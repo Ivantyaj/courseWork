@@ -41,7 +41,7 @@ public class ServerThread extends Thread {
 //            MessageType messageType;
 //
 //            while (true) {
-//                message = (Message) objectInput.readObject();
+//ser                message = (Message) objectInput.readObject();
 //                operationType = message.getOperationType();
 //                messageType = message.getMessageType();
 //                switch (operationType) {

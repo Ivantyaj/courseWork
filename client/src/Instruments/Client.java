@@ -15,7 +15,7 @@ public class Client {
             System.out.println("Invalid port!");
             System.exit(0);
         }
-        MainWindow mainWindow = new MainWindow(port);
-        mainWindow.setVisible(true);
+        //MainWindow mainWindow = new MainWindow(port);
+        //mainWindow.setVisible(true);
     }
 }
