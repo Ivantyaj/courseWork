@@ -12,6 +12,9 @@ public class Server extends JFrame {
     JButton btnPort;
     JTextField textPort;
     JTextField textIP;
+    JLabel labelPort;
+
+    int port = 0;
 
 
     public Server(String str) {
@@ -23,6 +26,7 @@ public class Server extends JFrame {
         btnPort = new JButton("Установить порт");
         textPort = new JTextField(9);
         textIP = new JTextField(9);
+        labelPort = new JLabel("Port: ");
 
         textIP.setEditable(false);
 
@@ -41,13 +45,15 @@ public class Server extends JFrame {
 
         setLayout(null);
 
-        textPort.setBounds(10 ,10,30,20);
-        btnStart.setBounds(10, 40, 30, 20);
-        btnPort.setBounds(10, 65, 30, 20);
+        textPort.setBounds(10 ,10,70,20);
+        btnStart.setBounds(10, 40, 70, 20);
+        btnPort.setBounds(10, 65, 70, 20);
+        labelPort.setBounds(10,95, 90,20);
 
         add(btnStart);
         add(btnPort);
         add(textPort);
+        add(labelPort);
 //        add(area);
 //        add(l1);
 //        add(l2);
@@ -60,7 +66,7 @@ public class Server extends JFrame {
 //        add(flag2);
 
         btnPort.addActionListener(new ButtonActionListener());
-        btnStart.addActionListener(new FlagActionListener());
+        btnStart.addActionListener(new ButtonActionListener());
 //        flag2.addActionListener(new FlagActionListener());
 //        del.addActionListener(new DelActionListener());
 //        box_1.addActionListener(new BoxActionListener());
@@ -71,30 +77,34 @@ public class Server extends JFrame {
     public class ButtonActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource() == btnPort){
-                text.setText(null);
-                area.setText(null);
-
+                System.out.println(textPort.getText());
+                port = Integer.parseInt(textPort.getText()); //try/cath
+            }
+            if(e.getSource() == btnStart) {
+                System.out.println("Start serv");
+                start();
             }
         }
     }
 
 
     public void start() {
-        int port = 0;
         try {
-            if (args.length != 0 && Integer.parseInt(args[0]) != 0 && args[0].length() == 4) {
-                port = Integer.parseInt(args[0]);
-                System.out.println("first");
-            } else if (args.length == 0) {
+            if (textPort.getText().length() == 0) {
                 port = PORT;
                 System.out.println("second");
+            }else if (Integer.parseInt(textPort.getText()) != 0 && textPort.getText().length() == 4) {
+                port = Integer.parseInt(textPort.getText());
+                System.out.println("first");
             } else {
                 System.out.println("Invalid port!");
-                System.exit(0);
+                //System.exit(0);
+                return;
             }
+            labelPort.setText("Port: " + String.valueOf(port));
             ServerSocket serverSocket = new ServerSocket(port);
 
-            while (true) {
+            while (true) { //????
                 new ServerThread(serverSocket.accept()).start();
             }
         } catch (Exception e) {
