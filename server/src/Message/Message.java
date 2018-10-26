@@ -1,6 +1,7 @@
 package Message;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Message implements Serializable {
     public enum cmd{
@@ -10,21 +11,26 @@ public class Message implements Serializable {
     }
     cmd command = cmd.Start;
 
-    private Object messageObject;
+    private ArrayList<String> messageArray;
 
     public cmd getCommand() {
         return command;
     }
-    public void setMessageObject(Object messageObject) {
-        this.messageObject = messageObject;
+
+    public void setCommand(cmd command) {
+        this.command = command;
     }
 
-    public Object getMessageObject() {
-        return messageObject;
+    public void setMessageArray(ArrayList<String> messageArray) {
+        this.messageArray = new ArrayList<>(messageArray);
+    }
+
+    public ArrayList<String> getMessageArray() {
+        return messageArray;
     }
 
     @Override
     public String toString() {
-        return super.toString() + messageObject.toString();
+        return command + messageArray.toString();
     }
 }

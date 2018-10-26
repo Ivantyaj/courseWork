@@ -8,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class Client {
     public static final int PORT = 1502;
@@ -28,10 +29,8 @@ public class Client {
         //mainWindow.setVisible(true);
 
         Message message = new Message();
-        String test = "Hello";
-        message.setMessageObject(test);
 
-        Socket clientSocket = null;
+        Socket clientSocket;
         try {
             clientSocket = new Socket("127.0.0.1",PORT);
             ObjectOutputStream clientSendStream =  new ObjectOutputStream(clientSocket.getOutputStream());
@@ -43,11 +42,12 @@ public class Client {
             uiLogIN.setLocationRelativeTo(null);
 
             while (!message.getCommand().equals(Message.cmd.Stop)){
-                System.out.println(message);
+                //System.out.println(message);
 
+                uiLogIN.setClientSendStream(clientSendStream);
+                uiLogIN.setMessage(message);
 
-
-                clientSendStream.writeObject(message); //вынести
+                //clientSendStream.writeObject(message); //вынести
 
                 message = (Message) clientReadStream.readObject();
                 System.out.println(message);

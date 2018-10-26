@@ -1,15 +1,19 @@
 package ui;
 
+import Message.Message;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.*;
 import java.io.*;
+import java.util.ArrayList;
 
 public class LogIN extends JFrame{
 
     ObjectOutputStream clientSendStream;
+    Message message;
 
     JButton btnClear;
     JButton btnEnter;
@@ -29,6 +33,8 @@ public class LogIN extends JFrame{
         btnClear = new JButton("Очистить");
         textFieldLogin = new JTextField(9);
         textFieldPassword = new JTextField(9);
+        textFieldLogin.setText("");
+        textFieldPassword.setText("");
         labelLogin = new JLabel("Логин:");
         labelPassword = new JLabel("Пароль");
 
@@ -58,6 +64,10 @@ public class LogIN extends JFrame{
         this.clientSendStream = clientSendStream;
     }
 
+    public void setMessage(Message message) {
+        this.message = message;
+    }
+
     public class ButtonActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
@@ -65,7 +75,16 @@ public class LogIN extends JFrame{
                 textFieldLogin.setText(null);
                 textFieldPassword.setText(null);
             } else if (e.getSource() == btnEnter) {
-                //clientSendStream.writeObject();
+                ArrayList<String> stringArrayList = new ArrayList<>();
+                stringArrayList.add(textFieldLogin.getText());
+                stringArrayList.add(textFieldPassword.getText());
+                message.setMessageArray(stringArrayList);
+                message.setCommand(Message.cmd.LogIn);
+                try {
+                    clientSendStream.writeObject(message);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             }
         }
     }

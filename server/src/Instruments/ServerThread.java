@@ -21,7 +21,7 @@ public class ServerThread extends Thread {
     ObjectInputStream serverReadStream;
     ObjectOutputStream serverSendStream;
 
-    Message message;
+    Message message = new Message();
 
     public ServerThread(Socket socket) {
         this.socket = socket;
@@ -38,10 +38,21 @@ public class ServerThread extends Thread {
             serverReadStream = new ObjectInputStream(socket.getInputStream());
             serverSendStream = new ObjectOutputStream(socket.getOutputStream());
 
-            message = (Message) serverReadStream.readObject();
-            System.out.println(message);
+            //message = (Message) serverReadStream.readObject();
+
+            int k = 0; //DELETE
             while (!message.getCommand().equals(Message.cmd.Stop)){
                 message =(Message) serverReadStream.readObject();
+                System.out.println(message);
+                //if(message.getCommand().equals(Message.cmd.LogIn))
+
+                switch (message.getCommand()){
+                    case LogIn:
+                        message.setCommand(Message.cmd.Start);
+                        serverSendStream.writeObject(message);
+                        k++;
+                        break;
+                }
             }
 
         } catch (IOException | ClassNotFoundException e) {
