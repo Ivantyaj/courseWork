@@ -4,6 +4,7 @@ import Message.Message;
 import Users.User;
 import ui.AdminMainMenu;
 import ui.LogIN;
+import ui.UsersDB;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -36,7 +37,7 @@ public class Client {
             uiLogIN.setVisible(true);
             uiLogIN.setResizable(false);
             uiLogIN.setLocationRelativeTo(null);
-
+            UsersDB usersDB = null;
             while (!message.getCommand().equals(Message.cmd.Stop)) {
                 //System.out.println(message);
 
@@ -46,13 +47,12 @@ public class Client {
                 //clientSendStream.writeObject(message); //вынести
 
                 message = (Message) clientReadStream.readObject();
-
                 switch (message.getCommand()) {
                     case LogIn:
                         User user = (User) message.getMessageArray().get(0);
                         switch (user.getRole()) {
                             case ADMIN:
-                                workAdmin();
+                                workAdmin(clientSendStream, message);
                                 break;
                             case USER:
                                 break;
@@ -60,6 +60,38 @@ public class Client {
                                 JOptionPane.showMessageDialog(null, "Данные не верны");
                                 break;
                         }
+                        break;
+                    case UserRequest:
+                        System.out.println(message.getMessageArray());
+                        
+                        ArrayList<User> userArrayList = new ArrayList<>();
+                        for (Object object: message.getMessageArray()) {
+                            userArrayList.add((User) object);
+                        }
+
+//                        ArrayList<String[]> strings = new ArrayList<>();
+//                        for (User user1: userArrayList){
+//                            strings.add(user1.toStringArray());
+//                        }
+
+                        String [][] stringDa = new String[userArrayList.size()][];
+                        int i = 0;
+                        for (User user1: userArrayList){
+                            stringDa[i] = user1.toStringArray();
+                            i++;
+                        }
+
+                        if(usersDB != null)
+                            usersDB.setVisible(false);
+
+                        usersDB = new UsersDB(stringDa);
+                        usersDB.setVisible(true);
+                        usersDB.setLocationRelativeTo(null);
+                        usersDB.setClientSendStream(clientSendStream);
+                        usersDB.setMessage(message);
+
+
+
                         break;
                     default:
                         break;
@@ -72,11 +104,13 @@ public class Client {
         }
     }
 
-    protected void workAdmin() {
+    protected void workAdmin(ObjectOutputStream clientSendStream, Message message) {
         AdminMainMenu uiAdminMain = new AdminMainMenu();
         uiAdminMain.setVisible(true);
         uiAdminMain.setResizable(false);
         uiAdminMain.setLocationRelativeTo(null);
+        uiAdminMain.setClientSendStream(clientSendStream);
+        uiAdminMain.setMessage(message);
     }
 
 }

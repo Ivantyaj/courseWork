@@ -66,6 +66,15 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
                 visible(false);
             } else if (e.getSource() == btnDBUser) {
 
+                //message.setMessageArray(stringArrayList);
+                message = new Message();
+                message.setCommand(Message.cmd.UserRequest);
+                try {
+                    clientSendStream.writeObject(message);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+
             } else if (e.getSource() == btnUser) {
 
             }

@@ -64,7 +64,7 @@ public class ServerThread extends Thread {
                 serverGui.setMessage(message.toString());
 
                 switch (message.getCommand()) {
-                    case LogIn:
+                    case LogIn: {
 
                         String login = (String) message.getMessageArray().get(0);
                         String password = (String) message.getMessageArray().get(1);
@@ -78,14 +78,45 @@ public class ServerThread extends Thread {
                             ResultSet resultSet = statement.executeQuery(query);
 
                             if (resultSet.next()) {
-                                user.setRole(resultSet.getString("role"));
-                                user.setLogin(resultSet.getString("login"));
-                                user.setPassword(resultSet.getString("password"));
+//                                user.setId(resultSet.getInt("id"));
+//                                user.setRole(resultSet.getString("role"));
+//                                user.setLogin(resultSet.getString("login"));
+//                                user.setPassword(resultSet.getString("password"));
+                                user = new User(resultSet);
                             }
                         }
                         message.setArrayOneObject(user);
                         serverSendStream.writeObject(message);
+                    }
+                        break;
+                    case UserRequest: {
+                        ArrayList<Object> userArrayList = new ArrayList<>();
+                        String query = "select * from users";
+                        Statement statement = dbWorker.getConnection().createStatement();
+                        ResultSet resultSet = statement.executeQuery(query);
+                        while (resultSet.next()) {
+                            userArrayList.add(new User(resultSet));
+                        }
+                        message.setMessageArray(userArrayList);
+                        serverSendStream.writeObject(message);
+                    }
+                        break;
+                    case UserDelete: {
 
+                        Statement statement = dbWorker.getConnection().createStatement();
+
+                        for (Object id: message.getMessageArray()) {
+                            if(!id.equals(null)) {
+                                String query = "delete from users where id = " + id;
+                                statement.execute(query);
+                            }
+                        }
+//                        message.setMessageArray(new ArrayList<>());
+//                        serverSendStream.writeObject(message);
+                    }
+                        break;
+                    default:
+                        System.out.println("Неизвестная комманда");
                         break;
                 }
             }

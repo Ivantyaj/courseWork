@@ -7,8 +7,10 @@ public class Message implements Serializable {
     public enum cmd{
         Start,
         LogIn,
-        LogInRefuse,
+        UserRequest,
         Stop,
+        UserDelete,
+        Fail
     }
     cmd command = cmd.Start;
 
@@ -39,6 +41,10 @@ public class Message implements Serializable {
 
     @Override
     public String toString() {
-        return command + messageArray.toString();
+        String str = new String();
+        str += String.valueOf(command);
+        if(messageArray != null)
+            str += messageArray.toString();
+        return str;
     }
 }
