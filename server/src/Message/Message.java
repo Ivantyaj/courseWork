@@ -7,7 +7,9 @@ public class Message implements Serializable {
     public enum cmd{
         Start,
         LogIn,
-        Stop
+        LogInRefuse,
+        LogInSucsess,
+        Stop,
     }
     cmd command = cmd.Start;
 
@@ -23,6 +25,11 @@ public class Message implements Serializable {
 
     public void setMessageArray(ArrayList<String> messageArray) {
         this.messageArray = new ArrayList<>(messageArray);
+    }
+
+    public void setMessageArray(String messageString) {
+        this.messageArray = new ArrayList<String>();
+        this.messageArray.add(messageString);
     }
 
     public ArrayList<String> getMessageArray() {

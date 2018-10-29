@@ -9,7 +9,7 @@ public class Server{
     public static final int PORT = 1502;
 
 
-    String sPort;
+    String sPort = "";
     int port = 0;
 
     public void setsPort(String sPort) {
@@ -38,6 +38,7 @@ public class Server{
             while (true) { //????
                 new ServerThread(serverSocket.accept()).start();
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }

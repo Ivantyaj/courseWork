@@ -1,11 +1,18 @@
 package Instruments;
 
+import DataBase.DBWorker;
 import Message.Message;
+import Users.User;
+import ui.ServerGUI;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 public class ServerThread extends Thread {
 
@@ -14,7 +21,7 @@ public class ServerThread extends Thread {
     private ObjectOutput objectOutput;
     private ObjectInput objectInput;
     private Socket socket;
-    private Connection connection;
+    private DBWorker dbWorker;
 //    private SqlDaoFactory   daoFactory;
 
 
@@ -31,8 +38,14 @@ public class ServerThread extends Thread {
 
     @Override
     public void run() {
+
+        //ServerGUI a = new ServerGUI("Сервер");
+        //a.setVisible(true);
+
         System.out.println(socket.getInetAddress().getHostName() +
                 " " + socket.getInetAddress() + "connected");
+
+        dbWorker = new DBWorker();
 
         try {
             serverReadStream = new ObjectInputStream(socket.getInputStream());
@@ -40,7 +53,6 @@ public class ServerThread extends Thread {
 
             //message = (Message) serverReadStream.readObject();
 
-            int k = 0; //DELETE
             while (!message.getCommand().equals(Message.cmd.Stop)){
                 message =(Message) serverReadStream.readObject();
                 System.out.println(message);
@@ -48,14 +60,37 @@ public class ServerThread extends Thread {
 
                 switch (message.getCommand()){
                     case LogIn:
-                        message.setCommand(Message.cmd.Start);
+                        //message.setCommand(Message.cmd.Start);
+
+                        String login = message.getMessageArray().get(0);
+                        String password = message.getMessageArray().get(1);
+
+                        if(login.isEmpty() || password.isEmpty()){
+                            message.setCommand(Message.cmd.LogInRefuse);
+                        } else {
+
+                            String query = "select * from users where " +
+                                    "login = " + login + " and" + " password = " + password;
+                            Statement statement = dbWorker.getConnection().createStatement();
+                            ResultSet resultSet = statement.executeQuery(query);
+
+                            if (resultSet.next()) {
+                                User user = new User();
+                                user.setRole(resultSet.getString("role"));
+                                message.setCommand(Message.cmd.LogInSucsess);
+                                message.setMessageArray(user.getRoleName());
+                            } else {
+                                message.setCommand(Message.cmd.LogInRefuse);
+                            }
+                        }
+
                         serverSendStream.writeObject(message);
-                        k++;
+
                         break;
                 }
             }
 
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
 
