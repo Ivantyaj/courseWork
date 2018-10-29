@@ -75,7 +75,7 @@ public class LogIN extends JFrame implements SocketGuiInterface{
                 textFieldLogin.setText(null);
                 textFieldPassword.setText(null);
             } else if (e.getSource() == btnEnter) {
-                ArrayList<String> stringArrayList = new ArrayList<>();
+                ArrayList<Object> stringArrayList = new ArrayList<>();
                 stringArrayList.add(textFieldLogin.getText());
                 stringArrayList.add(textFieldPassword.getText());
                 message.setMessageArray(stringArrayList);

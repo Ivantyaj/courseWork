@@ -1,6 +1,7 @@
 package Instruments;
 
 import Message.Message;
+import Users.User;
 import ui.AdminMainMenu;
 import ui.LogIN;
 

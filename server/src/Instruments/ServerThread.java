@@ -70,8 +70,8 @@ public class ServerThread extends Thread {
                     case LogIn:
                         //message.setCommand(Message.cmd.Start);
 
-                        String login = message.getMessageArray().get(0);
-                        String password = message.getMessageArray().get(1);
+                        String login = (String) message.getMessageArray().get(0);
+                        String password = (String) message.getMessageArray().get(1);
 
                         if(login.isEmpty() || password.isEmpty()){
                             message.setCommand(Message.cmd.LogInRefuse);
@@ -93,7 +93,7 @@ public class ServerThread extends Thread {
                                 message.setCommand(Message.cmd.LogInRefuse);
                             }
                         }
-
+                        message.getMessageArray().add(new User(User.Role.FAIL, "1", "2"));
                         serverSendStream.writeObject(message);
 
                         break;

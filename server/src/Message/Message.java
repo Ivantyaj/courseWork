@@ -14,7 +14,7 @@ public class Message implements Serializable {
     }
     cmd command = cmd.Start;
 
-    private ArrayList<String> messageArray;
+    private ArrayList<Object> messageArray;
 
     public cmd getCommand() {
         return command;
@@ -24,16 +24,24 @@ public class Message implements Serializable {
         this.command = command;
     }
 
-    public void setMessageArray(ArrayList<String> messageArray) {
+
+    public void setMessageArray(ArrayList<Object> messageArray) {
         this.messageArray = new ArrayList<>(messageArray);
     }
 
+
+//    public void setMessageArray(ArrayList<String> messageArray) {
+//        this.messageArray = new ArrayList<>(messageArray);
+//    }
+
+
+
     public void setMessageArray(String messageString) {
-        this.messageArray = new ArrayList<String>();
+        this.messageArray = new ArrayList<>();
         this.messageArray.add(messageString);
     }
 
-    public ArrayList<String> getMessageArray() {
+    public ArrayList<Object> getMessageArray() {
         return messageArray;
     }
 
