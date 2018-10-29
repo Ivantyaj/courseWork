@@ -2,26 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34397994-8a57-4afb-b7da-8c9b0e18214c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/client/Instruments/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/Instruments/Client$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/client/Instruments/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/Instruments/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/Message/Message$cmd.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/Message/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/ui/LogIN$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/ui/LogIN$ButtonActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/Instruments/ServerThread$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Instruments/ServerThread$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/Instruments/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Instruments/ServerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/Message/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Message/Message.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Instruments/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instruments/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Message/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/LogIN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/LogIN.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/production/server/Instruments/ServerThread$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Instruments/ServerThread$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/out/production/server/Instruments/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Instruments/ServerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/production/server/Message/Message$cmd.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Message/Message$cmd.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/out/production/server/Message/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Message/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/server/Users/User$Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Users/User$Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/server/Users/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Users/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/server.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/Instruments/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Instruments/ServerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/Message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Message/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/Users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Users/User.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,6 +23,20 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="373689385">
@@ -56,12 +64,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="24" />
-          <entry key="java" value="2043" />
+          <entry key="java" value="2227" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2043" />
+          <entry key="JAVA" value="2227" />
           <entry key="PLAIN_TEXT" value="24" />
         </counts>
       </usages-collector>
@@ -81,20 +89,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../server/src/DataBase/DBWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-65">
-              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+            <state relative-caret-position="292">
+              <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Instruments/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+            <state relative-caret-position="405">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/LogIN.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="83" column="58" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
+            <state relative-caret-position="368">
+              <caret line="85" column="41" lean-forward="true" selection-start-line="85" selection-start-column="41" selection-end-line="86" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1759#1760#0" expanded="true" />
@@ -188,9 +199,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -242,7 +254,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540826619497" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540832722789" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../server" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -330,17 +342,29 @@
       <option name="presentableId" value="Default" />
       <updated>1540805228087</updated>
       <workItem from="1540805231225" duration="3761000" />
-      <workItem from="1540818312484" duration="7209000" />
+      <workItem from="1540818312484" duration="8985000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="All_Features_in__server - 2018.10.29 at 18h 21m 13s.xml">
+      <configuration name="All Features in: server" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_Features_in__client - 2018.10.29 at 18h 23m 32s.xml">
+      <configuration name="All Features in: client" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_Features_in__server - 2018.10.29 at 18h 23m 43s.xml">
+      <configuration name="All Features in: server" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10970000" />
+    <option name="totallyTimeSpent" value="12746000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21275167" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21275167" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -350,7 +374,7 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32907802" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.32907802" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.1716312" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -360,12 +384,12 @@
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Database" order="6" weight="0.3295302" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
@@ -397,6 +421,22 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Instruments/Client.java</url>
+          <line>49</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Instruments/Main.java">
@@ -438,18 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/LogIN.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="83" column="58" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1759#1760#0" expanded="true" />
-            <element signature="e#1797#1798#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Message/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-374">
@@ -471,20 +499,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instruments/Client.java">
+    <entry file="file://$PROJECT_DIR$/../server/src/DataBase/DBWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+        <state relative-caret-position="292">
+          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../server/src/DataBase/DBWorker.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/LogIN.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-65">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        <state relative-caret-position="368">
+          <caret line="85" column="41" lean-forward="true" selection-start-line="85" selection-start-column="41" selection-end-line="86" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1759#1760#0" expanded="true" />
+            <element signature="e#1797#1798#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Instruments/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

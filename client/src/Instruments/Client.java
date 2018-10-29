@@ -5,6 +5,7 @@ import Users.User;
 import ui.AdminMainMenu;
 import ui.LogIN;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -20,7 +21,7 @@ public class Client {
         client.run();
     }
 
-    public void run(){
+    public void run() {
 
 
         Message message = new Message();
@@ -47,10 +48,20 @@ public class Client {
                 message = (Message) clientReadStream.readObject();
 
                 switch (message.getCommand()) {
-                    case LogInSucsessAdmin:
-                        workAdmin();
+                    case LogIn:
+                        User user = (User) message.getMessageArray().get(0);
+                        switch (user.getRole()) {
+                            case ADMIN:
+                                workAdmin();
+                                break;
+                            case USER:
+                                break;
+                            case FAIL:
+                                JOptionPane.showMessageDialog(null, "Данные не верны");
+                                break;
+                        }
                         break;
-                    case LogInSucsessUser:
+                    default:
                         break;
                 }
 
@@ -61,7 +72,7 @@ public class Client {
         }
     }
 
-    protected void workAdmin(){
+    protected void workAdmin() {
         AdminMainMenu uiAdminMain = new AdminMainMenu();
         uiAdminMain.setVisible(true);
         uiAdminMain.setResizable(false);

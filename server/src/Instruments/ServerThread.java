@@ -58,24 +58,19 @@ public class ServerThread extends Thread {
             serverReadStream = new ObjectInputStream(socket.getInputStream());
             serverSendStream = new ObjectOutputStream(socket.getOutputStream());
 
-            //message = (Message) serverReadStream.readObject();
-
-            while (!message.getCommand().equals(Message.cmd.Stop)){
-                message =(Message) serverReadStream.readObject();
+            while (!message.getCommand().equals(Message.cmd.Stop)) {
+                message = (Message) serverReadStream.readObject();
                 System.out.println(message);
                 serverGui.setMessage(message.toString());
-                //if(message.getCommand().equals(Message.cmd.LogIn))
 
-                switch (message.getCommand()){
+                switch (message.getCommand()) {
                     case LogIn:
-                        //message.setCommand(Message.cmd.Start);
 
                         String login = (String) message.getMessageArray().get(0);
                         String password = (String) message.getMessageArray().get(1);
-
-                        if(login.isEmpty() || password.isEmpty()){
-                            message.setCommand(Message.cmd.LogInRefuse);
-                        } else {
+                        User user = new User();
+                        message.setCommand(Message.cmd.LogIn);
+                        if (!(login.isEmpty() || password.isEmpty())) {
 
                             String query = "select * from users where " +
                                     "login = " + login + " and" + " password = " + password;
@@ -83,17 +78,12 @@ public class ServerThread extends Thread {
                             ResultSet resultSet = statement.executeQuery(query);
 
                             if (resultSet.next()) {
-                                User user = new User();
                                 user.setRole(resultSet.getString("role"));
-                                if (user.getRole() == User.Role.ADMIN)
-                                    message.setCommand(Message.cmd.LogInSucsessAdmin);
-                                else if (user.getRole() == User.Role.USER)
-                                    message.setCommand(Message.cmd.LogInSucsessUser);
-                            } else {
-                                message.setCommand(Message.cmd.LogInRefuse);
+                                user.setLogin(resultSet.getString("login"));
+                                user.setPassword(resultSet.getString("password"));
                             }
                         }
-                        message.getMessageArray().add(new User(User.Role.FAIL, "1", "2"));
+                        message.setArrayOneObject(user);
                         serverSendStream.writeObject(message);
 
                         break;
