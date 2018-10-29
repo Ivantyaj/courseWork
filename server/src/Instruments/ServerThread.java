@@ -22,6 +22,7 @@ public class ServerThread extends Thread {
     private ObjectInput objectInput;
     private Socket socket;
     private DBWorker dbWorker;
+    ServerGUI serverGui;
 //    private SqlDaoFactory   daoFactory;
 
 
@@ -38,6 +39,12 @@ public class ServerThread extends Thread {
 
     @Override
     public void run() {
+
+        serverGui = ServerGUI.INSTANCE;
+        serverGui.setVisible(true);
+        serverGui.setResizable(false);
+        serverGui.setLocationRelativeTo(null);
+        serverGui.addClient();
 
         //ServerGUI a = new ServerGUI("Сервер");
         //a.setVisible(true);
@@ -56,6 +63,7 @@ public class ServerThread extends Thread {
             while (!message.getCommand().equals(Message.cmd.Stop)){
                 message =(Message) serverReadStream.readObject();
                 System.out.println(message);
+                serverGui.setMessage(message.toString());
                 //if(message.getCommand().equals(Message.cmd.LogIn))
 
                 switch (message.getCommand()){
@@ -92,6 +100,8 @@ public class ServerThread extends Thread {
 
         } catch (IOException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
+        } finally {
+            serverGui.removeClient();
         }
 
     }

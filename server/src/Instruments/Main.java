@@ -8,12 +8,12 @@ public class Main {
 
 
         Server server = new Server();
-
-        ServerGUI serverGui = new ServerGUI("Сервер");
-        serverGui.setServer(server);
-        serverGui.setVisible(true);
-        serverGui.setResizable(false);
-        serverGui.setLocationRelativeTo(null);
+        server.start();
+//        ServerGUI serverGui = new ServerGUI("Сервер");
+//        serverGui.setServer(server);
+//        serverGui.setVisible(true);
+//        serverGui.setResizable(false);
+//        serverGui.setLocationRelativeTo(null);
     }
 
 }

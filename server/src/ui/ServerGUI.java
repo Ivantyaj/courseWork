@@ -9,11 +9,16 @@ import java.awt.event.ActionListener;
 
 public class ServerGUI extends JFrame {
 
+    public static final ServerGUI INSTANCE = new ServerGUI("Сервер");
+
+    int clientCount = 0;
+
     JButton btnStart;
     JButton btnPort;
     JTextField textPort;
     JTextField textIP;
     JLabel labelPort;
+    JTextArea textAreaMessage;
 
     Server server;
 
@@ -21,7 +26,7 @@ public class ServerGUI extends JFrame {
         this.server = server;
     }
 
-    public ServerGUI(String str) {
+    private ServerGUI(String str) {
         super(str);
         setSize(500, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,7 +35,8 @@ public class ServerGUI extends JFrame {
         btnPort = new JButton("Установить порт");
         textPort = new JTextField(9);
         textIP = new JTextField(9);
-        labelPort = new JLabel("Port: ");
+        labelPort = new JLabel("Client: ");
+        textAreaMessage = new JTextArea(9,9);
 
         textIP.setEditable(false);
 
@@ -40,16 +46,32 @@ public class ServerGUI extends JFrame {
         btnStart.setBounds(10, 40, 70, 20);
         btnPort.setBounds(10, 65, 70, 20);
         labelPort.setBounds(10, 95, 90, 20);
+        textAreaMessage.setBounds(10, 120, 300, 200);
 
         add(btnStart);
         add(btnPort);
         add(textPort);
         add(labelPort);
+        add(textAreaMessage);
 
 
         btnPort.addActionListener(new ServerGUI.ButtonActionListener());
         btnStart.addActionListener(new ServerGUI.ButtonActionListener());
 
+    }
+
+    public void addClient(){
+        clientCount++;
+        labelPort.setText("Client: " + String.valueOf(clientCount));
+    }
+
+    public void removeClient(){
+        clientCount--;
+        labelPort.setText("Client: " + String.valueOf(clientCount));
+    }
+
+    public void setMessage(String message){
+        textAreaMessage.setText(message);
     }
 
     public class ButtonActionListener implements ActionListener {
