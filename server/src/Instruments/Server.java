@@ -1,5 +1,7 @@
 package Instruments;
 
+import ui.WaitFrame;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.ServerSocket;
@@ -35,8 +37,14 @@ public class Server{
             }
             ServerSocket serverSocket = new ServerSocket(port);
 
+            WaitFrame waitFrame = new WaitFrame("Wait");
+            waitFrame .setVisible(true);
+            waitFrame .setResizable(false);
+            waitFrame .setLocationRelativeTo(null);
+
             while (true) { //????
                 new ServerThread(serverSocket.accept()).start();
+                waitFrame.setVisible(false);
             }
 
         } catch (Exception e) {

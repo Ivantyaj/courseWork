@@ -85,8 +85,10 @@ public class ServerThread extends Thread {
                             if (resultSet.next()) {
                                 User user = new User();
                                 user.setRole(resultSet.getString("role"));
-                                message.setCommand(Message.cmd.LogInSucsess);
-                                message.setMessageArray(user.getRoleName());
+                                if (user.getRole() == User.Role.ADMIN)
+                                    message.setCommand(Message.cmd.LogInSucsessAdmin);
+                                else if (user.getRole() == User.Role.USER)
+                                    message.setCommand(Message.cmd.LogInSucsessUser);
                             } else {
                                 message.setCommand(Message.cmd.LogInRefuse);
                             }

@@ -10,7 +10,7 @@ import java.net.*;
 import java.io.*;
 import java.util.ArrayList;
 
-public class LogIN extends JFrame{
+public class LogIN extends JFrame implements SocketGuiInterface{
 
     ObjectOutputStream clientSendStream;
     Message message;

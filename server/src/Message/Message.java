@@ -8,7 +8,8 @@ public class Message implements Serializable {
         Start,
         LogIn,
         LogInRefuse,
-        LogInSucsess,
+        LogInSucsessAdmin,
+        LogInSucsessUser,
         Stop,
     }
     cmd command = cmd.Start;

@@ -1,6 +1,7 @@
 package Instruments;
 
 import Message.Message;
+import ui.AdminMainMenu;
 import ui.LogIN;
 
 import java.io.IOException;
@@ -14,34 +15,27 @@ public class Client {
     public static final int PORT = 1502;
 
     public static void main(String[] args) {
-        int port = 0;
-        if (args.length == 0) {
-            port = PORT;
-            System.out.println("first");
-        } else if (Integer.parseInt(args[0]) != 0 && args[0].length() == 4) {
-            port = Integer.parseInt(args[0]);
-            System.out.println("second");
-        } else {
-            System.out.println("Invalid port!");
-            System.exit(0);
-        }
-        //LogIN mainWindow = new LogIN(port);
-        //mainWindow.setVisible(true);
+        Client client = new Client();
+        client.run();
+    }
+
+    public void run(){
+
 
         Message message = new Message();
 
         Socket clientSocket;
         try {
-            clientSocket = new Socket("127.0.0.1",PORT);
-            ObjectOutputStream clientSendStream =  new ObjectOutputStream(clientSocket.getOutputStream());
-            ObjectInputStream clientReadStream =  new ObjectInputStream(clientSocket.getInputStream());
+            clientSocket = new Socket("127.0.0.1", PORT);
+            ObjectOutputStream clientSendStream = new ObjectOutputStream(clientSocket.getOutputStream());
+            ObjectInputStream clientReadStream = new ObjectInputStream(clientSocket.getInputStream());
 
             LogIN uiLogIN = new LogIN("Авторизация");
             uiLogIN.setVisible(true);
             uiLogIN.setResizable(false);
             uiLogIN.setLocationRelativeTo(null);
 
-            while (!message.getCommand().equals(Message.cmd.Stop)){
+            while (!message.getCommand().equals(Message.cmd.Stop)) {
                 //System.out.println(message);
 
                 uiLogIN.setClientSendStream(clientSendStream);
@@ -50,13 +44,27 @@ public class Client {
                 //clientSendStream.writeObject(message); //вынести
 
                 message = (Message) clientReadStream.readObject();
+
+                switch (message.getCommand()) {
+                    case LogInSucsessAdmin:
+                        workAdmin();
+                        break;
+                    case LogInSucsessUser:
+                        break;
+                }
+
                 System.out.println(message);
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-
     }
 
+    protected void workAdmin(){
+        AdminMainMenu uiAdminMain = new AdminMainMenu();
+        uiAdminMain.setVisible(true);
+        uiAdminMain.setResizable(false);
+        uiAdminMain.setLocationRelativeTo(null);
+    }
 
 }

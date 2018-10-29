@@ -8,7 +8,8 @@ public class Message implements Serializable {
         Start,
         LogIn,
         LogInRefuse,
-        LogInSucsess,
+        LogInSucsessAdmin,
+        LogInSucsessUser,
         Stop,
     }
     cmd command = cmd.Start;
@@ -28,7 +29,7 @@ public class Message implements Serializable {
     }
 
     public void setMessageArray(String messageString) {
-        this.messageArray = new ArrayList<String>();
+        this.messageArray = new ArrayList<>();
         this.messageArray.add(messageString);
     }
 

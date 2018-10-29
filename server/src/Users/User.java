@@ -1,7 +1,7 @@
 package Users;
 
 public class User {
-    enum Role {
+    public enum Role {
         ADMIN,
         USER,
         FAIL
