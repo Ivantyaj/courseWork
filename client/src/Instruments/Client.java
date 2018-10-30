@@ -33,7 +33,7 @@ public class Client {
             ObjectOutputStream clientSendStream = new ObjectOutputStream(clientSocket.getOutputStream());
             ObjectInputStream clientReadStream = new ObjectInputStream(clientSocket.getInputStream());
 
-            LogIN uiLogIN = new LogIN("Авторизация");
+            LogIN uiLogIN = new LogIN("Вход");
             uiLogIN.setVisible(true);
             uiLogIN.setResizable(false);
             uiLogIN.setLocationRelativeTo(null);
@@ -101,6 +101,7 @@ public class Client {
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "СЕРВЕР НЕ ДОСТУПЕН","ОШИБКА!", JOptionPane.ERROR_MESSAGE);
         }
     }
 
