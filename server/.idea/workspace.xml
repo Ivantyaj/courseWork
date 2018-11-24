@@ -3,10 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="230fcb3f-3dd5-47cd-ab9b-cad21832a6fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/AdminMainMenu$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/AdminMainMenu$ButtonActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/AdminMainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/AdminMainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/LogIN$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/LogIN$ButtonActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/LogIN.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/LogIN.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/UsersDB$ButtonActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/UsersDB$TabActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/UsersDB.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/Instruments/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Instruments/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/ui/AdminMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/AdminMainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/UsersDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/DB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1c588b5e-61a7-4b80-a0f8-04b83da6109c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1c588b5e-61a7-4b80-a0f8-04b83da6109c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/ui/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/DB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/ui/LogIN.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/LogIN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/ui/SocketGuiInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/SocketGuiInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/ui/userPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/UserPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />

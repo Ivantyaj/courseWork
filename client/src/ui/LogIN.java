@@ -24,6 +24,7 @@ public class LogIN extends JFrame implements SocketGuiInterface{
 
 
 
+
     public LogIN(String title){
         super(title);
         setSize(220, 130);

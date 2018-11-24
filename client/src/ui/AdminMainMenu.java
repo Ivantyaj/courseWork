@@ -18,14 +18,26 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
     JButton btnUser;
     JButton btnBack;
 
+    DB dbUI;
 
-    public AdminMainMenu() {
+
+    public AdminMainMenu(ObjectOutputStream objectOutputStream, Message mes){
         super("Администратор");
+
+        setClientSendStream(objectOutputStream);
+        setMessage(mes);
+
+
+
         setSize(150, 200);
 
         btnUser = new JButton("Расчет затрат");
         btnDBUser = new JButton("Войти в базу данных");
         btnBack = new JButton("Назад");
+
+        dbUI = new DB(clientSendStream, message);
+        dbUI.setVisible(false);
+        dbUI.setLocationRelativeTo(null);
 
         setDefaultCloseOperation(HIDE_ON_CLOSE);
 
@@ -79,5 +91,9 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
 
             }
         }
+    }
+
+    public DB getDbUI() {
+        return dbUI;
     }
 }

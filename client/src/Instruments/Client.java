@@ -16,6 +16,8 @@ import java.util.ArrayList;
 public class Client {
     public static final int PORT = 1502;
 
+    AdminMainMenu uiAdminMain = null;
+
     public static void main(String[] args) {
         Client client = new Client();
         client.run();
@@ -36,7 +38,7 @@ public class Client {
             uiLogIN.setVisible(true);
             uiLogIN.setResizable(false);
             uiLogIN.setLocationRelativeTo(null);
-            DB DB = null;
+            //DB DB = null;
             while (!message.getCommand().equals(Message.cmd.Stop)) {
                 //System.out.println(message);
 
@@ -80,14 +82,12 @@ public class Client {
                             i++;
                         }
 
-                        if(DB != null)
-                            DB.setVisible(false);
+                        DB db = uiAdminMain.getDbUI();
 
-                        DB = new DB(stringDa);
-                        DB.setVisible(true);
-                        DB.setLocationRelativeTo(null);
-                        DB.setClientSendStream(clientSendStream);
-                        DB.setMessage(message);
+                        db.setVisible(true);
+                        db.setLocationRelativeTo(null);
+                        db.setUserData(stringDa);
+
 
 
 
@@ -105,12 +105,12 @@ public class Client {
     }
 
     protected void workAdmin(ObjectOutputStream clientSendStream, Message message) {
-        AdminMainMenu uiAdminMain = new AdminMainMenu();
+        uiAdminMain = new AdminMainMenu(clientSendStream, message);
         uiAdminMain.setVisible(true);
         uiAdminMain.setResizable(false);
         uiAdminMain.setLocationRelativeTo(null);
-        uiAdminMain.setClientSendStream(clientSendStream);
-        uiAdminMain.setMessage(message);
+        //uiAdminMain.setClientSendStream(clientSendStream);
+        //uiAdminMain.setMessage(message);
     }
 
 }

@@ -6,13 +6,14 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-public class userPanel extends JPanel  implements SocketGuiInterface {
+public class UserPanel extends JPanel  implements SocketGuiInterface {
     String[] columnName = {
             "id",
             "Логин",
@@ -34,11 +35,14 @@ public class userPanel extends JPanel  implements SocketGuiInterface {
     JPanel tabModifyPanel;
 
 
-    public userPanel(Object[][] data){
-        setSize(450,500);
+    public UserPanel(ObjectOutputStream css, Message mes){
+        setClientSendStream(css);
+        setMessage(mes);
+
+        setSize(900,680);
         setLayout(null);
 
-        table = new JTable(data, columnName);
+        table = new JTable(new Object[][] {}, columnName);
         JScrollPane scrollPane = new JScrollPane(table);
 
         //table.setSize(400,50);
@@ -46,18 +50,9 @@ public class userPanel extends JPanel  implements SocketGuiInterface {
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         table.setRowSelectionAllowed(true);
 
-        scrollPane.setBounds(10,10,400,80);
+        scrollPane.setBounds(10,10,890,350);
         //add(table);
 
-
-        JPanel tablePanel = new JPanel();
-        tablePanel.setLayout(null);
-        //tablePanel.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        tablePanel.add(scrollPane);
-        tablePanel.setSize(500,100);
-        //tablePanel.
-
-        //tablePanel.setBounds(10,10,480,500);
 
 
 
@@ -66,8 +61,8 @@ public class userPanel extends JPanel  implements SocketGuiInterface {
         tabDeletePanel = new JPanel();
         tabDeletePanel.setLayout(null);
         btnTabDelete = new JButton("Удалить");
-        btnTabDelete.addActionListener(new userPanel.ButtonActionListener());
-        btnTabDelete.setBounds(5,5,90,20);
+        btnTabDelete.addActionListener(new UserPanel.ButtonActionListener());
+        btnTabDelete.setBounds(10,10,90,20);
         tabDeletePanel.add(btnTabDelete);
 
         tabInsertPanel = new JPanel();
@@ -79,15 +74,12 @@ public class userPanel extends JPanel  implements SocketGuiInterface {
         tabbedPane.addTab("Удалить", tabDeletePanel);
         tabbedPane.addTab("Изменить", tabModifyPanel);
 
-        tabbedPane.setBounds(10,250,400,150);
-        tabbedPane.addChangeListener(new userPanel.TabActionListener());
+        tabbedPane.setBounds(10,360,890,310);
+        tabbedPane.addChangeListener(new UserPanel.TabActionListener());
 
-
-
-        add(tablePanel);
+        add(scrollPane, BorderLayout.CENTER);
         add(tabbedPane);
-        //tablePanel.add(tablePanel);
-        //add(scrollPane);
+
     }
 
     public void setClientSendStream(ObjectOutputStream clientSendStream) {
