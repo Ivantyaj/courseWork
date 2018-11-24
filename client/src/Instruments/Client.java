@@ -4,13 +4,12 @@ import Message.Message;
 import Users.User;
 import ui.AdminMainMenu;
 import ui.LogIN;
-import ui.UsersDB;
+import ui.DB;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.net.Socket;
 import java.util.ArrayList;
 
@@ -37,7 +36,7 @@ public class Client {
             uiLogIN.setVisible(true);
             uiLogIN.setResizable(false);
             uiLogIN.setLocationRelativeTo(null);
-            UsersDB usersDB = null;
+            DB DB = null;
             while (!message.getCommand().equals(Message.cmd.Stop)) {
                 //System.out.println(message);
 
@@ -81,14 +80,14 @@ public class Client {
                             i++;
                         }
 
-                        if(usersDB != null)
-                            usersDB.setVisible(false);
+                        if(DB != null)
+                            DB.setVisible(false);
 
-                        usersDB = new UsersDB(stringDa);
-                        usersDB.setVisible(true);
-                        usersDB.setLocationRelativeTo(null);
-                        usersDB.setClientSendStream(clientSendStream);
-                        usersDB.setMessage(message);
+                        DB = new DB(stringDa);
+                        DB.setVisible(true);
+                        DB.setLocationRelativeTo(null);
+                        DB.setClientSendStream(clientSendStream);
+                        DB.setMessage(message);
 
 
 

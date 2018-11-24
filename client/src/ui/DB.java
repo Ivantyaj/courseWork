@@ -13,7 +13,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 
-public class UsersDB extends JFrame implements SocketGuiInterface {
+public class DB extends JFrame implements SocketGuiInterface {
     String[] columnName = {
       "id",
       "Логин",
@@ -35,7 +35,7 @@ public class UsersDB extends JFrame implements SocketGuiInterface {
     JPanel tabModifyPanel;
 
 
-    public UsersDB(Object[][] data){
+    public DB(Object[][] data){
         super("Пользователи");
         setSize(450,500);
         setResizable(false);
@@ -151,7 +151,6 @@ public class UsersDB extends JFrame implements SocketGuiInterface {
     }
 
     public class TabActionListener implements ChangeListener {
-
         @Override
         public void stateChanged(ChangeEvent e) {
             JPanel sourcePanel = (JPanel) ((JTabbedPane)e.getSource()).getSelectedComponent();

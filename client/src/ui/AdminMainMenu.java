@@ -23,8 +23,8 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
         super("Администратор");
         setSize(150, 200);
 
-        btnUser = new JButton("Logic");
-        btnDBUser = new JButton("Пользователи");
+        btnUser = new JButton("Расчет затрат");
+        btnDBUser = new JButton("Войти в базу данных");
         btnBack = new JButton("Назад");
 
         setDefaultCloseOperation(HIDE_ON_CLOSE);
