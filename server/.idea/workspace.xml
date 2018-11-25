@@ -7,18 +7,18 @@
       <change beforePath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/AdminMainMenu$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/AdminMainMenu$ButtonActionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/AdminMainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/AdminMainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/LogIN$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/LogIN$ButtonActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/LogIN.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/LogIN.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/UsersDB$ButtonActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/UsersDB$TabActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/UsersDB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/UserPanel$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/UserPanel$ButtonActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/UserPanel$TabActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/UserPanel$TabActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/UserPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/UserPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/server/Instruments/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/Instruments/ServerThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/Instruments/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Instruments/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/ui/AdminMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/AdminMainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/DB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/LogIN.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/LogIN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/SocketGuiInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/SocketGuiInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/userPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/UserPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/ui/UserPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/UserPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1c588b5e-61a7-4b80-a0f8-04b83da6109c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1c588b5e-61a7-4b80-a0f8-04b83da6109c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/Instruments/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Instruments/ServerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Instruments/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instruments/ServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Message/Message.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -91,20 +91,20 @@
         <counts>
           <entry key="cell" value="268" />
           <entry key="dummy" value="12" />
-          <entry key="java" value="3885" />
+          <entry key="java" value="4601" />
           <entry key="txt" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3885" />
+          <entry key="JAVA" value="4601" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="Scratch" value="268" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="9" />
+          <entry key="java" value="11" />
           <entry key="sql" value="3" />
           <entry key="users" value="2" />
         </counts>
@@ -112,7 +112,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Database Element" value="2" />
-          <entry key="JAVA" value="9" />
+          <entry key="JAVA" value="11" />
           <entry key="SQL" value="2" />
           <entry key="Scratch" value="1" />
         </counts>
@@ -127,17 +127,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Instruments/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/WaitFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+            <state relative-caret-position="215">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
@@ -184,11 +175,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Instruments/ServerThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="86" column="25" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
+            <state relative-caret-position="355">
+              <caret line="140" column="14" selection-start-line="140" selection-start-column="14" selection-end-line="140" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3535#3574#0" />
+                <element signature="e#4196#4287#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DataBase/SQLRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-427">
+              <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -211,8 +216,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Message/Message.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="34">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#351#352#0" expanded="true" />
                 <element signature="e#381#382#0" expanded="true" />
@@ -226,7 +231,7 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="das://1c588b5e-61a7-4b80-a0f8-04b83da6109c/schema/server/table/users">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -261,6 +266,7 @@
         <option value="1c588b5e-61a7-4b80-a0f8-04b83da6109c/schema/server/table/users.sql" />
         <option value="$PROJECT_DIR$/src/Instruments/Main.java" />
         <option value="$PROJECT_DIR$/src/ui/WaitFrame.java" />
+        <option value="$PROJECT_DIR$/src/DataBase/SQLRequest.java" />
         <option value="$PROJECT_DIR$/src/Instruments/ServerThread.java" />
       </list>
     </option>
@@ -278,10 +284,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="133" />
-    <option name="y" value="-1058" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -354,7 +360,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/БГУИР 672302/Курс 3/Курсач 5 сем/Курсач git/server/src/Instruments/ServerThread.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540852642333" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543129228055" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../client" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -416,30 +422,30 @@
       <workItem from="1540982115032" duration="1458000" />
       <workItem from="1542455722156" duration="1057000" />
       <workItem from="1542457117263" duration="5457000" />
-      <workItem from="1543062546969" duration="2506000" />
+      <workItem from="1543062546969" duration="8721000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38188000" />
+    <option name="totallyTimeSpent" value="44403000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="133" y="-1058" width="1696" height="1026" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Capture Tool" order="0" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.12469438" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.13691275" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Palette&#9;" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32907802" />
-      <window_info anchor="bottom" id="Database Changes" order="1" />
+      <window_info anchor="bottom" id="Database Changes" order="1" weight="0.32907802" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.32907802" />
       <window_info anchor="bottom" id="Find" order="4" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.28139013" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.35602838" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
@@ -455,7 +461,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Designer" order="6" />
-      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.24022005" />
+      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.2637584" />
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
   </component>
@@ -478,9 +484,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Instruments/ServerThread.java</url>
-          <line>107</line>
+          <line>112</line>
           <properties />
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/DataBase/SQLRequest.java</url>
+          <line>32</line>
+          <properties class="DataBase.SQLRequest" method="selectFrom">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -494,13 +508,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/UsersDB.java" />
-    <entry file="file://$PROJECT_DIR$/src/Instruments/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/WaitFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -534,16 +541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instruments/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding>
-            <marker date="1540902306654" expanded="false" signature="174:395" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Users/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -554,10 +551,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://1c588b5e-61a7-4b80-a0f8-04b83da6109c/schema/server/table/users.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://1c588b5e-61a7-4b80-a0f8-04b83da6109c/schema/server/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Instruments/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <folding>
+            <marker date="1540902306654" expanded="false" signature="174:395" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Message/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="34">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#351#352#0" expanded="true" />
             <element signature="e#381#382#0" expanded="true" />
@@ -565,23 +582,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://1c588b5e-61a7-4b80-a0f8-04b83da6109c/schema/server/table/users.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instruments/ServerThread.java">
+    <entry file="file://$PROJECT_DIR$/src/Instruments/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="86" column="25" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
+        <state relative-caret-position="215">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBase/SQLRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-427">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="das://1c588b5e-61a7-4b80-a0f8-04b83da6109c/schema/server/table/users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/src/Instruments/ServerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="140" column="14" selection-start-line="140" selection-start-column="14" selection-end-line="140" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3535#3574#0" />
+            <element signature="e#4196#4287#0" />
+          </folding>
         </state>
       </provider>
     </entry>

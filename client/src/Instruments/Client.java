@@ -38,7 +38,15 @@ public class Client {
             uiLogIN.setVisible(true);
             uiLogIN.setResizable(false);
             uiLogIN.setLocationRelativeTo(null);
-            //DB DB = null;
+            uiLogIN.setClientSendStream(clientSendStream);
+            uiLogIN.setMessage(message);
+
+            uiAdminMain = new AdminMainMenu(clientSendStream, message);
+            uiAdminMain.setVisible(false);
+            uiAdminMain.setResizable(false);
+            uiAdminMain.setLocationRelativeTo(null);
+            DB db = uiAdminMain.getDbUI();
+
             while (!message.getCommand().equals(Message.cmd.Stop)) {
                 //System.out.println(message);
 
@@ -53,7 +61,8 @@ public class Client {
                         User user = (User) message.getMessageArray().get(0);
                         switch (user.getRole()) {
                             case ADMIN:
-                                workAdmin(clientSendStream, message);
+                                //workAdmin(clientSendStream, message);
+                                uiAdminMain.setVisible(true);
                                 break;
                             case USER:
                                 break;
@@ -82,10 +91,10 @@ public class Client {
                             i++;
                         }
 
-                        DB db = uiAdminMain.getDbUI();
+                        //DB db = uiAdminMain.getDbUI();
 
-                        db.setVisible(true);
-                        db.setLocationRelativeTo(null);
+                        //db.setVisible(true);
+                        //db.setLocationRelativeTo(null);
                         db.setUserData(stringDa);
 
 

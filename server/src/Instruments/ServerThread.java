@@ -1,6 +1,7 @@
 package Instruments;
 
 import DataBase.DBWorker;
+import DataBase.SQLRequest;
 import Message.Message;
 import Users.User;
 import ui.ServerGUI;
@@ -22,6 +23,8 @@ public class ServerThread extends Thread {
     private ObjectInput objectInput;
     private Socket socket;
     private DBWorker dbWorker;
+    private SQLRequest sqlRequest;
+
     ServerGUI serverGui;
 //    private SqlDaoFactory   daoFactory;
 
@@ -53,6 +56,7 @@ public class ServerThread extends Thread {
                 " " + socket.getInetAddress() + "connected");
 
         dbWorker = new DBWorker();
+        sqlRequest = new SQLRequest();
 
         try {
             serverReadStream = new ObjectInputStream(socket.getInputStream());
@@ -60,7 +64,7 @@ public class ServerThread extends Thread {
 
             while (!message.getCommand().equals(Message.cmd.Stop)) {
                 message = (Message) serverReadStream.readObject();
-                System.out.println(message);
+                System.out.println("incoming: " + message);
                 serverGui.setMessage(message.toString());
 
                 switch (message.getCommand()) {
@@ -91,9 +95,10 @@ public class ServerThread extends Thread {
                         break;
                     case UserRequest: {
                         ArrayList<Object> userArrayList = new ArrayList<>();
-                        String query = "select * from users";
-                        Statement statement = dbWorker.getConnection().createStatement();
-                        ResultSet resultSet = statement.executeQuery(query);
+                        //String query = "select * from users";
+                        //Statement statement = dbWorker.getConnection().createStatement();
+//                        ResultSet resultSet = statement.executeQuery(query);
+                        ResultSet resultSet = sqlRequest.executeSqlQuery(message);
                         while (resultSet.next()) {
                             userArrayList.add(new User(resultSet));
                         }
@@ -102,18 +107,20 @@ public class ServerThread extends Thread {
                     }
                         break;
                     case UserDelete: {
-
-                        Statement statement = dbWorker.getConnection().createStatement();
-
-                        for (Object id: message.getMessageArray()) {
-                            if(!id.equals(null)) {
-                                String query = "delete from users where id = " + id;
-                                statement.execute(query);
-                            }
-                        }
+                         sqlRequest.executeSqlQuery(message);
+//                        Statement statement = dbWorker.getConnection().createStatement();
+//
+//                        for (Object id: message.getMessageArray()) {
+//                            if(!id.equals(null)) {
+//                                String query = "delete from users where id = " + id;
+//                                statement.execute(query);
+//                            }
+//                        }
 //                        message.setMessageArray(new ArrayList<>());
 //                        serverSendStream.writeObject(message);
                     }
+                    case UserAdd:
+                        sqlRequest.executeSqlQuery(message);
                         break;
                     default:
                         System.out.println("Неизвестная комманда");
@@ -123,6 +130,13 @@ public class ServerThread extends Thread {
 
         } catch (IOException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
+//            message = new Message(); ///хзхзхзххзхззхз
+//            message.setCommand(Message.cmd.Fail);
+//            try {
+//                serverSendStream.writeObject(message);
+//            } catch (IOException e1) {
+//                e1.printStackTrace();
+//            }
         } finally {
             serverGui.removeClient();
         }

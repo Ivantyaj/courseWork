@@ -10,6 +10,9 @@ public class Message implements Serializable {
         UserRequest,
         Stop,
         UserDelete,
+        UserAdd,
+        UserRedact,
+        SQL,
         Fail
     }
     cmd command = cmd.Start;

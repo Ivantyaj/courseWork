@@ -86,6 +86,7 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
+                dbUI.setVisible(true);
 
             } else if (e.getSource() == btnUser) {
 
