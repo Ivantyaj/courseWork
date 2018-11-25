@@ -3,46 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="230fcb3f-3dd5-47cd-ab9b-cad21832a6fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/AccessoriesPanel$ButtonActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/AccessoriesPanel$TabActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/AccessoriesPanel$TableSelectListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/AccessoriesPanel$TftCaractersListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/AccessoriesPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/AdminMainMenu$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/AdminMainMenu$ButtonActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/AdminMainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/AdminMainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/DB$TabActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/DB$TabActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/DB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/DB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/ProdactionPanel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/ProdactionPanel$ButtonActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/ProdactionPanel$TabActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/ProdactionPanel$TableSelectListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/ProdactionPanel$TftCaractersListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/ProdactionPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/StaffPanel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/StaffPanel$ButtonActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/StaffPanel$TabActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/StaffPanel$TableSelectListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/StaffPanel$TftCaractersListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/StaffPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/UserPanel$ButtonActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/UserPanel$TabActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/UserPanel$TableSelectListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/UserPanel$TftCaractersListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/UserPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/Message/Message$cmd.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/Message/Message$cmd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/Message/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/Message/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/Instruments/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Instruments/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/AccessoriesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/tablePanel/AccessoriesPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/AdminMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/AdminMainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/DB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/EvaluateUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/EvaluateUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/ProdactionPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/tablePanel/ProdactionPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/StaffPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/tablePanel/StaffPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/UserPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/tablePanel/UserPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Message/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/evaluatePanel/MainReportPanel$TableSelectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/evaluatePanel/MainReportPanel$TableSelectListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/evaluatePanel/MainReportPanel$TftCaractersListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/evaluatePanel/MainReportPanel$TftCaractersListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/evaluatePanel/MainReportPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/evaluatePanel/MainReportPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/ui/evaluatePanel/MainReportPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/evaluatePanel/MainReportPanel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -216,7 +180,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Instruments/ServerThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
+            <state relative-caret-position="248">
               <caret line="66" selection-start-line="66" selection-end-line="66" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -407,7 +371,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/БГУИР 672302/Курс 3/Курсач 5 сем/Курсач git/server/src/Instruments/ServerThread.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543157994738" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543173293766" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../client" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -469,16 +433,15 @@
       <workItem from="1540982115032" duration="1458000" />
       <workItem from="1542455722156" duration="1057000" />
       <workItem from="1542457117263" duration="5457000" />
-      <workItem from="1543062546969" duration="19393000" />
+      <workItem from="1543062546969" duration="19903000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55075000" />
+    <option name="totallyTimeSpent" value="55585000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="133" y="-1058" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Capture Tool" order="0" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.12469438" />
@@ -662,7 +625,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Instruments/ServerThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
+        <state relative-caret-position="248">
           <caret line="66" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="imports" expanded="true" />

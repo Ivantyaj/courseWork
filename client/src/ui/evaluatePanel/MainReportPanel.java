@@ -50,7 +50,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
 
     private JFormattedTextField ftfDate;
     private JFormattedTextField ftfDebtSum;
-    private JFormattedTextField ftfDebtPersent;
+    private JFormattedTextField ftfAddSum;
 
     private JCheckBox cbDefect;
     private JCheckBox cbDebt;
@@ -128,10 +128,10 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         }
 
         JLabel lbDate = new JLabel("Дата: ");
-        lbDate.setBounds(10,400,80,20);
+        lbDate.setBounds(10, 380, 80, 20);
 
         ftfDate = new JFormattedTextField(mf);
-        ftfDate.setBounds(200, 400, 80, 20);
+        ftfDate.setBounds(30, 400, 80, 20);
         ftfDate.addKeyListener(new KeyAdapter() {
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();
@@ -160,13 +160,24 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         comboBox.setEnabled(false);
 
         cbDebt = new JCheckBox("Вносить в расчет сумму по задолженностям?");
-        cbDebt.setBounds(10, 490, 200, 20);
+        cbDebt.setBounds(10, 490, 250, 20);
         cbDebt.addItemListener(new CheckBoxActionListener());
 
         lbDebtSum = new JLabel("Сумма по долгу");
-        lbDebtSum.setBounds(150,510,90,20);
+        lbDebtSum.setBounds(120, 520, 150, 20);
+        lbDebtSum.setEnabled(false);
+
         ftfDebtSum = new JFormattedTextField();
-        ftfDebtSum.setBounds(30, 510, 90, 20);
+        ftfDebtSum.setBounds(30, 520, 90, 20);
+        ftfDebtSum.setEnabled(false);
+
+        cbAdditional = new JCheckBox("Добавить сумму неучтенных расходов");
+        cbAdditional.setBounds(10, 550, 250, 20);
+        cbAdditional.addItemListener(new CheckBoxActionListener());
+
+        ftfAddSum = new JFormattedTextField();
+        ftfAddSum.setBounds(30, 580, 90, 20);
+        ftfAddSum.setEnabled(false);
 
         add(scrollPaneStaff);
         add(scrollPaneAccessories);
@@ -176,13 +187,18 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         add(lbAccessories);
         add(lbProdaction);
         add(lbDate);
+        add(lbDebtSum);
+        add(lbDebtSum);
 
         add(btnEvaluate);
         add(ftfDate);
+        add(ftfDebtSum);
+        add(ftfAddSum);
         add(comboBox);
         //add(cbAdditional);
-        //add(cbDebt);
+        add(cbDebt);
         add(cbDefect);
+        add(cbAdditional);
 
 
     }
@@ -338,6 +354,41 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
                         listID.add(tableStaff.getValueAt(selectStaff, 0));
                         listID.add(tableAccessories.getValueAt(selectAccessories, 0));
                         listID.add(tableProdaction.getValueAt(selectProdaction, 0));
+                        listID.add(ftfDate.getText());
+
+                        if (cbDefect.isSelected()) {
+                            int index = comboBox.getSelectedIndex();
+                            Float persent;
+                            switch (index) {
+                                case 0:
+                                    persent = (float) 0.05;
+                                    break;
+                                case 1:
+                                    persent = (float) 0.10;
+                                    break;
+                                case 2:
+                                    persent = (float) 0.15;
+                                    break;
+                                default:
+                                    persent = (float) 0;
+                                    break;
+                            }
+
+                            listID.add(persent);
+                        } else {
+                            listID.add(Float.valueOf("0"));
+                        }
+                        if (cbDebt.isSelected()) {
+                            listID.add(Float.valueOf(ftfDebtSum.getText()));
+                        } else {
+                            listID.add(Float.valueOf("0"));
+                        }
+                        if (cbAdditional.isSelected()) {
+                            listID.add(Float.valueOf(ftfAddSum.getText()));
+                        } else {
+                            listID.add(Float.valueOf("0"));
+                        }
+
 
                         message = new Message();
                         if (!listID.isEmpty()) {
@@ -361,12 +412,24 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
 
         @Override
         public void itemStateChanged(ItemEvent e) {
-            if(cbDefect.isSelected()){
+            if (cbDefect.isSelected()) {
                 comboBox.setEnabled(true);
                 //comboBox.setEditable(true);
             } else {
                 comboBox.setEnabled(false);
                 //comboBox.setEditable(false);
+            }
+            if (cbDebt.isSelected()) {
+                lbDebtSum.setEnabled(true);
+                ftfDebtSum.setEnabled(true);
+            } else {
+                lbDebtSum.setEnabled(false);
+                ftfDebtSum.setEnabled(false);
+            }
+            if (cbAdditional.isSelected()) {
+                ftfAddSum.setEnabled(true);
+            } else {
+                ftfAddSum.setEnabled(false);
             }
         }
     }
