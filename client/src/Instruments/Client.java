@@ -4,7 +4,7 @@ import BDTable.Accessories;
 import BDTable.Prodaction;
 import BDTable.Staff;
 import Message.Message;
-import Users.User;
+import BDTable.User;
 import ui.AdminMainMenu;
 import ui.LogIN;
 import ui.DB;

@@ -1,7 +1,7 @@
 package ui;
 
 import Message.Message;
-import Users.User;
+import BDTable.User;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -10,15 +10,12 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 public class UserPanel extends JPanel implements SocketGuiInterface {

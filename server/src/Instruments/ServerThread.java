@@ -6,13 +6,11 @@ import BDTable.Staff;
 import DataBase.DBWorker;
 import DataBase.SQLRequest;
 import Message.Message;
-import Users.User;
+import BDTable.User;
 import ui.ServerGUI;
 
 import java.io.*;
-import java.net.ServerSocket;
 import java.net.Socket;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;

@@ -1,7 +1,6 @@
 package ui;
 
 import Message.Message;
-import Users.User;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;

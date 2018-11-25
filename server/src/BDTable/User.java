@@ -1,4 +1,4 @@
-package Users;
+package BDTable;
 
 import java.io.Serializable;
 import java.sql.ResultSet;
