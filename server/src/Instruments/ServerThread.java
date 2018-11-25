@@ -1,5 +1,7 @@
 package Instruments;
 
+import BDTable.Accessories;
+import BDTable.Prodaction;
 import BDTable.Staff;
 import DataBase.DBWorker;
 import DataBase.SQLRequest;
@@ -125,9 +127,6 @@ public class ServerThread extends Thread {
                         break;
                     case StaffRequest:{
                         ArrayList<Object> staffArrayList = new ArrayList<>();
-                        //String query = "select * from users";
-                        //Statement statement = dbWorker.getConnection().createStatement();
-//                        ResultSet resultSet = statement.executeQuery(query);
                         ResultSet resultSet = sqlRequest.executeSqlQuery(message);
 
                         //if(resultSet != null) {
@@ -142,6 +141,42 @@ public class ServerThread extends Thread {
                         sqlRequest.executeSqlQuery(message);
                     }break;
                     case StaffAdd:{
+                        sqlRequest.executeSqlQuery(message);
+                    }break;
+                    case AccessoriesRequest:{
+                        ArrayList<Object> staffArrayList = new ArrayList<>();
+                        ResultSet resultSet = sqlRequest.executeSqlQuery(message);
+
+                        //if(resultSet != null) {
+                        while (resultSet.next()) {
+                            staffArrayList.add(new Accessories(resultSet));
+                        }
+                        //}
+                        message.setMessageArray(staffArrayList);
+                        serverSendStream.writeObject(message);
+                    }break;
+                    case AccessoriesDelete:{
+                        sqlRequest.executeSqlQuery(message);
+                    }break;
+                    case AccessoriesAdd:{
+                        sqlRequest.executeSqlQuery(message);
+                    }break;
+                    case ProdactionRequest:{
+                        ArrayList<Object> staffArrayList = new ArrayList<>();
+                        ResultSet resultSet = sqlRequest.executeSqlQuery(message);
+
+                        //if(resultSet != null) {
+                        while (resultSet.next()) {
+                            staffArrayList.add(new Prodaction(resultSet));
+                        }
+                        //}
+                        message.setMessageArray(staffArrayList);
+                        serverSendStream.writeObject(message);
+                    }break;
+                    case ProdactionDelete:{
+                        sqlRequest.executeSqlQuery(message);
+                    }break;
+                    case ProdactionAdd:{
                         sqlRequest.executeSqlQuery(message);
                     }break;
                     default:

@@ -1,7 +1,6 @@
 package ui;
 
 import Message.Message;
-import Users.User;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -22,13 +21,13 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-public class StaffPanel extends JPanel implements SocketGuiInterface{
+public class AccessoriesPanel extends JPanel implements SocketGuiInterface{
 
     String[] columnName = {
             "id",
-            "Сумма з/п",
-            "Процент отчислений",
-            "Дата"
+            "Название",
+            "Количество",
+            "Цена"
     };
 
     ObjectOutputStream clientSendStream;
@@ -44,9 +43,9 @@ public class StaffPanel extends JPanel implements SocketGuiInterface{
     JPanel tabInsertPanel;
     //JPanel tabModifyPanel;
 
-    JFormattedTextField ftfFName;
-    JFormattedTextField ftfSName;
-    JFormattedTextField ftfDate;
+    JFormattedTextField ftfName;
+    JFormattedTextField ftfCount;
+    JFormattedTextField ftfPrice;
 
 
     JButton btnTabAdd;
@@ -54,7 +53,7 @@ public class StaffPanel extends JPanel implements SocketGuiInterface{
     private int id;
 
 
-    public StaffPanel(ObjectOutputStream css, Message mes) {
+    public AccessoriesPanel(ObjectOutputStream css, Message mes) {
         setClientSendStream(css);
         setMessage(mes);
 
@@ -68,7 +67,7 @@ public class StaffPanel extends JPanel implements SocketGuiInterface{
         table.setCellSelectionEnabled(false);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         table.setRowSelectionAllowed(true);
-        table.getSelectionModel().addListSelectionListener(new TableSelectListener());
+        table.getSelectionModel().addListSelectionListener(new AccessoriesPanel.TableSelectListener());
         table.setDefaultEditor(Object.class, null); //? /////////////////////////////////
 
         scrollPane.setBounds(10, 10, 890, 350);
@@ -80,7 +79,7 @@ public class StaffPanel extends JPanel implements SocketGuiInterface{
         tabDeletePanel = new JPanel();
         tabDeletePanel.setLayout(null);
         btnTabDelete = new JButton("Удалить");
-        btnTabDelete.addActionListener(new StaffPanel.ButtonActionListener());
+        btnTabDelete.addActionListener(new AccessoriesPanel.ButtonActionListener());
         btnTabDelete.setBounds(10, 50, 90, 20);
         tabDeletePanel.add(btnTabDelete);
 
@@ -88,61 +87,41 @@ public class StaffPanel extends JPanel implements SocketGuiInterface{
         tabInsertPanel.setLayout(null);
 
         btnTabAdd = new JButton("Добавить");
-        btnTabAdd.addActionListener(new ButtonActionListener());
+        btnTabAdd.addActionListener(new AccessoriesPanel.ButtonActionListener());
         btnTabAdd.setBounds(300, 70, 100, 20);
 
         btnTabRedact = new JButton("Изменить");
-        btnTabRedact.addActionListener(new ButtonActionListener());
+        btnTabRedact.addActionListener(new AccessoriesPanel.ButtonActionListener());
         btnTabRedact.setBounds(300, 90, 100, 20);
         //tabModifyPanel = new JPanel();
 
-        ftfFName = new JFormattedTextField();
-        ftfFName.setBounds(100, 5, 90, 20);
+        ftfName = new JFormattedTextField();
+        ftfName.setBounds(100, 5, 90, 20);
         //ftfName.addKeyListener(new TftCaractersListener());
 
-        ftfSName = new JFormattedTextField();
-        ftfSName.setBounds(100, 35, 90, 20);
-        //ftfCount.addKeyListener(new TftCaractersListener());
+        ftfCount = new JFormattedTextField();
+        ftfCount.setBounds(100, 35, 90, 20);
 
-        MaskFormatter mf = null;
-        try {
-            mf = new MaskFormatter("####-##-##");
-            mf.setPlaceholderCharacter('_');
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        ftfPrice = new JFormattedTextField();
+        ftfPrice.setBounds(100, 65, 90, 20);
 
-        ftfDate = new JFormattedTextField(mf);
-        ftfDate.setBounds(30, 80, 90, 20);
-        ftfDate.addKeyListener(new KeyAdapter() {
-            public void keyTyped(KeyEvent e) {
-                char c = e.getKeyChar();
-                if (!((c >= '0') && (c <= '9') ||
-                        (c == KeyEvent.VK_BACK_SPACE) ||
-                        (c == KeyEvent.VK_DELETE))) {
-                    JOptionPane.showMessageDialog(null, "Некорректный ввод");
-                    e.consume();
-                }
-            }
-        });
+        JLabel lbName = new JLabel("Название пакета");
+        JLabel lbCount = new JLabel("Количество");
+        JLabel lbPrice = new JLabel("Цена за пакет");
 
-        JLabel lbSumSalary = new JLabel("Cумма з/п");
-        JLabel lbGoverment = new JLabel("Процент отчислений");
-        JLabel lbDate = new JLabel("Дата гггг-мм-дд");
+        lbName.setBounds(5, 5, 90, 20);
+        lbCount.setBounds(5, 30, 90, 20);
+        lbPrice.setBounds(5, 55, 90, 20);
 
-        lbSumSalary.setBounds(5, 5, 90, 20);
-        lbGoverment.setBounds(5, 30, 90, 20);
-        lbDate.setBounds(5, 55, 90, 20);
-
-        tabInsertPanel.add(lbSumSalary);
-        tabInsertPanel.add(lbGoverment);
-        tabInsertPanel.add(lbDate);
+        tabInsertPanel.add(lbName);
+        tabInsertPanel.add(lbCount);
+        tabInsertPanel.add(lbPrice);
 
         tabInsertPanel.add(btnTabAdd);
         tabInsertPanel.add(btnTabRedact);
-        tabInsertPanel.add(ftfDate);
-        tabInsertPanel.add(ftfFName);
-        tabInsertPanel.add(ftfSName);
+        tabInsertPanel.add(ftfName);
+        tabInsertPanel.add(ftfCount);
+        tabInsertPanel.add(ftfPrice);
 
 
         tabbedPane.addTab("Добавить", tabInsertPanel);
@@ -156,7 +135,7 @@ public class StaffPanel extends JPanel implements SocketGuiInterface{
         //tabbedPane.addTab("Изменить", tabModifyPanel);
 
         tabbedPane.setBounds(10, 360, 890, 310);
-        tabbedPane.addChangeListener(new StaffPanel.TabActionListener());
+        tabbedPane.addChangeListener(new AccessoriesPanel.TabActionListener());
 
         add(scrollPane);
         add(tabbedPane);
@@ -196,7 +175,7 @@ public class StaffPanel extends JPanel implements SocketGuiInterface{
                 message = new Message();
                 if (!listID.isEmpty()) {
                     message.setMessageArray(listID);
-                    message.setCommand(Message.cmd.StaffDelete);
+                    message.setCommand(Message.cmd.AccessoriesDelete);
                     try {
                         clientSendStream.writeObject(message);
                     } catch (IOException e1) {
@@ -205,28 +184,26 @@ public class StaffPanel extends JPanel implements SocketGuiInterface{
                 }
             }
             if (e.getSource() == btnTabAdd) {
-                if (!isDateValid(ftfDate.getText())) {
-                    JOptionPane.showMessageDialog(null, "Дата введена не корректно");
-                } else {
+
                     ArrayList<Object> addData = new ArrayList<>();
-                    addData.add(ftfFName.getText());
-                    addData.add(ftfSName.getText());
-                    addData.add(ftfDate.getText());
+                    addData.add(ftfName.getText());
+                    addData.add(ftfCount.getText());
+                    addData.add(ftfPrice.getText());
 
                     message = new Message();
 
                     message.setMessageArray(addData);
-                    message.setCommand(Message.cmd.StaffAdd);
+                    message.setCommand(Message.cmd.AccessoriesAdd);
                     try {
                         clientSendStream.writeObject(message);
                     } catch (IOException e1) {
                         e1.printStackTrace();
                     }
-                }
+
             }
 
             message = new Message();
-            message.setCommand(Message.cmd.StaffRequest);
+            message.setCommand(Message.cmd.AccessoriesRequest);
             try {
                 clientSendStream.writeObject(message);
             } catch (IOException e1) {
@@ -274,9 +251,9 @@ public class StaffPanel extends JPanel implements SocketGuiInterface{
             if (selectedRow >= 0) {
                 TableModel model = table.getModel();
                 id = Integer.parseInt((String) model.getValueAt(selectedRow, 0));
-                ftfFName.setValue(model.getValueAt(selectedRow, 1));
-                ftfSName.setValue(model.getValueAt(selectedRow, 2));
-                ftfDate.setValue(model.getValueAt(selectedRow,3));
+                ftfName.setValue(model.getValueAt(selectedRow, 1));
+                ftfCount.setValue(model.getValueAt(selectedRow, 2));
+                ftfPrice.setValue(model.getValueAt(selectedRow, 3));
             }
 
         }

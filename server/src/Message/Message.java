@@ -18,6 +18,16 @@ public class Message implements Serializable {
         StaffRedact,
         StaffDelete,
 
+        ProdactionRequest,
+        ProdactionAdd,
+        ProdactionRedact,
+        ProdactionDelete,
+
+        AccessoriesRequest,
+        AccessoriesAdd,
+        AccessoriesRedact,
+        AccessoriesDelete,
+
         SQL,
         Fail
     }

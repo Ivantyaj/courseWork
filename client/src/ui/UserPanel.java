@@ -95,11 +95,11 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
 
         ftfFName = new JFormattedTextField();
         ftfFName.setBounds(100, 5, 90, 20);
-        //ftfFName.addKeyListener(new TftCaractersListener());
+        //ftfName.addKeyListener(new TftCaractersListener());
 
         ftfSName = new JFormattedTextField();
         ftfSName.setBounds(100, 35, 90, 20);
-        //ftfSName.addKeyListener(new TftCaractersListener());
+        //ftfCount.addKeyListener(new TftCaractersListener());
 
         String[] items = {
                 "Администратор",

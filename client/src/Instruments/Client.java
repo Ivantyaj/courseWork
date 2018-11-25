@@ -1,5 +1,7 @@
 package Instruments;
 
+import BDTable.Accessories;
+import BDTable.Prodaction;
 import BDTable.Staff;
 import Message.Message;
 import Users.User;
@@ -105,6 +107,40 @@ public class Client {
                         db.setStaffData(stringDaStaff);
                     }
                         break;
+                    case AccessoriesRequest: {
+                        System.out.println(message.getMessageArray());
+
+                        ArrayList<Accessories> accessoriesArrayList = new ArrayList<>();
+                        for (Object object : message.getMessageArray()) {
+                            accessoriesArrayList.add((Accessories) object);
+                        }
+
+                        String[][] stringDaAccessories = new String[accessoriesArrayList.size()][];
+                        int i = 0;
+                        for (Accessories accessories : accessoriesArrayList) {
+                            stringDaAccessories[i] = accessories.toStringArray();
+                            i++;
+                        }
+                        db.setAccessoriesData(stringDaAccessories);
+                    }
+                    break;
+                    case ProdactionRequest: {
+                        System.out.println(message.getMessageArray());
+
+                        ArrayList<Prodaction> prodactionArrayList = new ArrayList<>();
+                        for (Object object : message.getMessageArray()) {
+                            prodactionArrayList.add((Prodaction) object);
+                        }
+
+                        String[][] stringDaProdaction = new String[prodactionArrayList.size()][];
+                        int i = 0;
+                        for (Prodaction prodaction : prodactionArrayList) {
+                            stringDaProdaction[i] = prodaction.toStringArray();
+                            i++;
+                        }
+                        db.setProdactionData(stringDaProdaction);
+                    }
+                    break;
                     default:
                         break;
                 }

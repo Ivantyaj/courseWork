@@ -32,8 +32,29 @@ public class SQLRequest {
                 break;
             case StaffAdd:
                 insertInto(message);
+                break;
             case StaffDelete:
                 deleteFrom("staff", message);
+                break;
+
+            case AccessoriesRequest:
+                resultSet = selectFrom("accessories");
+                break;
+            case AccessoriesAdd:
+                insertInto(message);
+                break;
+            case AccessoriesDelete:
+                deleteFrom("accessories", message);
+                break;
+
+            case ProdactionRequest:
+                resultSet = selectFrom("prodaction");
+                break;
+            case ProdactionAdd:
+                insertInto(message);
+                break;
+            case ProdactionDelete:
+                deleteFrom("prodaction", message);
                 break;
         }
         return resultSet;
@@ -80,6 +101,22 @@ public class SQLRequest {
                 preparedStatement.setFloat(1, Float.valueOf((String)message.getMessageArray().get(0)));
                 preparedStatement.setFloat(2, Float.valueOf((String)message.getMessageArray().get(1)));
                 preparedStatement.setString(3, (String) message.getMessageArray().get(2));
+                break;
+            case ProdactionAdd:
+                query = "insert into prodaction(energy, tariff, amortisation, date) values(?,?,?,?)";
+                preparedStatement = dbWorker.getConnection().prepareStatement(query);
+                preparedStatement.setFloat(1, Integer.valueOf((String)message.getMessageArray().get(0)));
+                preparedStatement.setFloat(2, Float.valueOf((String)message.getMessageArray().get(1)));
+                preparedStatement.setFloat(3, Float.valueOf((String)message.getMessageArray().get(2)));
+                preparedStatement.setString(4, (String) message.getMessageArray().get(3));
+                break;
+            case AccessoriesAdd:
+                query = "insert into accessories(name, count, price) values (?,?,?)";
+                preparedStatement = dbWorker.getConnection().prepareStatement(query);
+                preparedStatement.setString(1, (String) message.getMessageArray().get(0));
+                preparedStatement.setInt(2, Integer.valueOf((String)message.getMessageArray().get(1)));
+                preparedStatement.setFloat(3, Float.valueOf((String)message.getMessageArray().get(2)));
+                break;
         }
 
         preparedStatement.execute();
