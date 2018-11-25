@@ -1,5 +1,6 @@
 package Instruments;
 
+import BDTable.Staff;
 import Message.Message;
 import Users.User;
 import ui.AdminMainMenu;
@@ -61,7 +62,6 @@ public class Client {
                         User user = (User) message.getMessageArray().get(0);
                         switch (user.getRole()) {
                             case ADMIN:
-                                //workAdmin(clientSendStream, message);
                                 uiAdminMain.setVisible(true);
                                 break;
                             case USER:
@@ -71,35 +71,39 @@ public class Client {
                                 break;
                         }
                         break;
-                    case UserRequest:
+                    case UserRequest: {
                         System.out.println(message.getMessageArray());
-                        
+
                         ArrayList<User> userArrayList = new ArrayList<>();
-                        for (Object object: message.getMessageArray()) {
+                        for (Object object : message.getMessageArray()) {
                             userArrayList.add((User) object);
                         }
 
-//                        ArrayList<String[]> strings = new ArrayList<>();
-//                        for (User user1: userArrayList){
-//                            strings.add(user1.toStringArray());
-//                        }
-
-                        String [][] stringDa = new String[userArrayList.size()][];
+                        String[][] stringDa = new String[userArrayList.size()][];
                         int i = 0;
-                        for (User user1: userArrayList){
+                        for (User user1 : userArrayList) {
                             stringDa[i] = user1.toStringArray();
                             i++;
                         }
-
-                        //DB db = uiAdminMain.getDbUI();
-
-                        //db.setVisible(true);
-                        //db.setLocationRelativeTo(null);
                         db.setUserData(stringDa);
+                    }
+                        break;
+                    case StaffRequest: {
+                        System.out.println(message.getMessageArray());
 
+                        ArrayList<Staff> staffArrayList = new ArrayList<>();
+                        for (Object object : message.getMessageArray()) {
+                            staffArrayList.add((Staff) object);
+                        }
 
-
-
+                        String[][] stringDaStaff = new String[staffArrayList.size()][];
+                        int i = 0;
+                        for (Staff staff : staffArrayList) {
+                            stringDaStaff[i] = staff.toStringArray();
+                            i++;
+                        }
+                        db.setStaffData(stringDaStaff);
+                    }
                         break;
                     default:
                         break;
@@ -109,7 +113,7 @@ public class Client {
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "СЕРВЕР НЕ ДОСТУПЕН","ОШИБКА!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "СЕРВЕР НЕ ДОСТУПЕН", "ОШИБКА!", JOptionPane.ERROR_MESSAGE);
         }
     }
 

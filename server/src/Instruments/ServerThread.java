@@ -1,5 +1,6 @@
 package Instruments;
 
+import BDTable.Staff;
 import DataBase.DBWorker;
 import DataBase.SQLRequest;
 import Message.Message;
@@ -122,6 +123,27 @@ public class ServerThread extends Thread {
                     case UserAdd:
                         sqlRequest.executeSqlQuery(message);
                         break;
+                    case StaffRequest:{
+                        ArrayList<Object> staffArrayList = new ArrayList<>();
+                        //String query = "select * from users";
+                        //Statement statement = dbWorker.getConnection().createStatement();
+//                        ResultSet resultSet = statement.executeQuery(query);
+                        ResultSet resultSet = sqlRequest.executeSqlQuery(message);
+
+                        //if(resultSet != null) {
+                            while (resultSet.next()) {
+                                staffArrayList.add(new Staff(resultSet));
+                            }
+                        //}
+                        message.setMessageArray(staffArrayList);
+                        serverSendStream.writeObject(message);
+                    }break;
+                    case StaffDelete:{
+                        sqlRequest.executeSqlQuery(message);
+                    }break;
+                    case StaffAdd:{
+                        sqlRequest.executeSqlQuery(message);
+                    }break;
                     default:
                         System.out.println("Неизвестная комманда");
                         break;

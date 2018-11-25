@@ -25,6 +25,15 @@ public class SQLRequest {
                 insertInto(message);
                 break;
             case UserRedact:
+
+                break;
+            case StaffRequest:
+                resultSet = selectFrom("staff");
+                break;
+            case StaffAdd:
+                insertInto(message);
+            case StaffDelete:
+                deleteFrom("staff", message);
                 break;
         }
         return resultSet;
@@ -65,6 +74,12 @@ public class SQLRequest {
                 preparedStatement.setString(2,(String) message.getMessageArray().get(1));
                 preparedStatement.setString(3,(String) message.getMessageArray().get(2));
                 break;
+            case StaffAdd:
+                query = "insert into staff(salary,goverment,date) values (?,?,?)";
+                preparedStatement = dbWorker.getConnection().prepareStatement(query);
+                preparedStatement.setFloat(1, Float.valueOf((String)message.getMessageArray().get(0)));
+                preparedStatement.setFloat(2, Float.valueOf((String)message.getMessageArray().get(1)));
+                preparedStatement.setString(3, (String) message.getMessageArray().get(2));
         }
 
         preparedStatement.execute();

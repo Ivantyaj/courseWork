@@ -12,6 +12,12 @@ public class Message implements Serializable {
         UserDelete,
         UserAdd,
         UserRedact,
+
+        StaffRequest,
+        StaffAdd,
+        StaffRedact,
+        StaffDelete,
+
         SQL,
         Fail
     }

@@ -31,6 +31,7 @@ public class DB extends JFrame implements SocketGuiInterface {
     //JButton btnTabDelete;
 
     UserPanel tabUserPanel;
+    StaffPanel tabStaffPanel;
 //    JPanel tabInsertPanel;
 //    JPanel tabModifyPanel;
 
@@ -47,8 +48,10 @@ public class DB extends JFrame implements SocketGuiInterface {
         tabbedPane = new JTabbedPane();
 
         tabUserPanel = new UserPanel(clientSendStream, message);
+        tabStaffPanel = new StaffPanel(clientSendStream, message);
 
         tabbedPane.addTab("Пользователи", tabUserPanel);
+        tabbedPane.addTab("Штат", tabStaffPanel);
 
 
         tabbedPane.setBounds(5,5,920,700);
@@ -118,6 +121,10 @@ public class DB extends JFrame implements SocketGuiInterface {
     public void setUserData(Object[][] data){
         tabUserPanel.setSourse(data);
     }
+    public void setStaffData(Object[][] data){
+        tabStaffPanel.setSourse(data);
+    }
+
 
 //    public class ButtonActionListener implements ActionListener {
 //        public void actionPerformed(ActionEvent e) {
@@ -172,13 +179,15 @@ public class DB extends JFrame implements SocketGuiInterface {
         @Override
         public void stateChanged(ChangeEvent e) {
             JPanel sourcePanel = (JPanel) ((JTabbedPane)e.getSource()).getSelectedComponent();
-//            if (sourcePanel == tabDeletePanel){
-//                table.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-//            } else if(sourcePanel == tabInsertPanel){
-//                table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//            } else if (sourcePanel == tabModifyPanel) {
-//                table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//            }
+            if (sourcePanel == tabStaffPanel){
+                message = new Message();
+                message.setCommand(Message.cmd.StaffRequest);
+                try {
+                    clientSendStream.writeObject(message);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
         }
     }
 }
