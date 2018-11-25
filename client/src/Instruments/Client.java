@@ -6,6 +6,7 @@ import BDTable.Staff;
 import Message.Message;
 import BDTable.User;
 import ui.AdminMainMenu;
+import ui.EvaluateUI;
 import ui.LogIN;
 import ui.DB;
 
@@ -48,7 +49,9 @@ public class Client {
             uiAdminMain.setVisible(false);
             uiAdminMain.setResizable(false);
             uiAdminMain.setLocationRelativeTo(null);
+
             DB db = uiAdminMain.getDbUI();
+            EvaluateUI mrpUI = uiAdminMain.getEvaluateUI();
 
             while (!message.getCommand().equals(Message.cmd.Stop)) {
                 //System.out.println(message);
@@ -105,6 +108,7 @@ public class Client {
                             i++;
                         }
                         db.setStaffData(stringDaStaff);
+                        mrpUI.setStaffData(stringDaStaff);
                     }
                         break;
                     case AccessoriesRequest: {
@@ -122,6 +126,7 @@ public class Client {
                             i++;
                         }
                         db.setAccessoriesData(stringDaAccessories);
+                        mrpUI.setAccessoriesData(stringDaAccessories);
                     }
                     break;
                     case ProdactionRequest: {
@@ -139,6 +144,7 @@ public class Client {
                             i++;
                         }
                         db.setProdactionData(stringDaProdaction);
+                        mrpUI.setProdactionData(stringDaProdaction);
                     }
                     break;
                     default:

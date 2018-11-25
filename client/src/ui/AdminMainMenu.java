@@ -19,6 +19,7 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
     JButton btnBack;
 
     DB dbUI;
+    EvaluateUI evaluateUI;
 
 
     public AdminMainMenu(ObjectOutputStream objectOutputStream, Message mes){
@@ -26,7 +27,7 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
 
         setClientSendStream(objectOutputStream);
         setMessage(mes);
-
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 
         setSize(150, 200);
@@ -39,7 +40,11 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
         dbUI.setVisible(false);
         dbUI.setLocationRelativeTo(null);
 
-        setDefaultCloseOperation(HIDE_ON_CLOSE);
+        evaluateUI = new EvaluateUI(clientSendStream, message);
+        evaluateUI.setVisible(false);
+        evaluateUI.setLocationRelativeTo(null);
+
+        //setDefaultCloseOperation(HIDE_ON_CLOSE);
 
         setLayout(null);
 
@@ -90,11 +95,22 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
 
             } else if (e.getSource() == btnUser) {
 
+                try {
+                    evaluateUI.requestAll(message, clientSendStream);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+
+                evaluateUI.setVisible(true);
             }
         }
     }
 
     public DB getDbUI() {
         return dbUI;
+    }
+
+    public EvaluateUI getEvaluateUI() {
+        return evaluateUI;
     }
 }

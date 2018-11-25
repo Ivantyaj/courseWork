@@ -28,6 +28,7 @@ public class Message implements Serializable {
         AccessoriesRedact,
         AccessoriesDelete,
 
+        Evaluate,
         SQL,
         Fail
     }

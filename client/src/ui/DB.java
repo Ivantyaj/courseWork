@@ -1,16 +1,16 @@
 package ui;
 
 import Message.Message;
+import ui.tablePanel.AccessoriesPanel;
+import ui.tablePanel.ProdactionPanel;
+import ui.tablePanel.StaffPanel;
+import ui.tablePanel.UserPanel;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 
 
 public class DB extends JFrame implements SocketGuiInterface {
