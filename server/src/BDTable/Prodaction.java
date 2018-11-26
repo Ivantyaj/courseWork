@@ -6,11 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Prodaction implements Serializable {
-    int id;
-    int energy;
-    float tariff;
-    float amortisation;
-    Date date;
+    private int id;
+    private int energy;
+    private float tariff;
+    private float amortisation;
+    private Date date;
 
     public Prodaction() {
     }
@@ -44,5 +44,17 @@ public class Prodaction implements Serializable {
                 ", amortisation=" + amortisation +
                 ", date=" + date +
                 '}';
+    }
+
+    public int getEnergy() {
+        return energy;
+    }
+
+    public float getTariff() {
+        return tariff;
+    }
+
+    public float getAmortisation() {
+        return amortisation;
     }
 }

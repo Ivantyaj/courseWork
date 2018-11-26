@@ -61,7 +61,9 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
     JLabel lbDebtSum;
     JLabel lbDebtPersent;
 
-    private int id;
+    private int idUser;
+
+
 
 
     public MainReportPanel(ObjectOutputStream css, Message mes) {
@@ -201,6 +203,14 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         add(cbAdditional);
 
 
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     final static String DATE_FORMAT = "yyyy-MM-dd";
@@ -354,6 +364,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
                         listID.add(tableStaff.getValueAt(selectStaff, 0));
                         listID.add(tableAccessories.getValueAt(selectAccessories, 0));
                         listID.add(tableProdaction.getValueAt(selectProdaction, 0));
+                        listID.add(String.valueOf(idUser));
                         listID.add(ftfDate.getText());
 
                         if (cbDefect.isSelected()) {
@@ -374,19 +385,19 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
                                     break;
                             }
 
-                            listID.add(persent);
+                            listID.add(String.valueOf(persent));
                         } else {
-                            listID.add(Float.valueOf("0"));
+                            listID.add("0");
                         }
                         if (cbDebt.isSelected()) {
-                            listID.add(Float.valueOf(ftfDebtSum.getText()));
+                            listID.add(ftfDebtSum.getText());
                         } else {
-                            listID.add(Float.valueOf("0"));
+                            listID.add("0");
                         }
                         if (cbAdditional.isSelected()) {
-                            listID.add(Float.valueOf(ftfAddSum.getText()));
+                            listID.add(ftfAddSum.getText());
                         } else {
-                            listID.add(Float.valueOf("0"));
+                            listID.add("0");
                         }
 
 

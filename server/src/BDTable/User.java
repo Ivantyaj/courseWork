@@ -33,6 +33,10 @@ public class User implements Serializable {
         this.password = resultSet.getString("password");
     }
 
+    public int getId() {
+        return id;
+    }
+
     public void setId(int id) {
         this.id = id;
     }

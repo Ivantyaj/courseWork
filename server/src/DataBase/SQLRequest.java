@@ -1,5 +1,8 @@
 package DataBase;
 
+import BDTable.Accessories;
+import BDTable.Prodaction;
+import BDTable.Staff;
 import Message.Message;
 
 import java.sql.PreparedStatement;
@@ -123,8 +126,33 @@ public class SQLRequest {
         preparedStatement.execute();
     }
 
-    private void evaluate(Message message){
+    public ArrayList<Object> requestDataForEvaluate(int idStaff, int idProdaction, int idAccessories) throws SQLException {
+        String query = "select * from %s where id=?";
+        PreparedStatement preparedStatement;
 
+        String queryTable;
 
+        queryTable = String.format(query, "staff");
+        preparedStatement = dbWorker.getConnection().prepareStatement(queryTable);
+        preparedStatement.setInt(1,idStaff);
+        Staff staff = new Staff(preparedStatement.executeQuery());
+
+        queryTable = String.format(query, "prodaction");
+        preparedStatement = dbWorker.getConnection().prepareStatement(queryTable);
+        preparedStatement.setInt(1,idProdaction);
+        Prodaction prodaction = new Prodaction(preparedStatement.executeQuery());
+
+        queryTable = String.format(query, "accessories");
+        preparedStatement = dbWorker.getConnection().prepareStatement(queryTable);
+        preparedStatement.setInt(1,idAccessories);
+        Accessories accessories = new Accessories(preparedStatement.executeQuery());
+
+        ArrayList<Object> arrayList = new ArrayList<>();
+
+        arrayList.add(staff);
+        arrayList.add(prodaction);
+        arrayList.add(accessories);
+
+        return arrayList;
     }
 }

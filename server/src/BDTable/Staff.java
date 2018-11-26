@@ -6,10 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Staff implements Serializable {
-    int id;
-    float salary;
-    float goverment;
-    Date date;
+    private int id;
+    private float salary;
+    private float goverment;
+    private Date date;
 
     public Staff() {
     }
@@ -40,5 +40,13 @@ public class Staff implements Serializable {
                 ", goverment=" + goverment +
                 ", date=" + date +
                 '}';
+    }
+
+    public float getSalary() {
+        return salary;
+    }
+
+    public float getGoverment() {
+        return goverment;
     }
 }

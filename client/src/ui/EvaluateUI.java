@@ -1,5 +1,6 @@
 package ui;
 
+import BDTable.User;
 import Message.Message;
 import ui.evaluatePanel.MainReportPanel;
 
@@ -23,6 +24,9 @@ public class EvaluateUI extends JFrame implements SocketGuiInterface {
     //JButton btnTabDelete;
 
     MainReportPanel tabMainReportPanel;
+
+
+    User user;
 
 //    StaffPanel tabStaffPanel;
 //    AccessoriesPanel tabAccessoriesPanel;
@@ -71,6 +75,15 @@ public class EvaluateUI extends JFrame implements SocketGuiInterface {
 
     public void setProdactionData(Object[][] data) {
         tabMainReportPanel.setSourseProdaction(data);
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+        tabMainReportPanel.setIdUser(user.getId());
     }
 
     void requestAll(Message mes, ObjectOutputStream sendStream) throws IOException {

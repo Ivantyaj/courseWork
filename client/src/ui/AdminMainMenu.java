@@ -1,5 +1,6 @@
 package ui;
 
+import BDTable.User;
 import Message.Message;
 
 import javax.swing.*;
@@ -20,6 +21,8 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
 
     DB dbUI;
     EvaluateUI evaluateUI;
+
+    User user;
 
 
     public AdminMainMenu(ObjectOutputStream objectOutputStream, Message mes){
@@ -112,5 +115,14 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
 
     public EvaluateUI getEvaluateUI() {
         return evaluateUI;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+        evaluateUI.setUser(user);
     }
 }

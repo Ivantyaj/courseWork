@@ -6,10 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Accessories implements Serializable {
-    int id;
-    String name;
-    int count;
-    float price;
+    private int id;
+    private String name;
+    private int count;
+    private float price;
 
     public Accessories() {
     }
@@ -40,5 +40,21 @@ public class Accessories implements Serializable {
                 ", count=" + count +
                 ", price=" + price +
                 '}';
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
     }
 }

@@ -21,6 +21,7 @@ public class Client {
     public static final int PORT = 1502;
 
     AdminMainMenu uiAdminMain = null;
+    User user;
 
     public static void main(String[] args) {
         Client client = new Client();
@@ -64,10 +65,11 @@ public class Client {
                 message = (Message) clientReadStream.readObject();
                 switch (message.getCommand()) {
                     case LogIn:
-                        User user = (User) message.getMessageArray().get(0);
+                        user = (User) message.getMessageArray().get(0);
                         switch (user.getRole()) {
                             case ADMIN:
                                 uiAdminMain.setVisible(true);
+                                uiAdminMain.setUser(user);
                                 break;
                             case USER:
                                 break;
