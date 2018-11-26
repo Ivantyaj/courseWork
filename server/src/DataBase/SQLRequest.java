@@ -27,6 +27,7 @@ public class SQLRequest {
             case UserRedact:
 
                 break;
+             ////////////////////////////////
             case StaffRequest:
                 resultSet = selectFrom("staff");
                 break;
@@ -36,7 +37,7 @@ public class SQLRequest {
             case StaffDelete:
                 deleteFrom("staff", message);
                 break;
-
+            //////////////////////////////////
             case AccessoriesRequest:
                 resultSet = selectFrom("accessories");
                 break;
@@ -46,7 +47,7 @@ public class SQLRequest {
             case AccessoriesDelete:
                 deleteFrom("accessories", message);
                 break;
-
+            //////////////////////////////////
             case ProdactionRequest:
                 resultSet = selectFrom("prodaction");
                 break;
@@ -120,7 +121,10 @@ public class SQLRequest {
         }
 
         preparedStatement.execute();
-        //query = "insert into %s where id = ?";
-        //query = String.format(query, table);
+    }
+
+    private void evaluate(Message message){
+
+
     }
 }

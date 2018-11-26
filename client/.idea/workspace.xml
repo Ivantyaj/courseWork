@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34397994-8a57-4afb-b7da-8c9b0e18214c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/ui/evaluatePanel/MainReportPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/evaluatePanel/MainReportPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/server/Message/Message$cmd.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Message/Message$cmd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/server/Message/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Message/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/DataBase/SQLRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/DataBase/SQLRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/Instruments/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Instruments/ServerThread.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,8 +107,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ui/evaluatePanel/MainReportPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="378" column="59" selection-start-line="378" selection-start-column="59" selection-end-line="378" selection-end-column="59" />
+            <state relative-caret-position="-19">
+              <caret line="364" column="42" lean-forward="true" selection-start-line="364" selection-start-column="42" selection-end-line="364" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4000#4067#0" />
@@ -344,7 +343,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543173293668" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543211744339" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Java/Pattern" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -439,7 +438,7 @@
       <workItem from="1540981919925" duration="87000" />
       <workItem from="1542455755246" duration="736000" />
       <workItem from="1542457228712" duration="5342000" />
-      <workItem from="1543062523221" duration="40828000" />
+      <workItem from="1543062523221" duration="41551000" />
     </task>
     <servers />
   </component>
@@ -455,10 +454,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78982000" />
+    <option name="totallyTimeSpent" value="79705000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19060403" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -752,8 +752,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/evaluatePanel/MainReportPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="378" column="59" selection-start-line="378" selection-start-column="59" selection-end-line="378" selection-end-column="59" />
+        <state relative-caret-position="-19">
+          <caret line="364" column="42" lean-forward="true" selection-start-line="364" selection-start-column="42" selection-end-line="364" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4000#4067#0" />

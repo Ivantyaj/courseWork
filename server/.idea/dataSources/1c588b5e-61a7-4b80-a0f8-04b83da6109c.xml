@@ -1128,6 +1128,7 @@
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="288" parent="282" name="name">
@@ -1157,6 +1158,7 @@
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="293" parent="283" name="energy">
@@ -1192,6 +1194,7 @@
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="299" parent="284" name="date">
@@ -1200,9 +1203,10 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="300" parent="284" name="reportcol">
+    <column id="300" parent="284" name="result">
       <Position>3</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="301" parent="284" name="id_user">
@@ -1229,19 +1233,19 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="305" parent="284" name="id_idx">
+    <index id="305" parent="284" name="user_id_idx">
       <ColNames>id_user</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="306" parent="284" name="id_staff_idx">
+    <index id="306" parent="284" name="accessories_id_idx">
       <ColNames>id_staff</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="307" parent="284" name="id_accessories_idx">
+    <index id="307" parent="284" name="accessories_id_idx1">
       <ColNames>id_accessories</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="308" parent="284" name="id_prodaction_idx">
+    <index id="308" parent="284" name="prodaction_id_idx">
       <ColNames>id_prodaction</ColNames>
       <Type>btree</Type>
     </index>
@@ -1250,35 +1254,38 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="310" parent="284" name="id_user">
+    <foreign-key id="310" parent="284" name="user_id">
       <ColNames>id_user</ColNames>
       <RefSchemaName>server</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <foreign-key id="311" parent="284" name="id_staff">
+    <foreign-key id="311" parent="284" name="staff_id">
       <ColNames>id_staff</ColNames>
       <RefSchemaName>server</RefSchemaName>
       <RefTableName>staff</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <foreign-key id="312" parent="284" name="id_accessories">
+    <foreign-key id="312" parent="284" name="accessories_id">
       <ColNames>id_accessories</ColNames>
       <RefSchemaName>server</RefSchemaName>
       <RefTableName>accessories</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="313" parent="284" name="id_prodaction">
+    <foreign-key id="313" parent="284" name="prodaction_id">
       <ColNames>id_prodaction</ColNames>
       <RefSchemaName>server</RefSchemaName>
       <RefTableName>prodaction</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <column id="314" parent="285" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="315" parent="285" name="salary">

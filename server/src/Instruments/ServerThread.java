@@ -180,6 +180,9 @@ public class ServerThread extends Thread {
                     default:
                         System.out.println("Неизвестная комманда");
                         break;
+                    case Evaluate:
+
+                        break;
                 }
             }
 
@@ -199,45 +202,4 @@ public class ServerThread extends Thread {
     }
 
 
-//
-//        try {
-//            printStream = new PrintStream(socket.getOutputStream());
-//            bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-//            objectInput = new ObjectInputStream(socket.getInputStream());
-//            objectOutput = new ObjectOutputStream(socket.getOutputStream());
-//
-////            daoFactory = new SqlDaoFactory();
-////            GenericDao dao = null;
-////            Message message = null;
-////            Message replyMessage = null;
-////            User user;
-////            MessageType operationType;
-////            MessageType messageType;
-////
-////            while (true) {
-////ser                message = (Message) objectInput.readObject();
-////                operationType = message.getOperationType();
-////                messageType = message.getMessageType();
-////                switch (operationType) {
-////                    case SIGN:
-////                        System.out.println("SIGN operation :");
-////                        switch (messageType) {
-////                            case UP:
-////                                System.out.println("SIGN UP");
-////                                user = (User) message.getMessage();
-////
-////                                /**
-////                                 * check if this user exists
-////                                 */
-////                                break;
-////                            case IN:
-////                                System.out.println("SIGN IN");
-////                        }
-////                }
-////            }
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
 }
