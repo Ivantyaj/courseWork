@@ -61,6 +61,9 @@ public class SQLRequest {
             case ProdactionDelete:
                 deleteFrom("prodaction", message);
                 break;
+            case ReportRequest:
+                resultSet = selectFrom("report");
+                break;
         }
         return resultSet;
     }

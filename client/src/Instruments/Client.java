@@ -1,10 +1,7 @@
 package Instruments;
 
-import BDTable.Accessories;
-import BDTable.Prodaction;
-import BDTable.Staff;
+import BDTable.*;
 import Message.Message;
-import BDTable.User;
 import ui.AdminMainMenu;
 import ui.EvaluateUI;
 import ui.LogIN;
@@ -149,6 +146,22 @@ public class Client {
                         mrpUI.setProdactionData(stringDaProdaction);
                     }
                     break;
+                    case ReportRequest:
+                        System.out.println(message.getMessageArray());
+
+                        ArrayList<Report> reportArrayList = new ArrayList<>();
+                        for (Object object : message.getMessageArray()) {
+                            reportArrayList.add((Report) object);
+                        }
+
+                        String[][] stringDaReport = new String[reportArrayList.size()][];
+                        int i = 0;
+                        for (Report report : reportArrayList) {
+                            stringDaReport[i] = report.toStringArray();
+                            i++;
+                        }
+                        mrpUI.setReportData(stringDaReport);
+                        break;
                     default:
                         break;
                 }

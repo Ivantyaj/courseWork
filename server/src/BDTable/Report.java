@@ -2,12 +2,13 @@ package BDTable;
 
 import DataBase.SQLRequest;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class Report {
+public class Report implements Serializable {
     private int id;
     private Date date;
     private float result;
@@ -45,6 +46,10 @@ public class Report {
         this.id_staff = resultSet.getInt("id_staff");
         this.id_accessories =resultSet.getInt( "id_accessories");
         this.id_prodaction = resultSet.getInt("id_prodaction");
+    }
+
+    public String[] toStringArray() {
+        return new String[]{String.valueOf(id),String.valueOf(date),String.valueOf(result),String.valueOf(id_user),String.valueOf(id_staff),String.valueOf(id_accessories),String.valueOf(id_prodaction)};
     }
 
     public void evaluateResult(SQLRequest sql){

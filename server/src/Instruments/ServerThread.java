@@ -182,6 +182,17 @@ public class ServerThread extends Thread {
                         report.evaluateResult(sqlRequest);
                         sqlRequest.insertIntoReport(report);
                         break;
+                    case ReportRequest:
+                        ArrayList<Object> reportArrayList = new ArrayList<>();
+                        ResultSet resultSet = sqlRequest.executeSqlQuery(message);
+
+                        while (resultSet.next()) {
+                            reportArrayList.add(new Report(resultSet));
+                        }
+
+                        message.setMessageArray(reportArrayList);
+                        serverSendStream.writeObject(message);
+                        break;
                 }
             }
 

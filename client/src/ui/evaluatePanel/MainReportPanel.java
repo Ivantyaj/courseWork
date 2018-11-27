@@ -84,7 +84,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         tableStaff.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tableStaff.setRowSelectionAllowed(true);
         tableStaff.getSelectionModel().addListSelectionListener(new MainReportPanel.TableSelectListener());
-        tableStaff.setDefaultEditor(Object.class, null); //? /////////////////////////////////
+        tableStaff.setDefaultEditor(Object.class, null); //
 
         scrollPaneStaff.setBounds(10, 20, 890, 105);
         JLabel lbStaff = new JLabel("Персонал:");
@@ -98,7 +98,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         tableAccessories.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tableAccessories.setRowSelectionAllowed(true);
         tableAccessories.getSelectionModel().addListSelectionListener(new MainReportPanel.TableSelectListener());
-        tableAccessories.setDefaultEditor(Object.class, null); //? /////////////////////////////////
+        tableAccessories.setDefaultEditor(Object.class, null); //
 
         scrollPaneAccessories.setBounds(10, 145, 890, 105);
         JLabel lbAccessories = new JLabel("Сырье:");
@@ -112,7 +112,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         tableProdaction.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tableProdaction.setRowSelectionAllowed(true);
         tableProdaction.getSelectionModel().addListSelectionListener(new MainReportPanel.TableSelectListener());
-        tableProdaction.setDefaultEditor(Object.class, null); //? /////////////////////////////////
+        tableProdaction.setDefaultEditor(Object.class, null); //
 
         scrollPaneProdaction.setBounds(10, 270, 890, 105);
         JLabel lbProdaction = new JLabel("Производство:");

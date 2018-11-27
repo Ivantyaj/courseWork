@@ -84,6 +84,8 @@ public class EvaluateUI extends JFrame implements SocketGuiInterface {
         tabMainReportPanel.setSourseProdaction(data);
     }
 
+    public void setReportData(Object[][] data) { tabGraphicsPanel.setSourseReport(data);}
+
     public User getUser() {
         return user;
     }
@@ -168,35 +170,19 @@ public class EvaluateUI extends JFrame implements SocketGuiInterface {
             if (sourcePanel == tabMainReportPanel) {
                 try {
                     requestAll(message, clientSendStream);
-//                    message = new Message();
-//                    message.setCommand(Message.cmd.StaffRequest);
-//
-//                    clientSendStream.writeObject(message);
-//
-//
-//                    message = new Message();
-//                    message.setCommand(Message.cmd.AccessoriesRequest);
-//
-//                    clientSendStream.writeObject(message);
-//
-//
-//                    message = new Message();
-//                    message.setCommand(Message.cmd.ProdactionRequest);
-//
-//                    clientSendStream.writeObject(message);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
             }
-//            if (sourcePanel == tabUserPanel) {
-//                message = new Message();
-//                message.setCommand(Message.cmd.UserRequest);
-//                try {
-//                    clientSendStream.writeObject(message);
-//                } catch (IOException e1) {
-//                    e1.printStackTrace();
-//                }
-//            }
+            if (sourcePanel == tabGraphicsPanel) {
+                message = new Message();
+                message.setCommand(Message.cmd.ReportRequest);
+                try {
+                    clientSendStream.writeObject(message);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
 //            if (sourcePanel == tabAccessoriesPanel) {
 //                message = new Message();
 //                message.setCommand(Message.cmd.AccessoriesRequest);
