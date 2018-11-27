@@ -53,14 +53,10 @@ public class EvaluateUI extends JFrame implements SocketGuiInterface {
         tabbedPane.addTab("Расчет затрат", tabMainReportPanel);
         tabbedPane.addTab("Графики", tabGraphicsPanel);
 
-
         tabbedPane.setBounds(5, 5, 920, 700);
         tabbedPane.addChangeListener(new EvaluateUI.TabActionListener());
 
         add(tabbedPane);
-
-
-
 
     }
 

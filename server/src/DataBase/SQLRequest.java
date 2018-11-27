@@ -15,7 +15,7 @@ public class SQLRequest {
 
     DBWorker dbWorker = new DBWorker();
 
-
+    //TODO объединить case
     public ResultSet executeSqlQuery(Message message) throws SQLException {
         ResultSet resultSet = null;
         switch (message.getCommand()){
@@ -29,7 +29,7 @@ public class SQLRequest {
                 insertInto(message);
                 break;
             case UserRedact:
-
+                updateData(message);
                 break;
              ////////////////////////////////
             case StaffRequest:
@@ -41,6 +41,9 @@ public class SQLRequest {
             case StaffDelete:
                 deleteFrom("staff", message);
                 break;
+            case StaffRedact:
+                updateData(message);
+                break;
             //////////////////////////////////
             case AccessoriesRequest:
                 resultSet = selectFrom("accessories");
@@ -50,6 +53,9 @@ public class SQLRequest {
                 break;
             case AccessoriesDelete:
                 deleteFrom("accessories", message);
+                break;
+            case AccessoriesRedact:
+                updateData(message);
                 break;
             //////////////////////////////////
             case ProdactionRequest:
@@ -63,6 +69,9 @@ public class SQLRequest {
                 break;
             case ReportRequest:
                 resultSet = selectFrom("report");
+                break;
+            case ProdactionRedact:
+                updateData(message);
                 break;
         }
         return resultSet;
@@ -120,6 +129,45 @@ public class SQLRequest {
                 break;
             case AccessoriesAdd:
                 query = "insert into accessories(name, count, price) values (?,?,?)";
+                preparedStatement = dbWorker.getConnection().prepareStatement(query);
+                preparedStatement.setString(1, (String) message.getMessageArray().get(0));
+                preparedStatement.setInt(2, Integer.valueOf((String)message.getMessageArray().get(1)));
+                preparedStatement.setFloat(3, Float.valueOf((String)message.getMessageArray().get(2)));
+                break;
+        }
+
+        preparedStatement.execute();
+    }
+
+    //TODO вынести preparedStatement
+    private void updateData(Message message) throws SQLException {
+        String query = null;
+        PreparedStatement preparedStatement = null;
+        switch (message.getCommand()){
+            case UserRedact:
+                //query = "UPDATE users set password = ?, role = ? WHERE id=";
+                preparedStatement = dbWorker.getConnection().prepareStatement(query);
+                preparedStatement.setString(1,(String) message.getMessageArray().get(0));
+                preparedStatement.setString(2,(String) message.getMessageArray().get(1));
+                preparedStatement.setString(3,(String) message.getMessageArray().get(2));
+                break;
+            case StaffRedact:
+                query = "UPDATE staff set salary = ?,goverment = ?,date = ?";
+                preparedStatement = dbWorker.getConnection().prepareStatement(query);
+                preparedStatement.setFloat(1, Float.valueOf((String)message.getMessageArray().get(0)));
+                preparedStatement.setFloat(2, Float.valueOf((String)message.getMessageArray().get(1)));
+                preparedStatement.setString(3, (String) message.getMessageArray().get(2));
+                break;
+            case ProdactionRedact:
+                query = "UPDATE prodaction set energy = ?, tariff = ?, amortisation = ?, date = ?";
+                preparedStatement = dbWorker.getConnection().prepareStatement(query);
+                preparedStatement.setFloat(1, Integer.valueOf((String)message.getMessageArray().get(0)));
+                preparedStatement.setFloat(2, Float.valueOf((String)message.getMessageArray().get(1)));
+                preparedStatement.setFloat(3, Float.valueOf((String)message.getMessageArray().get(2)));
+                preparedStatement.setString(4, (String) message.getMessageArray().get(3));
+                break;
+            case AccessoriesRedact:
+                query = "UPDATE accessories set name = ?, count = ?, price = ?";
                 preparedStatement = dbWorker.getConnection().prepareStatement(query);
                 preparedStatement.setString(1, (String) message.getMessageArray().get(0));
                 preparedStatement.setInt(2, Integer.valueOf((String)message.getMessageArray().get(1)));

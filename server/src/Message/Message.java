@@ -30,9 +30,8 @@ public class Message implements Serializable {
 
         ReportRequest,
         Evaluate,
-        GraphicsMostCost,
-        SQL,
-        Fail
+        //GraphicsMostCost,
+
     }
     cmd command = cmd.Start;
 

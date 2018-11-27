@@ -180,24 +180,10 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
 //                }
             }
             if (e.getSource() == btnTabAdd) {
-                ArrayList<Object> addData = new ArrayList<>();
-                addData.add(ftfFName.getText());
-                addData.add(ftfSName.getText());
-
-                if (comboBox.getSelectedIndex() == 0)
-                    addData.add(String.valueOf(User.Role.ADMIN));
-                else
-                    addData.add(String.valueOf(User.Role.USER));
-
-                message = new Message();
-
-                message.setMessageArray(addData);
-                message.setCommand(Message.cmd.UserAdd);
-                try {
-                    clientSendStream.writeObject(message);
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
+                setSendData(Message.cmd.UserAdd);
+            }
+            if (e.getSource() == btnTabRedact) {
+                setSendData(Message.cmd.UserRedact);
             }
 
             message = new Message();
@@ -207,6 +193,27 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
+        }
+    }
+
+    private void setSendData(Message.cmd cmd){
+        ArrayList<Object> addData = new ArrayList<>();
+        addData.add(ftfFName.getText());
+        addData.add(ftfSName.getText());
+
+        if (comboBox.getSelectedIndex() == 0)
+            addData.add(String.valueOf(User.Role.ADMIN));
+        else
+            addData.add(String.valueOf(User.Role.USER));
+
+        message = new Message();
+
+        message.setMessageArray(addData);
+        message.setCommand(cmd);
+        try {
+            clientSendStream.writeObject(message);
+        } catch (IOException e1) {
+            e1.printStackTrace();
         }
     }
 

@@ -2,29 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="230fcb3f-3dd5-47cd-ab9b-cad21832a6fc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/EvaluateUI$TabActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/EvaluateUI$TabActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/EvaluateUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/EvaluateUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/graphics/GraphicsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/graphics/GraphicsPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/graphics/chartPieUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ui/graphics/chartPieUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/BDTable/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/BDTable/Report.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/DataBase/SQLRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/DataBase/SQLRequest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/DataBase/SQLRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/DataBase/SQLRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/Instruments/ServerThread$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/Instruments/ServerThread$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/Instruments/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/Instruments/ServerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/Message/Message$cmd.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/Message/Message$cmd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/Message/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/Message/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/Instruments/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Instruments/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/Instruments/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/Instruments/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/AdminMainMenu$ButtonActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/AdminMainMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/DB$TabActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/DB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/EvaluateUI$TabActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/EvaluateUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/LogIN$ButtonActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/LogIN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/SocketGuiInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/evaluatePanel/MainReportPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/evaluatePanel/MainReportPanel$ButtonActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/evaluatePanel/MainReportPanel$CheckBoxActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/evaluatePanel/MainReportPanel$TableSelectListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/evaluatePanel/MainReportPanel$TftCaractersListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/evaluatePanel/MainReportPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/graphics/GraphicsPanel$ButtonActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/graphics/GraphicsPanel$TableSelectListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/graphics/GraphicsPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/graphics/chartPieUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/AccessoriesPanel$ButtonActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/AccessoriesPanel$TabActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/AccessoriesPanel$TableSelectListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/AccessoriesPanel$TftCaractersListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/AccessoriesPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/ProdactionPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/ProdactionPanel$ButtonActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/ProdactionPanel$TabActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/ProdactionPanel$TableSelectListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/ProdactionPanel$TftCaractersListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/ProdactionPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/StaffPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/StaffPanel$ButtonActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/StaffPanel$TabActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/StaffPanel$TableSelectListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/StaffPanel$TftCaractersListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/StaffPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/UserPanel$ButtonActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/UserPanel$TabActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/UserPanel$TableSelectListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/UserPanel$TftCaractersListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ui/tablePanel/UserPanel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/ui/EvaluateUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/EvaluateUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/evaluatePanel/MainReportPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/evaluatePanel/MainReportPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/graphics/GraphicsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/graphics/GraphicsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/graphics/chartPieUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/graphics/chartPieUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/ui/tablePanel/AccessoriesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/tablePanel/AccessoriesPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/ui/tablePanel/ProdactionPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/tablePanel/ProdactionPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/ui/tablePanel/StaffPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/tablePanel/StaffPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/ui/tablePanel/UserPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/tablePanel/UserPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/Message/Message$cmd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Message/Message$cmd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/Message/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Message/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BDTable/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BDTable/Report.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataBase/SQLRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/SQLRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Instruments/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instruments/ServerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Message/Message.java" afterDir="false" />
@@ -71,7 +101,7 @@
         <item name="server@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="server: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="report: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="accessories: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -87,7 +117,7 @@
     <session id="221787554">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="16" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
@@ -101,22 +131,23 @@
           <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.62" value="1" />
           <entry key="project.open.time.68" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.open.time.78" value="1" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cell" value="268" />
+          <entry key="cell" value="282" />
           <entry key="dummy" value="18" />
-          <entry key="java" value="6560" />
+          <entry key="java" value="6953" />
           <entry key="txt" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6560" />
+          <entry key="JAVA" value="6953" />
           <entry key="PLAIN_TEXT" value="24" />
-          <entry key="Scratch" value="268" />
+          <entry key="Scratch" value="282" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -126,13 +157,13 @@
           <entry key="report" value="2" />
           <entry key="sql" value="3" />
           <entry key="staff" value="2" />
-          <entry key="users" value="2" />
+          <entry key="users" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="Database Element" value="6" />
+          <entry key="Database Element" value="7" />
           <entry key="JAVA" value="21" />
           <entry key="SQL" value="2" />
           <entry key="Scratch" value="1" />
@@ -148,7 +179,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DataBase/DBWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
+            <state relative-caret-position="340">
               <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="e#627#628#0" expanded="true" />
@@ -160,35 +191,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Instruments/ServerThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="186" column="62" lean-forward="true" selection-start-line="186" selection-start-column="62" selection-end-line="186" selection-end-column="62" />
+            <state relative-caret-position="136">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1543301041702" expanded="true" signature="8513:8793" ph="..." />
+                <marker date="1543310921833" expanded="true" signature="7651:7931" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BDTable/Report.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+            <state relative-caret-position="204">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2342#2343#0" expanded="true" />
-                <element signature="e#2369#2370#0" expanded="true" />
-                <element signature="e#2401#2402#0" expanded="true" />
-                <element signature="e#2430#2431#0" expanded="true" />
-                <element signature="e#2461#2462#0" expanded="true" />
-                <element signature="e#2491#2492#0" expanded="true" />
-                <element signature="e#2523#2524#0" expanded="true" />
-                <element signature="e#2554#2555#0" expanded="true" />
-                <element signature="e#2592#2593#0" expanded="true" />
-                <element signature="e#2629#2630#0" expanded="true" />
-                <element signature="e#2666#2667#0" expanded="true" />
                 <element signature="e#2702#2703#0" expanded="true" />
+                <element signature="e#2731#2732#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -197,11 +218,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DataBase/SQLRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+            <state relative-caret-position="224">
+              <caret line="145" column="38" lean-forward="true" selection-start-line="145" selection-start-column="38" selection-end-line="145" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="das://1c588b5e-61a7-4b80-a0f8-04b83da6109c/schema/server/table/users">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -218,12 +248,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Message/Message.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-              <folding>
-                <element signature="e#1165#1166#0" expanded="true" />
-                <element signature="e#1200#1201#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -231,7 +257,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BDTable/Prodaction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="510">
               <caret line="33" selection-start-line="33" selection-end-line="35" selection-end-column="5" />
             </state>
           </provider>
@@ -240,8 +266,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BDTable/Staff.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="42" />
+            <state relative-caret-position="136">
+              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1260#1261#0" expanded="true" />
@@ -254,8 +280,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/result/ResultSetImpl.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="818" column="54" lean-forward="true" selection-start-line="818" selection-start-column="54" selection-end-line="818" selection-end-column="54" />
+            <state relative-caret-position="12257">
+              <caret line="818" column="54" selection-start-line="818" selection-start-column="54" selection-end-line="818" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -289,10 +315,10 @@
         <option value="$PROJECT_DIR$/src/BDTable/Accessories.java" />
         <option value="$PROJECT_DIR$/src/BDTable/Prodaction.java" />
         <option value="$PROJECT_DIR$/src/BDTable/Staff.java" />
+        <option value="$PROJECT_DIR$/src/BDTable/Report.java" />
+        <option value="$PROJECT_DIR$/src/Instruments/ServerThread.java" />
         <option value="$PROJECT_DIR$/src/Message/Message.java" />
         <option value="$PROJECT_DIR$/src/DataBase/SQLRequest.java" />
-        <option value="$PROJECT_DIR$/src/Instruments/ServerThread.java" />
-        <option value="$PROJECT_DIR$/src/BDTable/Report.java" />
       </list>
     </option>
   </component>
@@ -309,10 +335,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="133" />
-    <option name="y" value="-1058" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1939" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -322,7 +348,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -374,6 +399,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -385,7 +411,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/БГУИР 672302/Курс 3/Курсач 5 сем/Курсач git/server/src/Instruments/ServerThread.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543302949614" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543302965602" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../client" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -449,19 +475,19 @@
       <workItem from="1542457117263" duration="5457000" />
       <workItem from="1543062546969" duration="21692000" />
       <workItem from="1543227912789" duration="2619000" />
-      <workItem from="1543236628698" duration="11130000" />
+      <workItem from="1543236628698" duration="11264000" />
+      <workItem from="1543308454323" duration="5200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71123000" />
+    <option name="totallyTimeSpent" value="76457000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="133" y="-1058" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info id="Capture Tool" order="0" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.116136916" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.13020134" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -472,7 +498,7 @@
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.32907802" />
       <window_info anchor="bottom" id="Find" order="4" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.28026906" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.3531915" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.3150224" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
@@ -488,7 +514,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Designer" order="6" />
-      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.21821515" />
+      <window_info active="true" anchor="right" id="Database" order="7" visible="true" weight="0.23959732" />
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
   </component>
@@ -510,20 +536,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Instruments/ServerThread.java</url>
-          <line>110</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/DataBase/SQLRequest.java</url>
-          <line>134</line>
+          <line>182</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Instruments/ServerThread.java</url>
-          <line>180</line>
+          <line>160</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -573,7 +593,6 @@
       </provider>
     </entry>
     <entry file="das://1c588b5e-61a7-4b80-a0f8-04b83da6109c/schema/server/table/staff" />
-    <entry file="das://1c588b5e-61a7-4b80-a0f8-04b83da6109c/schema/server/table/users" />
     <entry file="file://$PROJECT_DIR$/src/Instruments/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -602,9 +621,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="42" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -615,10 +631,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/result/ResultSetImpl.class">
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/io/Serializable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="818" column="54" lean-forward="true" selection-start-line="818" selection-start-column="54" selection-end-line="818" selection-end-column="54" />
+        <state relative-caret-position="2635">
+          <caret line="178" column="17" selection-start-line="178" selection-start-column="17" selection-end-line="178" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBase/DBWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#627#628#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -629,59 +655,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBase/DBWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#627#628#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Message/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-          <folding>
-            <element signature="e#1165#1166#0" expanded="true" />
-            <element signature="e#1200#1201#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBase/SQLRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instruments/ServerThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="186" column="62" lean-forward="true" selection-start-line="186" selection-start-column="62" selection-end-line="186" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1543301041702" expanded="true" signature="8513:8793" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BDTable/Prodaction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="510">
           <caret line="33" selection-start-line="33" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/result/ResultSetImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12257">
+          <caret line="818" column="54" selection-start-line="818" selection-start-column="54" selection-end-line="818" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BDTable/Report.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2702#2703#0" expanded="true" />
+            <element signature="e#2731#2732#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BDTable/Staff.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="42" />
+        <state relative-caret-position="136">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1260#1261#0" expanded="true" />
@@ -690,32 +693,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/io/Serializable.java">
+    <entry file="file://$PROJECT_DIR$/src/Message/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2635">
-          <caret line="178" column="17" selection-start-line="178" selection-start-column="17" selection-end-line="178" selection-end-column="17" />
+        <state relative-caret-position="272">
+          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BDTable/Report.java">
+    <entry file="file://$PROJECT_DIR$/src/Instruments/ServerThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+        <state relative-caret-position="136">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2342#2343#0" expanded="true" />
-            <element signature="e#2369#2370#0" expanded="true" />
-            <element signature="e#2401#2402#0" expanded="true" />
-            <element signature="e#2430#2431#0" expanded="true" />
-            <element signature="e#2461#2462#0" expanded="true" />
-            <element signature="e#2491#2492#0" expanded="true" />
-            <element signature="e#2523#2524#0" expanded="true" />
-            <element signature="e#2554#2555#0" expanded="true" />
-            <element signature="e#2592#2593#0" expanded="true" />
-            <element signature="e#2629#2630#0" expanded="true" />
-            <element signature="e#2666#2667#0" expanded="true" />
-            <element signature="e#2702#2703#0" expanded="true" />
+            <marker date="1543310921833" expanded="true" signature="7651:7931" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBase/SQLRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="145" column="38" lean-forward="true" selection-start-line="145" selection-start-column="38" selection-end-line="145" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1c588b5e-61a7-4b80-a0f8-04b83da6109c/schema/server/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>

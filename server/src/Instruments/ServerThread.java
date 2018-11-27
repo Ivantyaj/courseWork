@@ -90,7 +90,7 @@ public class ServerThread extends Thread {
                         message.setArrayOneObject(user);
                         serverSendStream.writeObject(message);
                     }
-                        break;
+                    break;
                     case UserRequest: {
                         ArrayList<Object> userArrayList = new ArrayList<>();
                         //String query = "select * from users";
@@ -103,80 +103,60 @@ public class ServerThread extends Thread {
                         message.setMessageArray(userArrayList);
                         serverSendStream.writeObject(message);
                     }
+                    break;
+                    case StaffRequest:
+                        ArrayList<Object> staffArrayList = new ArrayList<>();
+                        ResultSet resultSet = sqlRequest.executeSqlQuery(message);
+
+                        //if(resultSet != null) {
+                        while (resultSet.next()) {
+                            staffArrayList.add(new Staff(resultSet));
+                        }
+                        //}
+                        message.setMessageArray(staffArrayList);
+                        serverSendStream.writeObject(message);
                         break;
-                    case UserDelete: {
-                         sqlRequest.executeSqlQuery(message);
-//                        Statement statement = dbWorker.getConnection().createStatement();
-//
-//                        for (Object id: message.getMessageArray()) {
-//                            if(!id.equals(null)) {
-//                                String query = "delete from users where id = " + id;
-//                                statement.execute(query);
-//                            }
-//                        }
-//                        message.setMessageArray(new ArrayList<>());
-//                        serverSendStream.writeObject(message);
+//                    case AccessoriesDelete:
+//                    case AccessoriesAdd:
+//                    case ProdactionDelete:
+//                    case ProdactionAdd:
+//                    case UserDelete:
+//                    case UserAdd:
+//                    case StaffDelete:
+//                    case StaffAdd:
+//                    case StaffRedact:
+//                    case UserRedact:
+//                    case ProdactionRedact:
+//                    case AccessoriesRedact:
+//                        sqlRequest.executeSqlQuery(message);
+//                        break;
+                    case AccessoriesRequest: {
+                        ArrayList<Object> accessoriesArrayList = new ArrayList<>();
+                        ResultSet resultSetAccessories = sqlRequest.executeSqlQuery(message);
+
+                        //if(resultSet != null) {
+                        while (resultSetAccessories.next()) {
+                            accessoriesArrayList.add(new Accessories(resultSetAccessories));
+                        }
+                        //}
+                        message.setMessageArray(accessoriesArrayList);
+                        serverSendStream.writeObject(message);
                     }
-                    case UserAdd:
-                        sqlRequest.executeSqlQuery(message);
-                        break;
-                    case StaffRequest:{
-                        ArrayList<Object> staffArrayList = new ArrayList<>();
-                        ResultSet resultSet = sqlRequest.executeSqlQuery(message);
+                    break;
+
+                    case ProdactionRequest: {
+                        ArrayList<Object> prodactionArrayList = new ArrayList<>();
+                        ResultSet resultSetProdaction = sqlRequest.executeSqlQuery(message);
 
                         //if(resultSet != null) {
-                            while (resultSet.next()) {
-                                staffArrayList.add(new Staff(resultSet));
-                            }
-                        //}
-                        message.setMessageArray(staffArrayList);
-                        serverSendStream.writeObject(message);
-                    }break;
-                    case StaffDelete:{
-                        sqlRequest.executeSqlQuery(message);
-                    }break;
-                    case StaffAdd:{
-                        sqlRequest.executeSqlQuery(message);
-                    }break;
-                    case AccessoriesRequest:{
-                        ArrayList<Object> staffArrayList = new ArrayList<>();
-                        ResultSet resultSet = sqlRequest.executeSqlQuery(message);
-
-                        //if(resultSet != null) {
-                        while (resultSet.next()) {
-                            staffArrayList.add(new Accessories(resultSet));
+                        while (resultSetProdaction.next()) {
+                            prodactionArrayList.add(new Prodaction(resultSetProdaction));
                         }
                         //}
-                        message.setMessageArray(staffArrayList);
+                        message.setMessageArray(prodactionArrayList);
                         serverSendStream.writeObject(message);
-                    }break;
-                    case AccessoriesDelete:{
-                        sqlRequest.executeSqlQuery(message);
-                    }break;
-                    case AccessoriesAdd:{
-                        sqlRequest.executeSqlQuery(message);
-                    }break;
-                    case ProdactionRequest:{
-                        ArrayList<Object> staffArrayList = new ArrayList<>();
-                        ResultSet resultSet = sqlRequest.executeSqlQuery(message);
-
-                        //if(resultSet != null) {
-                        while (resultSet.next()) {
-                            staffArrayList.add(new Prodaction(resultSet));
-                        }
-                        //}
-                        message.setMessageArray(staffArrayList);
-                        serverSendStream.writeObject(message);
-                    }break;
-                    case ProdactionDelete:{
-                        sqlRequest.executeSqlQuery(message);
-                    }break;
-                    case ProdactionAdd:{
-                        sqlRequest.executeSqlQuery(message);
-                    }break;
-                    default:
-                        System.out.println("Неизвестная комманда");
-                        break;
+                    }
+                    break;
                     case Evaluate:
                         Report report = new Report(message.getMessageArray());
                         report.evaluateResult(sqlRequest);
@@ -184,15 +164,19 @@ public class ServerThread extends Thread {
                         break;
                     case ReportRequest:
                         ArrayList<Object> reportArrayList = new ArrayList<>();
-                        ResultSet resultSet = sqlRequest.executeSqlQuery(message);
+                        ResultSet resultSetReport = sqlRequest.executeSqlQuery(message);
 
-                        while (resultSet.next()) {
-                            reportArrayList.add(new Report(resultSet));
+                        while (resultSetReport.next()) {
+                            reportArrayList.add(new Report(resultSetReport));
                         }
 
                         message.setMessageArray(reportArrayList);
                         serverSendStream.writeObject(message);
                         break;
+                    default:
+                        sqlRequest.executeSqlQuery(message);
+                        break;
+
                 }
             }
 

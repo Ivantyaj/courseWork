@@ -205,24 +205,10 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
                 }
             }
             if (e.getSource() == btnTabAdd) {
-                if (!isDateValid(ftfDate.getText())) {
-                    JOptionPane.showMessageDialog(null, "Дата введена не корректно");
-                } else {
-                    ArrayList<Object> addData = new ArrayList<>();
-                    addData.add(ftfFName.getText());
-                    addData.add(ftfSName.getText());
-                    addData.add(ftfDate.getText());
-
-                    message = new Message();
-
-                    message.setMessageArray(addData);
-                    message.setCommand(Message.cmd.StaffAdd);
-                    try {
-                        clientSendStream.writeObject(message);
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
-                }
+                sendData(Message.cmd.StaffAdd);
+            }
+            if (e.getSource() == btnTabRedact){
+                sendData(Message.cmd.StaffRedact);
             }
 
             message = new Message();
@@ -234,6 +220,28 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
             }
         }
     }
+
+    private void sendData(Message.cmd cmd){
+        if (!isDateValid(ftfDate.getText())) {
+            JOptionPane.showMessageDialog(null, "Дата введена не корректно");
+        } else {
+            ArrayList<Object> addData = new ArrayList<>();
+            addData.add(ftfFName.getText());
+            addData.add(ftfSName.getText());
+            addData.add(ftfDate.getText());
+
+            message = new Message();
+
+            message.setMessageArray(addData);
+            message.setCommand(cmd);
+            try {
+                clientSendStream.writeObject(message);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+    }
+
 
     public class TabActionListener implements ChangeListener {
         @Override

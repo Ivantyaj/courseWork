@@ -184,22 +184,10 @@ public class AccessoriesPanel extends JPanel implements SocketGuiInterface {
                 }
             }
             if (e.getSource() == btnTabAdd) {
-
-                    ArrayList<Object> addData = new ArrayList<>();
-                    addData.add(ftfName.getText());
-                    addData.add(ftfCount.getText());
-                    addData.add(ftfPrice.getText());
-
-                    message = new Message();
-
-                    message.setMessageArray(addData);
-                    message.setCommand(Message.cmd.AccessoriesAdd);
-                    try {
-                        clientSendStream.writeObject(message);
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
-
+                setSendData(Message.cmd.AccessoriesAdd);
+            }
+            if (e.getSource() == btnTabRedact) {
+                setSendData(Message.cmd.AccessoriesRedact);
             }
 
             message = new Message();
@@ -210,6 +198,24 @@ public class AccessoriesPanel extends JPanel implements SocketGuiInterface {
                 e1.printStackTrace();
             }
         }
+    }
+
+    private void setSendData(Message.cmd cmd){
+        ArrayList<Object> addData = new ArrayList<Object>();
+        addData.add(ftfName.getText());
+        addData.add(ftfCount.getText());
+        addData.add(ftfPrice.getText());
+
+        message = new Message();
+
+        message.setMessageArray(addData);
+        message.setCommand(cmd);
+        try {
+            clientSendStream.writeObject(message);
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+
     }
 
     public class TabActionListener implements ChangeListener {

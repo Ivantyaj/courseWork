@@ -215,29 +215,36 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
                 }
             }
             if (e.getSource() == btnTabAdd) {
-                if (!isDateValid(ftfDate.getText())) {
-                    JOptionPane.showMessageDialog(null, "Дата введена не корректно");
-                } else {
-                    ArrayList<Object> addData = new ArrayList<>();
-                    addData.add(ftfEnergy.getText());
-                    addData.add(ftfTariff.getText());
-                    addData.add(ftfAmortisation.getText());
-                    addData.add(ftfDate.getText());
-
-                    message = new Message();
-
-                    message.setMessageArray(addData);
-                    message.setCommand(Message.cmd.ProdactionAdd);
-                    try {
-                        clientSendStream.writeObject(message);
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
-                }
+                setSendData(Message.cmd.ProdactionAdd);
+            }
+            if (e.getSource() == btnTabRedact) {
+                setSendData(Message.cmd.ProdactionRedact);
             }
 
             message = new Message();
             message.setCommand(Message.cmd.ProdactionRequest);
+            try {
+                clientSendStream.writeObject(message);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+    }
+
+    private void setSendData(Message.cmd cmd){
+        if (!isDateValid(ftfDate.getText())) {
+            JOptionPane.showMessageDialog(null, "Дата введена не корректно");
+        } else {
+            ArrayList<Object> addData = new ArrayList<>();
+            addData.add(ftfEnergy.getText());
+            addData.add(ftfTariff.getText());
+            addData.add(ftfAmortisation.getText());
+            addData.add(ftfDate.getText());
+
+            message = new Message();
+
+            message.setMessageArray(addData);
+            message.setCommand(cmd);
             try {
                 clientSendStream.writeObject(message);
             } catch (IOException e1) {
