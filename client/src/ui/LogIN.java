@@ -1,6 +1,14 @@
 package ui;
 
 import Message.Message;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DatasetChangeListener;
+import org.jfree.data.general.DatasetGroup;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.general.PieDataset;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,6 +17,7 @@ import java.awt.event.ActionListener;
 import java.net.*;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class LogIN extends JFrame implements SocketGuiInterface{
 
@@ -57,7 +66,6 @@ public class LogIN extends JFrame implements SocketGuiInterface{
         add(textFieldPassword);
         add(labelLogin);
         add(labelPassword);
-
     }
 
 

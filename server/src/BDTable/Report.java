@@ -63,6 +63,29 @@ public class Report {
         }
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public float getResult() {
+        return result;
+    }
+
+    public int getId_user() {
+        return id_user;
+    }
+
+    public int getId_staff() {
+        return id_staff;
+    }
+
+    public int getId_accessories() {
+        return id_accessories;
+    }
+
+    public int getId_prodaction() {
+        return id_prodaction;
+    }
 }
 
 

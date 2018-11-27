@@ -2,6 +2,7 @@ package DataBase;
 
 import BDTable.Accessories;
 import BDTable.Prodaction;
+import BDTable.Report;
 import BDTable.Staff;
 import Message.Message;
 
@@ -126,6 +127,7 @@ public class SQLRequest {
         preparedStatement.execute();
     }
 
+    //TODO divide
     public ArrayList<Object> requestDataForEvaluate(int idStaff, int idProdaction, int idAccessories) throws SQLException {
         String query = "select * from %s where id=?";
         PreparedStatement preparedStatement;
@@ -135,17 +137,29 @@ public class SQLRequest {
         queryTable = String.format(query, "staff");
         preparedStatement = dbWorker.getConnection().prepareStatement(queryTable);
         preparedStatement.setInt(1,idStaff);
-        Staff staff = new Staff(preparedStatement.executeQuery());
+        ResultSet resultSet = preparedStatement.executeQuery();
+        Staff staff = null;
+        if(resultSet.next()) {
+            staff = new Staff(resultSet);
+        }
 
         queryTable = String.format(query, "prodaction");
         preparedStatement = dbWorker.getConnection().prepareStatement(queryTable);
         preparedStatement.setInt(1,idProdaction);
-        Prodaction prodaction = new Prodaction(preparedStatement.executeQuery());
+        resultSet = preparedStatement.executeQuery();
+        Prodaction prodaction = null;
+        if(resultSet.next()) {
+            prodaction = new Prodaction(resultSet);
+        }
 
         queryTable = String.format(query, "accessories");
         preparedStatement = dbWorker.getConnection().prepareStatement(queryTable);
         preparedStatement.setInt(1,idAccessories);
-        Accessories accessories = new Accessories(preparedStatement.executeQuery());
+        resultSet = preparedStatement.executeQuery();
+        Accessories accessories = null;
+        if(resultSet.next()) {
+            accessories = new Accessories(resultSet);
+        }
 
         ArrayList<Object> arrayList = new ArrayList<>();
 
@@ -154,5 +168,18 @@ public class SQLRequest {
         arrayList.add(accessories);
 
         return arrayList;
+    }
+
+    public void insertIntoReport(Report report) throws SQLException {
+        String query = "insert into report(date, result, id_user, id_staff, id_accessories, id_prodaction) values(?,?,?,?,?,?)";
+        PreparedStatement preparedStatement = dbWorker.getConnection().prepareStatement(query);
+        preparedStatement.setDate(1, report.getDate());
+        preparedStatement.setFloat(2, report.getResult());
+        preparedStatement.setInt(3, report.getId_user());
+        preparedStatement.setInt(4, report.getId_staff());
+        preparedStatement.setInt(5, report.getId_accessories());
+        preparedStatement.setInt(6, report.getId_prodaction());
+
+        preparedStatement.execute();
     }
 }

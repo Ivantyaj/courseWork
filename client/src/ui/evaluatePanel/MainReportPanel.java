@@ -1,7 +1,9 @@
 package ui.evaluatePanel;
 
 import Message.Message;
+import org.jfree.chart.ChartPanel;
 import ui.SocketGuiInterface;
+import ui.graphics.chartPieUI;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -64,7 +66,8 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
     private int idUser;
 
 
-
+    private chartPieUI ui;
+    ChartPanel chart;
 
     public MainReportPanel(ObjectOutputStream css, Message mes) {
         setClientSendStream(css);
@@ -201,8 +204,6 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         add(cbDebt);
         add(cbDefect);
         add(cbAdditional);
-
-
     }
 
     public int getIdUser() {

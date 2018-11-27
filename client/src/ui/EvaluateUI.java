@@ -3,6 +3,7 @@ package ui;
 import BDTable.User;
 import Message.Message;
 import ui.evaluatePanel.MainReportPanel;
+import ui.graphics.GraphicsPanel;
 
 
 import javax.swing.*;
@@ -24,7 +25,7 @@ public class EvaluateUI extends JFrame implements SocketGuiInterface {
     //JButton btnTabDelete;
 
     MainReportPanel tabMainReportPanel;
-
+    GraphicsPanel tabGraphicsPanel;
 
     User user;
 
@@ -47,14 +48,20 @@ public class EvaluateUI extends JFrame implements SocketGuiInterface {
         tabbedPane = new JTabbedPane();
 
         tabMainReportPanel = new MainReportPanel(clientSendStream, message);
+        tabGraphicsPanel = new GraphicsPanel(clientSendStream, message);
 
         tabbedPane.addTab("Расчет затрат", tabMainReportPanel);
+        tabbedPane.addTab("Графики", tabGraphicsPanel);
 
 
         tabbedPane.setBounds(5, 5, 920, 700);
         tabbedPane.addChangeListener(new EvaluateUI.TabActionListener());
 
         add(tabbedPane);
+
+
+
+
     }
 
     public void setClientSendStream(ObjectOutputStream clientSendStream) {

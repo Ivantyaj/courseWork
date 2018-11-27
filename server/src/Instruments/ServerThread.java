@@ -1,12 +1,9 @@
 package Instruments;
 
-import BDTable.Accessories;
-import BDTable.Prodaction;
-import BDTable.Staff;
+import BDTable.*;
 import DataBase.DBWorker;
 import DataBase.SQLRequest;
 import Message.Message;
-import BDTable.User;
 import ui.ServerGUI;
 
 import java.io.*;
@@ -181,7 +178,9 @@ public class ServerThread extends Thread {
                         System.out.println("Неизвестная комманда");
                         break;
                     case Evaluate:
-
+                        Report report = new Report(message.getMessageArray());
+                        report.evaluateResult(sqlRequest);
+                        sqlRequest.insertIntoReport(report);
                         break;
                 }
             }
