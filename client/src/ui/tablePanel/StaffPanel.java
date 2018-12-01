@@ -1,6 +1,7 @@
 package ui.tablePanel;
 
 import Message.Message;
+import ui.DatePanel;
 import ui.SocketGuiInterface;
 
 import javax.swing.*;
@@ -46,11 +47,12 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
 
     JFormattedTextField ftfFName;
     JFormattedTextField ftfSName;
-    JFormattedTextField ftfDate;
 
 
     JButton btnTabAdd;
     JButton btnTabRedact;
+
+    DatePanel datePanel;
     private int id;
 
 
@@ -112,19 +114,8 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
             e.printStackTrace();
         }
 
-        ftfDate = new JFormattedTextField(mf);
-        ftfDate.setBounds(30, 80, 90, 20);
-        ftfDate.addKeyListener(new KeyAdapter() {
-            public void keyTyped(KeyEvent e) {
-                char c = e.getKeyChar();
-                if (!((c >= '0') && (c <= '9') ||
-                        (c == KeyEvent.VK_BACK_SPACE) ||
-                        (c == KeyEvent.VK_DELETE))) {
-                    JOptionPane.showMessageDialog(null, "Некорректный ввод");
-                    e.consume();
-                }
-            }
-        });
+        datePanel = new DatePanel();
+        datePanel.setBounds(100,55,90,20);
 
         JLabel lbSumSalary = new JLabel("Cумма з/п");
         JLabel lbGoverment = new JLabel("Процент отчислений");
@@ -140,7 +131,8 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
 
         tabInsertPanel.add(btnTabAdd);
         tabInsertPanel.add(btnTabRedact);
-        tabInsertPanel.add(ftfDate);
+        //tabInsertPanel.add(ftfDate);
+        tabInsertPanel.add(datePanel);
         tabInsertPanel.add(ftfFName);
         tabInsertPanel.add(ftfSName);
 
@@ -222,13 +214,12 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
     }
 
     private void sendData(Message.cmd cmd){
-        if (!isDateValid(ftfDate.getText())) {
-            JOptionPane.showMessageDialog(null, "Дата введена не корректно");
-        } else {
+
             ArrayList<Object> addData = new ArrayList<>();
+            addData.add(String.valueOf(id));
             addData.add(ftfFName.getText());
             addData.add(ftfSName.getText());
-            addData.add(ftfDate.getText());
+            addData.add(datePanel.getTextDate());
 
             message = new Message();
 
@@ -239,7 +230,6 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
-        }
     }
 
 
@@ -284,7 +274,8 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
                 id = Integer.parseInt((String) model.getValueAt(selectedRow, 0));
                 ftfFName.setValue(model.getValueAt(selectedRow, 1));
                 ftfSName.setValue(model.getValueAt(selectedRow, 2));
-                ftfDate.setValue(model.getValueAt(selectedRow,3));
+                //ftfDate.setValue(model.getValueAt(selectedRow,3));
+                datePanel.setValueData(model.getValueAt(selectedRow,3));
             }
 
         }

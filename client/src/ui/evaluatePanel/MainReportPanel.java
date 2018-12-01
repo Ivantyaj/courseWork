@@ -2,6 +2,7 @@ package ui.evaluatePanel;
 
 import Message.Message;
 import org.jfree.chart.ChartPanel;
+import ui.DatePanel;
 import ui.SocketGuiInterface;
 import ui.graphics.chartPieUI;
 
@@ -50,7 +51,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
 
     private JButton btnEvaluate;
 
-    private JFormattedTextField ftfDate;
+    private DatePanel datePanel;
     private JFormattedTextField ftfDebtSum;
     private JFormattedTextField ftfAddSum;
 
@@ -124,30 +125,11 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         btnEvaluate.setBounds(10, 630, 100, 25);
         btnEvaluate.addActionListener(new ButtonActionListener());
 
-        MaskFormatter mf = null;
-        try {
-            mf = new MaskFormatter("####-##-##");
-            mf.setPlaceholderCharacter('_');
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
         JLabel lbDate = new JLabel("Дата: ");
         lbDate.setBounds(10, 380, 80, 20);
 
-        ftfDate = new JFormattedTextField(mf);
-        ftfDate.setBounds(30, 400, 80, 20);
-        ftfDate.addKeyListener(new KeyAdapter() {
-            public void keyTyped(KeyEvent e) {
-                char c = e.getKeyChar();
-                if (!((c >= '0') && (c <= '9') ||
-                        (c == KeyEvent.VK_BACK_SPACE) ||
-                        (c == KeyEvent.VK_DELETE))) {
-                    JOptionPane.showMessageDialog(null, "Некорректный ввод");
-                    e.consume();
-                }
-            }
-        });
+        datePanel = new DatePanel();
+        datePanel.setBounds(30,400,90,20);
 
         cbDefect = new JCheckBox("Учитывать возможный брак?");
         cbDefect.setBounds(10, 430, 200, 20);
@@ -196,7 +178,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         add(lbDebtSum);
 
         add(btnEvaluate);
-        add(ftfDate);
+        add(datePanel);
         add(ftfDebtSum);
         add(ftfAddSum);
         add(comboBox);
@@ -265,8 +247,8 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
 //            }
 //            if (e.getSource() == btnTabAdd) {
 //                ArrayList<Object> addData = new ArrayList<>();
-//                addData.add(ftfFName.getText());
-//                addData.add(ftfSName.getText());
+//                addData.add(ftfFName.getTextDate());
+//                addData.add(ftfSName.getTextDate());
 //
 //                if (comboBox.getSelectedIndex() == 0)
 //                    addData.add(String.valueOf(User.Role.ADMIN));
@@ -351,7 +333,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         public void actionPerformed(ActionEvent e) {
 
             if (e.getSource() == btnEvaluate) {
-                if (!isDateValid(ftfDate.getText())) {
+                if (!isDateValid(datePanel.getTextDate())) {
                     JOptionPane.showMessageDialog(null, "Дата введена не корректно");
                 } else {
                     ArrayList<Object> listID = new ArrayList<>();
@@ -366,7 +348,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
                         listID.add(tableAccessories.getValueAt(selectAccessories, 0));
                         listID.add(tableProdaction.getValueAt(selectProdaction, 0));
                         listID.add(String.valueOf(idUser));
-                        listID.add(ftfDate.getText());
+                        listID.add(datePanel.getTextDate());
 
                         if (cbDefect.isSelected()) {
                             int index = comboBox.getSelectedIndex();

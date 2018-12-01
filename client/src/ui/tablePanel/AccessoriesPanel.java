@@ -201,7 +201,8 @@ public class AccessoriesPanel extends JPanel implements SocketGuiInterface {
     }
 
     private void setSendData(Message.cmd cmd){
-        ArrayList<Object> addData = new ArrayList<Object>();
+        ArrayList<Object> addData = new ArrayList<>();
+        addData.add(String.valueOf(id));
         addData.add(ftfName.getText());
         addData.add(ftfCount.getText());
         addData.add(ftfPrice.getText());

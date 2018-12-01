@@ -1,6 +1,7 @@
 package ui.tablePanel;
 
 import Message.Message;
+import ui.DatePanel;
 import ui.SocketGuiInterface;
 
 import javax.swing.*;
@@ -48,7 +49,7 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
     JFormattedTextField ftfEnergy;
     JFormattedTextField ftfTariff;
     JFormattedTextField ftfAmortisation;
-    JFormattedTextField ftfDate;
+    DatePanel datePanel;
 
 
     JButton btnTabAdd;
@@ -108,29 +109,8 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
         ftfAmortisation = new JFormattedTextField();
         ftfAmortisation.setBounds(100, 65, 90, 20);
 
-        //ftfCount.addKeyListener(new TftCaractersListener());
-
-        MaskFormatter mf = null;
-        try {
-            mf = new MaskFormatter("####-##-##");
-            mf.setPlaceholderCharacter('_');
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        ftfDate = new JFormattedTextField(mf);
-        ftfDate.setBounds(100, 95, 90, 20);
-        ftfDate.addKeyListener(new KeyAdapter() {
-            public void keyTyped(KeyEvent e) {
-                char c = e.getKeyChar();
-                if (!((c >= '0') && (c <= '9') ||
-                        (c == KeyEvent.VK_BACK_SPACE) ||
-                        (c == KeyEvent.VK_DELETE))) {
-                    JOptionPane.showMessageDialog(null, "Некорректный ввод");
-                    e.consume();
-                }
-            }
-        });
+        datePanel = new DatePanel();
+        datePanel.setBounds(100, 80, 90, 20);
 
         JLabel lbEnergy = new JLabel("Затраты энергии");
         JLabel lbTariff = new JLabel("Тариф");
@@ -149,7 +129,7 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
 
         tabInsertPanel.add(btnTabAdd);
         tabInsertPanel.add(btnTabRedact);
-        tabInsertPanel.add(ftfDate);
+        tabInsertPanel.add(datePanel);
         tabInsertPanel.add(ftfEnergy);
         tabInsertPanel.add(ftfTariff);
         tabInsertPanel.add(ftfAmortisation);
@@ -171,19 +151,6 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
         add(scrollPane);
         add(tabbedPane);
 
-    }
-
-    final static String DATE_FORMAT = "yyyy-MM-dd";
-
-    public static boolean isDateValid(String date) {
-        try {
-            DateFormat df = new SimpleDateFormat(DATE_FORMAT);
-            df.setLenient(false);
-            df.parse(date);
-            return true;
-        } catch (ParseException e) {
-            return false;
-        }
     }
 
     public void setClientSendStream(ObjectOutputStream clientSendStream) {
@@ -231,26 +198,25 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
         }
     }
 
-    private void setSendData(Message.cmd cmd){
-        if (!isDateValid(ftfDate.getText())) {
-            JOptionPane.showMessageDialog(null, "Дата введена не корректно");
-        } else {
-            ArrayList<Object> addData = new ArrayList<>();
-            addData.add(ftfEnergy.getText());
-            addData.add(ftfTariff.getText());
-            addData.add(ftfAmortisation.getText());
-            addData.add(ftfDate.getText());
+    private void setSendData(Message.cmd cmd) {
 
-            message = new Message();
+        ArrayList<Object> addData = new ArrayList<>();
+        addData.add(String.valueOf(id));
+        addData.add(ftfEnergy.getText());
+        addData.add(ftfTariff.getText());
+        addData.add(ftfAmortisation.getText());
+        addData.add(datePanel.getTextDate());
 
-            message.setMessageArray(addData);
-            message.setCommand(cmd);
-            try {
-                clientSendStream.writeObject(message);
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
+        message = new Message();
+
+        message.setMessageArray(addData);
+        message.setCommand(cmd);
+        try {
+            clientSendStream.writeObject(message);
+        } catch (IOException e1) {
+            e1.printStackTrace();
         }
+
     }
 
     public class TabActionListener implements ChangeListener {
@@ -295,7 +261,7 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
                 ftfEnergy.setValue(model.getValueAt(selectedRow, 1));
                 ftfTariff.setValue(model.getValueAt(selectedRow, 2));
                 ftfAmortisation.setValue(model.getValueAt(selectedRow, 3));
-                ftfDate.setValue(model.getValueAt(selectedRow,4));
+                datePanel.setValueData(model.getValueAt(selectedRow, 4));
             }
 
         }

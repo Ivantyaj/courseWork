@@ -146,8 +146,8 @@ public class EvaluateUI extends JFrame implements SocketGuiInterface {
 //            }
 ////            else if (e.getSource() == btnEnter) {
 ////                ArrayList<Object> stringArrayList = new ArrayList<>();
-////                stringArrayList.add(textFieldLogin.getText());
-////                stringArrayList.add(textFieldPassword.getText());
+////                stringArrayList.add(textFieldLogin.getTextDate());
+////                stringArrayList.add(textFieldPassword.getTextDate());
 ////                message.setMessageArray(stringArrayList);
 ////                message.setCommand(Message.cmd.LogIn);
 ////                try {

@@ -121,24 +121,24 @@ public class SQLRequest {
             case StaffAdd:
                 query = "insert into staff(salary,goverment,date) values (?,?,?)";
                 preparedStatement = dbWorker.getConnection().prepareStatement(query);
-                preparedStatement.setFloat(1, Float.valueOf((String)message.getMessageArray().get(0)));
-                preparedStatement.setFloat(2, Float.valueOf((String)message.getMessageArray().get(1)));
-                preparedStatement.setString(3, (String) message.getMessageArray().get(2));
+                preparedStatement.setFloat(1, Float.valueOf((String)message.getMessageArray().get(1)));
+                preparedStatement.setFloat(2, Float.valueOf((String)message.getMessageArray().get(2)));
+                preparedStatement.setString(3, (String) message.getMessageArray().get(3));
                 break;
             case ProdactionAdd:
                 query = "insert into prodaction(energy, tariff, amortisation, date) values(?,?,?,?)";
                 preparedStatement = dbWorker.getConnection().prepareStatement(query);
-                preparedStatement.setFloat(1, Integer.valueOf((String)message.getMessageArray().get(0)));
-                preparedStatement.setFloat(2, Float.valueOf((String)message.getMessageArray().get(1)));
-                preparedStatement.setFloat(3, Float.valueOf((String)message.getMessageArray().get(2)));
-                preparedStatement.setString(4, (String) message.getMessageArray().get(3));
+                preparedStatement.setFloat(1, Integer.valueOf((String)message.getMessageArray().get(1)));
+                preparedStatement.setFloat(2, Float.valueOf((String)message.getMessageArray().get(2)));
+                preparedStatement.setFloat(3, Float.valueOf((String)message.getMessageArray().get(3)));
+                preparedStatement.setString(4, (String) message.getMessageArray().get(4));
                 break;
             case AccessoriesAdd:
                 query = "insert into accessories(name, count, price) values (?,?,?)";
                 preparedStatement = dbWorker.getConnection().prepareStatement(query);
-                preparedStatement.setString(1, (String) message.getMessageArray().get(0));
-                preparedStatement.setInt(2, Integer.valueOf((String)message.getMessageArray().get(1)));
-                preparedStatement.setFloat(3, Float.valueOf((String)message.getMessageArray().get(2)));
+                preparedStatement.setString(1, (String) message.getMessageArray().get(1));
+                preparedStatement.setInt(2, Integer.valueOf((String)message.getMessageArray().get(2)));
+                preparedStatement.setFloat(3, Float.valueOf((String)message.getMessageArray().get(3)));
                 break;
         }
 
@@ -162,26 +162,29 @@ public class SQLRequest {
                 preparedStatement.setInt(7,Integer.parseInt((String) message.getMessageArray().get(0)));
                 break;
             case StaffRedact:
-                query = "UPDATE staff set salary = ?,goverment = ?,date = ?";
+                query = "UPDATE staff set salary = ?,goverment = ?,date = ?  WHERE id = ?";
                 preparedStatement = dbWorker.getConnection().prepareStatement(query);
-                preparedStatement.setFloat(1, Float.valueOf((String)message.getMessageArray().get(0)));
-                preparedStatement.setFloat(2, Float.valueOf((String)message.getMessageArray().get(1)));
-                preparedStatement.setString(3, (String) message.getMessageArray().get(2));
+                preparedStatement.setFloat(1, Float.valueOf((String)message.getMessageArray().get(1)));
+                preparedStatement.setFloat(2, Float.valueOf((String)message.getMessageArray().get(2)));
+                preparedStatement.setString(3, (String) message.getMessageArray().get(3));
+                preparedStatement.setInt(4,Integer.parseInt((String) message.getMessageArray().get(0)));
                 break;
             case ProdactionRedact:
-                query = "UPDATE prodaction set energy = ?, tariff = ?, amortisation = ?, date = ?";
+                query = "UPDATE prodaction set energy = ?, tariff = ?, amortisation = ?, date = ?  WHERE id = ?";
                 preparedStatement = dbWorker.getConnection().prepareStatement(query);
-                preparedStatement.setFloat(1, Integer.valueOf((String)message.getMessageArray().get(0)));
-                preparedStatement.setFloat(2, Float.valueOf((String)message.getMessageArray().get(1)));
-                preparedStatement.setFloat(3, Float.valueOf((String)message.getMessageArray().get(2)));
-                preparedStatement.setString(4, (String) message.getMessageArray().get(3));
+                preparedStatement.setFloat(1, Integer.valueOf((String)message.getMessageArray().get(1)));
+                preparedStatement.setFloat(2, Float.valueOf((String)message.getMessageArray().get(2)));
+                preparedStatement.setFloat(3, Float.valueOf((String)message.getMessageArray().get(3)));
+                preparedStatement.setString(4, (String) message.getMessageArray().get(4));
+                preparedStatement.setInt(5,Integer.parseInt((String) message.getMessageArray().get(0)));
                 break;
             case AccessoriesRedact:
-                query = "UPDATE accessories set name = ?, count = ?, price = ?";
+                query = "UPDATE accessories set name = ?, count = ?, price = ? WHERE id = ?";
                 preparedStatement = dbWorker.getConnection().prepareStatement(query);
-                preparedStatement.setString(1, (String) message.getMessageArray().get(0));
-                preparedStatement.setInt(2, Integer.valueOf((String)message.getMessageArray().get(1)));
-                preparedStatement.setFloat(3, Float.valueOf((String)message.getMessageArray().get(2)));
+                preparedStatement.setString(1, (String) message.getMessageArray().get(1));
+                preparedStatement.setInt(2, Integer.valueOf((String)message.getMessageArray().get(2)));
+                preparedStatement.setFloat(3, Float.valueOf((String)message.getMessageArray().get(3)));
+                preparedStatement.setInt(4,Integer.parseInt((String) message.getMessageArray().get(0)));
                 break;
         }
 
