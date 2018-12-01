@@ -9,6 +9,7 @@ import Message.Message;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 
 public class SQLRequest {
@@ -94,6 +95,8 @@ public class SQLRequest {
         PreparedStatement preparedStatement;
         preparedStatement = dbWorker.getConnection().prepareStatement(query);
         for (Object id: message.getMessageArray()) {
+            if(table == "users" && Integer.parseInt((String) id) == 1)
+                continue;
             if(id != null) {
                 preparedStatement.setString(1, (String) id);
                 preparedStatement.execute();
@@ -106,11 +109,14 @@ public class SQLRequest {
         PreparedStatement preparedStatement = null;
         switch (message.getCommand()){
             case UserAdd:
-                query = "insert into users(login, password, role) values (?,?,?)";
+                query = "insert into users(login, password, role, name, lastname, phone) values (?,?,?,?,?,?)";
                 preparedStatement = dbWorker.getConnection().prepareStatement(query);
-                preparedStatement.setString(1,(String) message.getMessageArray().get(0));
-                preparedStatement.setString(2,(String) message.getMessageArray().get(1));
-                preparedStatement.setString(3,(String) message.getMessageArray().get(2));
+                preparedStatement.setString(1,(String) message.getMessageArray().get(1));
+                preparedStatement.setString(2,(String) message.getMessageArray().get(2));
+                preparedStatement.setString(3,(String) message.getMessageArray().get(3));
+                preparedStatement.setString(4,(String) message.getMessageArray().get(4));
+                preparedStatement.setString(5,(String) message.getMessageArray().get(5));
+                preparedStatement.setString(6,(String) message.getMessageArray().get(6));
                 break;
             case StaffAdd:
                 query = "insert into staff(salary,goverment,date) values (?,?,?)";
@@ -145,11 +151,15 @@ public class SQLRequest {
         PreparedStatement preparedStatement = null;
         switch (message.getCommand()){
             case UserRedact:
-                //query = "UPDATE users set password = ?, role = ? WHERE id=";
+                query = "UPDATE users set login = ?, password = ?, role = ?, name = ?, lastname = ?, phone = ? WHERE id = ?";
                 preparedStatement = dbWorker.getConnection().prepareStatement(query);
-                preparedStatement.setString(1,(String) message.getMessageArray().get(0));
-                preparedStatement.setString(2,(String) message.getMessageArray().get(1));
-                preparedStatement.setString(3,(String) message.getMessageArray().get(2));
+                preparedStatement.setString(1,(String) message.getMessageArray().get(1));
+                preparedStatement.setString(2,(String) message.getMessageArray().get(2));
+                preparedStatement.setString(3,(String) message.getMessageArray().get(3));
+                preparedStatement.setString(4,(String) message.getMessageArray().get(4));
+                preparedStatement.setString(5,(String) message.getMessageArray().get(5));
+                preparedStatement.setString(6,(String) message.getMessageArray().get(6));
+                preparedStatement.setInt(7,Integer.parseInt((String) message.getMessageArray().get(0)));
                 break;
             case StaffRedact:
                 query = "UPDATE staff set salary = ?,goverment = ?,date = ?";

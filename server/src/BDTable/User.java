@@ -14,16 +14,12 @@ public class User implements Serializable {
     Role role = Role.FAIL;
     String login;
     String password;
+    String name;
+    String lastname;
+    String phone;
     int id;
 
     public User() {
-    }
-
-    public User(int id, Role role, String login, String password) {
-        this.id = id;
-        this.role = role;
-        this.login = login;
-        this.password = password;
     }
 
     public User(ResultSet resultSet) throws SQLException {
@@ -31,6 +27,9 @@ public class User implements Serializable {
         this.role = setRole(resultSet.getString("role"));
         this.login = resultSet.getString("login");
         this.password = resultSet.getString("password");
+        this.name = resultSet.getString("name");
+        this.lastname = resultSet.getString("lastname");
+        this.phone = resultSet.getString("phone");
     }
 
     public int getId() {
@@ -89,7 +88,7 @@ public class User implements Serializable {
     }
 
     public String[] toStringArray() {
-        return new String[]{String.valueOf(id),login,password,String.valueOf(role)};
+        return new String[]{String.valueOf(id),login,password,String.valueOf(role),name,lastname,phone};
     }
 
     @Override

@@ -11,12 +11,14 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import javax.swing.text.MaskFormatter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public class UserPanel extends JPanel implements SocketGuiInterface {
@@ -24,7 +26,10 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
             "id",
             "Логин",
             "Пароль",
-            "Роль"
+            "Роль",
+            "Имя",
+            "Фамилия",
+            "Телефон"
     };
 
     ObjectOutputStream clientSendStream;
@@ -34,18 +39,21 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
     JTabbedPane tabbedPane;
 
 
-    JButton btnTabDelete;
-
     JPanel tabDeletePanel;
     JPanel tabInsertPanel;
-    //JPanel tabModifyPanel;
+
+    JFormattedTextField ftfLogin;
+    JFormattedTextField ftfPassword;
 
     JFormattedTextField ftfFName;
     JFormattedTextField ftfSName;
+    JFormattedTextField ftfPhone;
     JComboBox comboBox;
 
     JButton btnTabAdd;
     JButton btnTabRedact;
+    JButton btnTabDelete;
+
     private int id;
 
 
@@ -76,27 +84,27 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
         tabDeletePanel.setLayout(null);
         btnTabDelete = new JButton("Удалить");
         btnTabDelete.addActionListener(new UserPanel.ButtonActionListener());
-        btnTabDelete.setBounds(10, 50, 90, 20);
+        btnTabDelete.setBounds(10, 50, 120, 20);
         tabDeletePanel.add(btnTabDelete);
 
         tabInsertPanel = new JPanel();
         tabInsertPanel.setLayout(null);
 
-        btnTabAdd = new JButton("Добавить");
+        btnTabAdd = new JButton("Зарегестрировать");
         btnTabAdd.addActionListener(new ButtonActionListener());
-        btnTabAdd.setBounds(300, 70, 100, 20);
+        btnTabAdd.setBounds(300, 70, 120, 20);
 
         btnTabRedact = new JButton("Изменить");
         btnTabRedact.addActionListener(new ButtonActionListener());
-        btnTabRedact.setBounds(300, 90, 100, 20);
+        btnTabRedact.setBounds(300, 90, 120, 20);
         //tabModifyPanel = new JPanel();
 
-        ftfFName = new JFormattedTextField();
-        ftfFName.setBounds(100, 5, 90, 20);
+        ftfLogin = new JFormattedTextField();
+        ftfLogin.setBounds(100, 5, 120, 20);
         //ftfName.addKeyListener(new TftCaractersListener());
 
-        ftfSName = new JFormattedTextField();
-        ftfSName.setBounds(100, 35, 90, 20);
+        ftfPassword = new JFormattedTextField();
+        ftfPassword.setBounds(100, 35, 120, 20);
         //ftfCount.addKeyListener(new TftCaractersListener());
 
         String[] items = {
@@ -104,15 +112,58 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
                 "Пользователь",
         };
         comboBox = new JComboBox(items);
-        comboBox.setBounds(100, 55, 90, 20);
+        comboBox.setBounds(100, 55, 120, 20);
 
         JLabel lbLogin = new JLabel("Логин");
         JLabel lbPassword = new JLabel("Пароль");
         JLabel lbRole = new JLabel("Роль");
 
-        lbLogin.setBounds(5, 5, 90, 20);
-        lbPassword.setBounds(5, 30, 90, 20);
-        lbRole.setBounds(5, 55, 90, 20);
+        lbLogin.setBounds(5, 5, 120, 20);
+        lbPassword.setBounds(5, 30, 120, 20);
+        lbRole.setBounds(5, 55, 120, 20);
+
+        MaskFormatter mf = null;
+        try {
+            mf = new MaskFormatter("+375(" + "##" + ")" + "###-##-##");
+            mf.setPlaceholderCharacter('_');
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        JLabel lbFName = new JLabel("Имя");
+        JLabel lbSName = new JLabel("Фамилия");
+        JLabel lbPhone = new JLabel("Телефон");
+
+        lbFName.setBounds(5, 80, 120, 20);
+        lbSName.setBounds(5, 105, 120, 20);
+        lbPhone.setBounds(5, 130, 120, 20);
+
+        ftfPhone = new JFormattedTextField(mf);
+        ftfPhone.setBounds(100, 130, 120, 20);
+        ftfPhone.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                if (!((c >= '0') && (c <= '9') ||
+                        (c == KeyEvent.VK_BACK_SPACE) ||
+                        (c == KeyEvent.VK_DELETE))) {
+                    JOptionPane.showMessageDialog(null, "Некорректный ввод");
+                    e.consume();
+                }
+            }
+        });
+
+        ftfFName = new JFormattedTextField();
+        ftfFName.setBounds(100, 105, 120, 20);
+
+        ftfSName = new JFormattedTextField();
+        ftfSName.setBounds(100, 80, 120, 20);
+
+        tabInsertPanel.add(lbFName);
+        tabInsertPanel.add(lbSName);
+        tabInsertPanel.add(lbPhone);
+        tabInsertPanel.add(ftfFName);
+        tabInsertPanel.add(ftfSName);
+        tabInsertPanel.add(ftfPhone);
 
         tabInsertPanel.add(lbLogin);
         tabInsertPanel.add(lbPassword);
@@ -121,11 +172,12 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
         tabInsertPanel.add(btnTabAdd);
         tabInsertPanel.add(btnTabRedact);
         tabInsertPanel.add(comboBox);
-        tabInsertPanel.add(ftfFName);
-        tabInsertPanel.add(ftfSName);
+        tabInsertPanel.add(ftfLogin);
+        tabInsertPanel.add(ftfPassword);
 
 
         tabbedPane.addTab("Добавить", tabInsertPanel);
+
 
         JLabel labelDelete = new JLabel("Выберите запись/записи для удаления");
         labelDelete.setBounds(10, 10, 200, 30);
@@ -170,14 +222,6 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
                         e1.printStackTrace();
                     }
                 }
-//
-//                message = new Message();
-//                message.setCommand(Message.cmd.UserRequest);
-//                try {
-//                    clientSendStream.writeObject(message);
-//                } catch (IOException e1) {
-//                    e1.printStackTrace();
-//                }
             }
             if (e.getSource() == btnTabAdd) {
                 setSendData(Message.cmd.UserAdd);
@@ -196,15 +240,20 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
         }
     }
 
-    private void setSendData(Message.cmd cmd){
+    private void setSendData(Message.cmd cmd) {
         ArrayList<Object> addData = new ArrayList<>();
-        addData.add(ftfFName.getText());
-        addData.add(ftfSName.getText());
+        addData.add(String.valueOf(id));
+        addData.add(ftfLogin.getText());
+        addData.add(ftfPassword.getText());
 
         if (comboBox.getSelectedIndex() == 0)
             addData.add(String.valueOf(User.Role.ADMIN));
         else
             addData.add(String.valueOf(User.Role.USER));
+
+        addData.add(ftfFName.getText());
+        addData.add(ftfSName.getText());
+        addData.add(ftfPhone.getText());
 
         message = new Message();
 
@@ -256,12 +305,15 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
             if (selectedRow >= 0) {
                 TableModel model = table.getModel();
                 id = Integer.parseInt((String) model.getValueAt(selectedRow, 0));
-                ftfFName.setValue(model.getValueAt(selectedRow, 1));
-                ftfSName.setValue(model.getValueAt(selectedRow, 2));
+                ftfLogin.setValue(model.getValueAt(selectedRow, 1));
+                ftfPassword.setValue(model.getValueAt(selectedRow, 2));
                 if (String.valueOf(User.Role.ADMIN) == model.getValueAt(selectedRow, 3))
                     comboBox.setSelectedIndex(0);
                 else
                     comboBox.setSelectedIndex(1);
+                ftfFName.setValue(model.getValueAt(selectedRow,4));
+                ftfSName.setValue(model.getValueAt(selectedRow,5));
+                ftfPhone.setValue(model.getValueAt(selectedRow,6));
             }
 
         }

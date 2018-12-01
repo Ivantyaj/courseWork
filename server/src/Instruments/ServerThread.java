@@ -182,16 +182,17 @@ public class ServerThread extends Thread {
 
         } catch (IOException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
-//            message = new Message(); ///хзхзхзххзхззхз
-//            message.setCommand(Message.cmd.Fail);
-//            try {
-//                serverSendStream.writeObject(message);
-//            } catch (IOException e1) {
-//                e1.printStackTrace();
-//            }
-        } finally {
-            serverGui.removeClient();
+            message = new Message(); ///хзхзхзххзхззхз
+            message.setCommand(Message.cmd.Fail);
+            try {
+                serverSendStream.writeObject(message);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
         }
+//         finally {
+//            serverGui.removeClient();
+//        }
 
     }
 

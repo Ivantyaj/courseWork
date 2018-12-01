@@ -31,6 +31,7 @@ public class Message implements Serializable {
         ReportRequest,
         Evaluate,
         //GraphicsMostCost,
+        Fail
 
     }
     cmd command = cmd.Start;
