@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.ConnectException;
 import java.net.Socket;
 import java.util.ArrayList;
 
@@ -32,11 +33,13 @@ public class Client {
 
         Socket clientSocket;
         try {
+            LogIN uiLogIN = new LogIN("Вход");
+
             clientSocket = new Socket("127.0.0.1", PORT);
             ObjectOutputStream clientSendStream = new ObjectOutputStream(clientSocket.getOutputStream());
             ObjectInputStream clientReadStream = new ObjectInputStream(clientSocket.getInputStream());
 
-            LogIN uiLogIN = new LogIN("Вход");
+
             uiLogIN.setVisible(true);
             uiLogIN.setResizable(false);
             uiLogIN.setLocationRelativeTo(null);
@@ -177,6 +180,10 @@ public class Client {
                         };
 
                         mrpUI.setGraphicsData(floatData);
+                        break;
+                    case FailSQL:
+                        JOptionPane.showMessageDialog(null, "Не удалось выполнить запрос к базе данных\r\n" +
+                                "   Проверьте все введенные вами данные", "ОШИБКА!", JOptionPane.ERROR_MESSAGE);
                         break;
                     default:
                         break;

@@ -18,9 +18,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class StaffPanel extends JPanel implements SocketGuiInterface {
@@ -66,12 +64,11 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
         table = new JTable(new Object[][]{}, columnName);
         JScrollPane scrollPane = new JScrollPane(table);
 
-        //table.setSize(400,50);
         table.setCellSelectionEnabled(false);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         table.setRowSelectionAllowed(true);
         table.getSelectionModel().addListSelectionListener(new TableSelectListener());
-        table.setDefaultEditor(Object.class, null); //? /////////////////////////////////
+        table.setDefaultEditor(Object.class, null);
 
         scrollPane.setBounds(10, 10, 890, 350);
         //add(table);
@@ -96,23 +93,12 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
         btnTabRedact = new JButton("Изменить");
         btnTabRedact.addActionListener(new ButtonActionListener());
         btnTabRedact.setBounds(300, 90, 100, 20);
-        //tabModifyPanel = new JPanel();
 
         ftfFName = new JFormattedTextField();
         ftfFName.setBounds(100, 5, 90, 20);
-        //ftfName.addKeyListener(new TftCaractersListener());
 
         ftfSName = new JFormattedTextField();
         ftfSName.setBounds(100, 35, 90, 20);
-        //ftfCount.addKeyListener(new TftCaractersListener());
-
-        MaskFormatter mf = null;
-        try {
-            mf = new MaskFormatter("####-##-##");
-            mf.setPlaceholderCharacter('_');
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
 
         datePanel = new DatePanel();
         datePanel.setBounds(100,55,90,20);
@@ -131,7 +117,6 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
 
         tabInsertPanel.add(btnTabAdd);
         tabInsertPanel.add(btnTabRedact);
-        //tabInsertPanel.add(ftfDate);
         tabInsertPanel.add(datePanel);
         tabInsertPanel.add(ftfFName);
         tabInsertPanel.add(ftfSName);
@@ -206,7 +191,7 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
             addData.add(String.valueOf(id));
             addData.add(ftfFName.getText());
             addData.add(ftfSName.getText());
-            addData.add(datePanel.getTextDate());
+            addData.add(datePanel.getText());
 
             message = new Message();
 
@@ -262,7 +247,7 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
                 ftfFName.setValue(model.getValueAt(selectedRow, 1));
                 ftfSName.setValue(model.getValueAt(selectedRow, 2));
                 //ftfDate.setValue(model.getValueAt(selectedRow,3));
-                datePanel.setValueData(model.getValueAt(selectedRow,3));
+                datePanel.setValue(model.getValueAt(selectedRow,3));
             }
 
         }

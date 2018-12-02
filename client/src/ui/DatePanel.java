@@ -51,11 +51,11 @@ public class DatePanel extends JPanel {
         //datePicker.setSize(width,height);
     }
     
-    public String getTextDate(){
+    public String getText(){
         return datePicker.getJFormattedTextField().getText();
     }
 
-    public void setValueData(Object value){
+    public void setValue(Object value){
         datePicker.getJFormattedTextField().setValue(value);
     }
     private class DateLabelFormatter extends JFormattedTextField.AbstractFormatter {

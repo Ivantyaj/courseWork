@@ -118,8 +118,8 @@ public class DB extends JFrame implements SocketGuiInterface {
 //            }
 ////            else if (e.getSource() == btnEnter) {
 ////                ArrayList<Object> stringArrayList = new ArrayList<>();
-////                stringArrayList.add(textFieldLogin.getTextDate());
-////                stringArrayList.add(textFieldPassword.getTextDate());
+////                stringArrayList.add(textFieldLogin.getText());
+////                stringArrayList.add(textFieldPassword.getText());
 ////                message.setMessageArray(stringArrayList);
 ////                message.setCommand(Message.cmd.LogIn);
 ////                try {

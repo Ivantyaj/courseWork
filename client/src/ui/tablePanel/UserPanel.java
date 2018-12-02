@@ -80,23 +80,22 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
 
         tabbedPane = new JTabbedPane();
 
-        tabDeletePanel = new JPanel();
-        tabDeletePanel.setLayout(null);
-        btnTabDelete = new JButton("Удалить");
-        btnTabDelete.addActionListener(new UserPanel.ButtonActionListener());
-        btnTabDelete.setBounds(10, 50, 120, 20);
-        tabDeletePanel.add(btnTabDelete);
+
+
+        //JLabel =
+
+
 
         tabInsertPanel = new JPanel();
         tabInsertPanel.setLayout(null);
 
         btnTabAdd = new JButton("Зарегестрировать");
         btnTabAdd.addActionListener(new ButtonActionListener());
-        btnTabAdd.setBounds(300, 70, 120, 20);
+        btnTabAdd.setBounds(300, 70, 140, 20);
 
         btnTabRedact = new JButton("Изменить");
         btnTabRedact.addActionListener(new ButtonActionListener());
-        btnTabRedact.setBounds(300, 90, 120, 20);
+        btnTabRedact.setBounds(300, 100, 140, 20);
         //tabModifyPanel = new JPanel();
 
         ftfLogin = new JFormattedTextField();
@@ -104,7 +103,7 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
         //ftfName.addKeyListener(new TftCaractersListener());
 
         ftfPassword = new JFormattedTextField();
-        ftfPassword.setBounds(100, 35, 120, 20);
+        ftfPassword.setBounds(100, 45, 120, 20);
         //ftfCount.addKeyListener(new TftCaractersListener());
 
         String[] items = {
@@ -112,15 +111,15 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
                 "Пользователь",
         };
         comboBox = new JComboBox(items);
-        comboBox.setBounds(100, 55, 120, 20);
+        comboBox.setBounds(100, 65, 120, 20);
 
         JLabel lbLogin = new JLabel("Логин");
         JLabel lbPassword = new JLabel("Пароль");
         JLabel lbRole = new JLabel("Роль");
 
         lbLogin.setBounds(5, 5, 120, 20);
-        lbPassword.setBounds(5, 30, 120, 20);
-        lbRole.setBounds(5, 55, 120, 20);
+        lbPassword.setBounds(5, 40, 120, 20);
+        lbRole.setBounds(5, 65, 120, 20);
 
         MaskFormatter mf = null;
         try {
@@ -134,12 +133,12 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
         JLabel lbSName = new JLabel("Фамилия");
         JLabel lbPhone = new JLabel("Телефон");
 
-        lbFName.setBounds(5, 80, 120, 20);
-        lbSName.setBounds(5, 105, 120, 20);
-        lbPhone.setBounds(5, 130, 120, 20);
+        lbFName.setBounds(5, 90, 120, 20);
+        lbSName.setBounds(5, 115, 120, 20);
+        lbPhone.setBounds(5, 140, 120, 20);
 
         ftfPhone = new JFormattedTextField(mf);
-        ftfPhone.setBounds(100, 130, 120, 20);
+        ftfPhone.setBounds(100, 140, 120, 20);
         ftfPhone.addKeyListener(new KeyAdapter() {
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();
@@ -153,10 +152,10 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
         });
 
         ftfFName = new JFormattedTextField();
-        ftfFName.setBounds(100, 105, 120, 20);
+        ftfFName.setBounds(100, 115, 120, 20);
 
         ftfSName = new JFormattedTextField();
-        ftfSName.setBounds(100, 80, 120, 20);
+        ftfSName.setBounds(100, 90, 120, 20);
 
         tabInsertPanel.add(lbFName);
         tabInsertPanel.add(lbSName);
@@ -178,11 +177,17 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
 
         tabbedPane.addTab("Добавить", tabInsertPanel);
 
+        tabDeletePanel = new JPanel();
+        tabDeletePanel.setLayout(null);
+        btnTabDelete = new JButton("Удалить");
+        btnTabDelete.addActionListener(new UserPanel.ButtonActionListener());
+        btnTabDelete.setBounds(10, 65, 120, 35);
 
         JLabel labelDelete = new JLabel("Выберите запись/записи для удаления");
-        labelDelete.setBounds(10, 10, 200, 30);
+        labelDelete.setBounds(10, 10, 300, 30);
 
         tabDeletePanel.add(labelDelete);
+        tabDeletePanel.add(btnTabDelete);
 
         tabbedPane.addTab("Удалить", tabDeletePanel);
         //tabbedPane.addTab("Изменить", tabModifyPanel);
@@ -207,6 +212,15 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
         public void actionPerformed(ActionEvent e) {
 
             if (e.getSource() == btnTabDelete) {
+
+                int dialogResult = JOptionPane.showConfirmDialog(tabDeletePanel,
+                    "Вы уверены?\r\nЭто действие необратимо!",
+                    "Удаление",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.WARNING_MESSAGE);
+                if (dialogResult != JOptionPane.YES_OPTION){
+                    return;
+                }
                 int[] selectedRows = table.getSelectedRows();
                 ArrayList<Object> listID = new ArrayList<>();
                 for (int id : selectedRows) {

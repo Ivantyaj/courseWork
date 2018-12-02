@@ -241,8 +241,8 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
 //            }
 //            if (e.getSource() == btnTabAdd) {
 //                ArrayList<Object> addData = new ArrayList<>();
-//                addData.add(ftfFName.getTextDate());
-//                addData.add(ftfSName.getTextDate());
+//                addData.add(ftfFName.getText());
+//                addData.add(ftfSName.getText());
 //
 //                if (comboBox.getSelectedIndex() == 0)
 //                    addData.add(String.valueOf(User.Role.ADMIN));
@@ -331,7 +331,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
                     JOptionPane.showMessageDialog(null, "Недостаточно прав для доступа!\nОбратитесь к администратору!");
                     return;
                 }
-                if(datePanel.getTextDate().equals("")){
+                if(datePanel.getText().equals("")){
                     JOptionPane.showMessageDialog(null, "Выберите дату!");
                     return;
                 }
@@ -347,7 +347,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
                     listID.add(tableAccessories.getValueAt(selectAccessories, 0));
                     listID.add(tableProdaction.getValueAt(selectProdaction, 0));
                     listID.add(String.valueOf(user.getId()));
-                    listID.add(datePanel.getTextDate());
+                    listID.add(datePanel.getText());
 
                     if (cbDefect.isSelected()) {
                         int index = comboBox.getSelectedIndex();

@@ -251,7 +251,7 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
             }
             if (e.getSource() == btnFilter) {
 
-                if (datePanelFrom.getTextDate().equals("") || datePanelTo.getTextDate().equals("")
+                if (datePanelFrom.getText().equals("") || datePanelTo.getText().equals("")
                         || ftfSumFrom.getText().equals("") || ftfSumTo.getText().equals("")) {
                     JOptionPane.showMessageDialog(null, "Необходимо ввести все данные!");
                     return;
@@ -260,8 +260,8 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
                 message = new Message();
                 ArrayList<Object> filterList = new ArrayList<>();
 
-                filterList.add(datePanelFrom.getTextDate());
-                filterList.add(datePanelTo.getTextDate());
+                filterList.add(datePanelFrom.getText());
+                filterList.add(datePanelTo.getText());
                 filterList.add(ftfSumFrom.getText());
                 filterList.add(ftfSumTo.getText());
 
@@ -278,7 +278,7 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
                 ArrayList<Object> filterList = new ArrayList<>();
 
                 filterList.add(ftfIdFind.getText());
-                filterList.add(datePanelFind.getTextDate());
+                filterList.add(datePanelFind.getText());
                 filterList.add(ftfSumFind.getText());
 
                 message.setMessageArray(filterList);

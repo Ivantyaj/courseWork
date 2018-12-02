@@ -65,16 +65,10 @@ public class ServerGUI extends JFrame {
         textAreaMessage.setEditable(false);
         JScrollPane sp = new JScrollPane(textAreaMessage);
 
-
-        //textIP.setEditable(false);
-
         setLayout(null);
 
-       // textPort.setBounds(10, 10, 70, 20);
         btnStart.setBounds(10, 50, 90, 20);
-        //btnStop.setBounds(10, 65, 70, 20);
         labelClient.setBounds(10, 105, 90, 20);
-        //textAreaMessage.setBounds(10, 130, 300, 200);
         sp.setBounds(10, 130, 300, 200);
 
         JLabel lbPort = new JLabel("Port:");
@@ -93,23 +87,16 @@ public class ServerGUI extends JFrame {
         ftfPort.setText(String.valueOf(PORT));
 
         add(btnStart);
-        //add(btnStop);
         add(lbPort);
 
         add(labelClient);
-//        add(textAreaMessage);
         add(sp);
         add(ftfPort);
 
-
-        //btnStop.addActionListener(new ServerGUI.ButtonActionListener());
         btnStart.addActionListener(new ServerGUI.ButtonActionListener());
 
     }
 
-    public int getClientCount() {
-        return clientCount;
-    }
 
     public void addClient() {
         clientCount++;
@@ -118,7 +105,7 @@ public class ServerGUI extends JFrame {
 
     public void removeClient() {
         clientCount--;
-        labelClient.setText("Client message: " + String.valueOf(clientCount));
+        labelClient.setText("Client: " + String.valueOf(clientCount));
     }
 
     public void setMessage(String message) {

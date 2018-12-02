@@ -145,7 +145,7 @@ public class SQLRequest {
         }
     }
 
-    private void insertInto(Message message) throws SQLException {
+    private void insertInto(Message message) throws SQLException, NumberFormatException {
         String query = null;
         PreparedStatement preparedStatement = null;
         switch (message.getCommand()){
@@ -187,7 +187,7 @@ public class SQLRequest {
     }
 
     //TODO вынести preparedStatement
-    private void updateData(Message message) throws SQLException {
+    private void updateData(Message message) throws SQLException, NumberFormatException {
         String query = null;
         PreparedStatement preparedStatement = null;
         switch (message.getCommand()){

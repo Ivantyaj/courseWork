@@ -11,16 +11,12 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import javax.swing.text.MaskFormatter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class ProdactionPanel extends JPanel implements SocketGuiInterface {
@@ -205,7 +201,7 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
         addData.add(ftfEnergy.getText());
         addData.add(ftfTariff.getText());
         addData.add(ftfAmortisation.getText());
-        addData.add(datePanel.getTextDate());
+        addData.add(datePanel.getText());
 
         message = new Message();
 
@@ -261,7 +257,7 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
                 ftfEnergy.setValue(model.getValueAt(selectedRow, 1));
                 ftfTariff.setValue(model.getValueAt(selectedRow, 2));
                 ftfAmortisation.setValue(model.getValueAt(selectedRow, 3));
-                datePanel.setValueData(model.getValueAt(selectedRow, 4));
+                datePanel.setValue(model.getValueAt(selectedRow, 4));
             }
 
         }

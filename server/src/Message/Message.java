@@ -33,7 +33,7 @@ public class Message implements Serializable {
         RequestReportOne,
         SearchReports,
         FilterReports,
-        Fail
+        FailSQL
 
     }
     cmd command = cmd.Start;
