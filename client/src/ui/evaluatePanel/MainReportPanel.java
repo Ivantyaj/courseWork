@@ -1,5 +1,6 @@
 package ui.evaluatePanel;
 
+import BDTable.User;
 import Message.Message;
 import org.jfree.chart.ChartPanel;
 import ui.DatePanel;
@@ -60,7 +61,8 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
     JLabel lbTransportSum;
     JLabel lbDebtPersent;
 
-    private int idUser;
+    //private int idUser;
+    private User user;
 
 
     private chartPieUI ui;
@@ -69,6 +71,10 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
     public MainReportPanel(ObjectOutputStream css, Message mes) {
         setClientSendStream(css);
         setMessage(mes);
+
+        user = new User();
+        user.setId(-1);
+        user.setRole(User.Role.FAIL);
 
         setSize(900, 680);
         setLayout(null);
@@ -184,15 +190,18 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         add(cbAdditional);
     }
 
+    public void setUser(User user) {
+        this.user = user;
+        //this.setIdUser(user.getId());
+    }
+
     public int getIdUser() {
-        return idUser;
+        return user.getId();
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
-    }
-
-    final static String DATE_FORMAT = "yyyy-MM-dd";
+//    public void setIdUser(int idUser) {
+//        this.user.setId(idUser);
+//    }
 
     public void setClientSendStream(ObjectOutputStream clientSendStream) {
         this.clientSendStream = clientSendStream;
@@ -318,6 +327,10 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         public void actionPerformed(ActionEvent e) {
 
             if (e.getSource() == btnEvaluate) {
+                if(user.getRole() == User.Role.USER){
+                    JOptionPane.showMessageDialog(null, "Недостаточно прав для доступа!\nОбратитесь к администратору!");
+                    return;
+                }
                 if(datePanel.getTextDate().equals("")){
                     JOptionPane.showMessageDialog(null, "Выберите дату!");
                     return;
@@ -333,7 +346,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
                     listID.add(tableStaff.getValueAt(selectStaff, 0));
                     listID.add(tableAccessories.getValueAt(selectAccessories, 0));
                     listID.add(tableProdaction.getValueAt(selectProdaction, 0));
-                    listID.add(String.valueOf(idUser));
+                    listID.add(String.valueOf(user.getId()));
                     listID.add(datePanel.getTextDate());
 
                     if (cbDefect.isSelected()) {

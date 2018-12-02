@@ -35,6 +35,7 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
         user = new User();
         user.setRole(User.Role.USER);
 
+
         setSize(150, 200);
 
         btnUser = new JButton("Расчет затрат");
@@ -48,6 +49,7 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
         evaluateUI = new EvaluateUI(clientSendStream, message);
         evaluateUI.setVisible(false);
         evaluateUI.setLocationRelativeTo(null);
+        evaluateUI.setUser(user);
 
         //setDefaultCloseOperation(HIDE_ON_CLOSE);
 

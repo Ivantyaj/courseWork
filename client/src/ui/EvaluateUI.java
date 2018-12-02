@@ -89,7 +89,8 @@ public class EvaluateUI extends JFrame implements SocketGuiInterface {
 
     public void setUser(User user) {
         this.user = user;
-        tabMainReportPanel.setIdUser(user.getId());
+        tabMainReportPanel.setUser(user);
+        //tabMainReportPanel.setIdUser(user.getId());
     }
 
     void requestAll(Message mes, ObjectOutputStream sendStream) throws IOException {
