@@ -2,6 +2,8 @@ package ui.tablePanel;
 
 import Message.Message;
 import BDTable.User;
+import TextField.NumTextField;
+import TextField.StrTextField;
 import ui.SocketGuiInterface;
 
 import javax.swing.*;
@@ -125,24 +127,13 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
         lbSName.setBounds(5, 115, 120, 20);
         lbPhone.setBounds(5, 140, 120, 20);
 
-        ftfPhone = new JFormattedTextField(mf);
+        ftfPhone = new NumTextField(mf);
         ftfPhone.setBounds(100, 140, 120, 20);
-        ftfPhone.addKeyListener(new KeyAdapter() {
-            public void keyTyped(KeyEvent e) {
-                char c = e.getKeyChar();
-                if (!((c >= '0') && (c <= '9') ||
-                        (c == KeyEvent.VK_BACK_SPACE) ||
-                        (c == KeyEvent.VK_DELETE))) {
-                    JOptionPane.showMessageDialog(null, "Некорректный ввод");
-                    e.consume();
-                }
-            }
-        });
 
-        ftfFName = new JFormattedTextField();
+        ftfFName = new StrTextField();
         ftfFName.setBounds(100, 115, 120, 20);
 
-        ftfSName = new JFormattedTextField();
+        ftfSName = new StrTextField();
         ftfSName.setBounds(100, 90, 120, 20);
 
         tabInsertPanel.add(lbFName);
@@ -168,7 +159,7 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
         tabDeletePanel = new JPanel();
         tabDeletePanel.setLayout(null);
         btnTabDelete = new JButton("Удалить");
-        btnTabDelete.addActionListener(new UserPanel.ButtonActionListener());
+        btnTabDelete.addActionListener(new ButtonActionListener());
         btnTabDelete.setBounds(10, 65, 120, 35);
 
         JLabel labelDelete = new JLabel("Выберите запись/записи для удаления");

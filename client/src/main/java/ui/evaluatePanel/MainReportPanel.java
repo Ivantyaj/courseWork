@@ -2,6 +2,7 @@ package ui.evaluatePanel;
 
 import BDTable.User;
 import Message.Message;
+import TextField.NumTextField;
 import ui.DatePanel;
 import ui.SocketGuiInterface;
 
@@ -138,7 +139,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         cbTransport.setBounds(10, 490, 250, 20);
         cbTransport.addItemListener(new CheckBoxActionListener());
 
-        ftfTransportSum = new JFormattedTextField();
+        ftfTransportSum = new NumTextField();
         ftfTransportSum.setBounds(30, 520, 90, 20);
         ftfTransportSum.setEnabled(false);
 
@@ -146,7 +147,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         cbAdditional.setBounds(10, 550, 250, 20);
         cbAdditional.addItemListener(new CheckBoxActionListener());
 
-        ftfAddSum = new JFormattedTextField();
+        ftfAddSum = new NumTextField();
         ftfAddSum.setBounds(30, 580, 90, 20);
         ftfAddSum.setEnabled(false);
 

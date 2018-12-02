@@ -15,7 +15,6 @@ public class SQLRequest {
 
     private DBWorker dbWorker = new DBWorker();
 
-    //TODO объединить case
     public ResultSet executeSqlQuery(Message message) throws SQLException {
         ResultSet resultSet = null;
         switch (message.getCommand()){
@@ -188,7 +187,6 @@ public class SQLRequest {
         preparedStatement.execute();
     }
 
-    //TODO вынести preparedStatement
     private void updateData(Message message) throws SQLException, NumberFormatException {
         String query = null;
         PreparedStatement preparedStatement = null;
@@ -234,7 +232,6 @@ public class SQLRequest {
         preparedStatement.execute();
     }
 
-    //TODO divide
     public ArrayList<Object> requestDataForEvaluate(int idStaff, int idProdaction, int idRawPackage) throws SQLException {
         String query = "select * from %s where id=?";
         PreparedStatement preparedStatement;

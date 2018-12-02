@@ -1,6 +1,8 @@
 package ui.tablePanel;
 
 import Message.Message;
+import TextField.NumTextField;
+import TextField.StrTextField;
 import ui.SocketGuiInterface;
 
 import javax.swing.*;
@@ -68,7 +70,7 @@ public class RawPackagePanel extends JPanel implements SocketGuiInterface {
         tabDeletePanel.setLayout(null);
         btnTabDelete = new JButton("Удалить");
         btnTabDelete.addActionListener(new RawPackagePanel.ButtonActionListener());
-        btnTabDelete.setBounds(10, 50, 90, 20);
+        btnTabDelete.setBounds(10, 65, 120, 35);;
         tabDeletePanel.add(btnTabDelete);
 
         tabInsertPanel = new JPanel();
@@ -82,13 +84,13 @@ public class RawPackagePanel extends JPanel implements SocketGuiInterface {
         btnTabRedact.addActionListener(new RawPackagePanel.ButtonActionListener());
         btnTabRedact.setBounds(300, 90, 100, 20);
 
-        ftfName = new JFormattedTextField();
+        ftfName = new StrTextField();
         ftfName.setBounds(130, 5, 90, 20);
 
-        ftfCount = new JFormattedTextField();
+        ftfCount = new NumTextField();
         ftfCount.setBounds(130, 35, 90, 20);
 
-        ftfPrice = new JFormattedTextField();
+        ftfPrice = new NumTextField();
         ftfPrice.setBounds(130, 65, 90, 20);
 
         JLabel lbName = new JLabel("Назначение пакета");
@@ -112,7 +114,7 @@ public class RawPackagePanel extends JPanel implements SocketGuiInterface {
         tabbedPane.addTab("Добавить", tabInsertPanel);
 
         JLabel labelDelete = new JLabel("Выберите запись/записи для удаления");
-        labelDelete.setBounds(10, 10, 200, 30);
+        labelDelete.setBounds(10, 10, 300, 30);
 
         tabDeletePanel.add(labelDelete);
 
@@ -137,6 +139,15 @@ public class RawPackagePanel extends JPanel implements SocketGuiInterface {
         public void actionPerformed(ActionEvent e) {
 
             if (e.getSource() == btnTabDelete) {
+                int dialogResult = JOptionPane.showConfirmDialog(tabDeletePanel,
+                        "Вы уверены?\r\nЭто действие необратимо!",
+                        "Удаление",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.WARNING_MESSAGE);
+                if (dialogResult != JOptionPane.YES_OPTION){
+                    return;
+                }
+
                 int[] selectedRows = table.getSelectedRows();
                 ArrayList<Object> listID = new ArrayList<>();
                 for (int id : selectedRows) {

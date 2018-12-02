@@ -1,6 +1,7 @@
 package ui.tablePanel;
 
 import Message.Message;
+import TextField.NumTextField;
 import ui.DatePanel;
 import ui.SocketGuiInterface;
 
@@ -80,7 +81,7 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
         tabDeletePanel.setLayout(null);
         btnTabDelete = new JButton("Удалить");
         btnTabDelete.addActionListener(new ProdactionPanel.ButtonActionListener());
-        btnTabDelete.setBounds(10, 50, 90, 20);
+        btnTabDelete.setBounds(10, 65, 120, 35);
         tabDeletePanel.add(btnTabDelete);
 
         tabInsertPanel = new JPanel();
@@ -93,16 +94,14 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
         btnTabRedact = new JButton("Изменить");
         btnTabRedact.addActionListener(new ProdactionPanel.ButtonActionListener());
         btnTabRedact.setBounds(300, 90, 100, 20);
-        //tabModifyPanel = new JPanel();
 
-        ftfEnergy = new JFormattedTextField();
+        ftfEnergy = new NumTextField();
         ftfEnergy.setBounds(100, 5, 90, 20);
-        //ftfName.addKeyListener(new TftCaractersListener());
 
-        ftfTariff = new JFormattedTextField();
+        ftfTariff = new NumTextField();
         ftfTariff.setBounds(100, 35, 90, 20);
 
-        ftfAmortisation = new JFormattedTextField();
+        ftfAmortisation = new NumTextField();
         ftfAmortisation.setBounds(100, 65, 90, 20);
 
         datePanel = new DatePanel();
@@ -134,7 +133,7 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
         tabbedPane.addTab("Добавить", tabInsertPanel);
 
         JLabel labelDelete = new JLabel("Выберите запись/записи для удаления");
-        labelDelete.setBounds(10, 10, 200, 30);
+        labelDelete.setBounds(10, 10, 300, 30);
 
         tabDeletePanel.add(labelDelete);
 
@@ -161,6 +160,15 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
         public void actionPerformed(ActionEvent e) {
 
             if (e.getSource() == btnTabDelete) {
+                int dialogResult = JOptionPane.showConfirmDialog(tabDeletePanel,
+                        "Вы уверены?\r\nЭто действие необратимо!",
+                        "Удаление",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.WARNING_MESSAGE);
+                if (dialogResult != JOptionPane.YES_OPTION){
+                    return;
+                }
+
                 int[] selectedRows = table.getSelectedRows();
                 ArrayList<Object> listID = new ArrayList<>();
                 for (int id : selectedRows) {

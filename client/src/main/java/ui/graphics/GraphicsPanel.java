@@ -2,6 +2,7 @@ package ui.graphics;
 
 import BDTable.User;
 import Message.Message;
+import TextField.NumTextField;
 import org.jfree.chart.ChartPanel;
 import ui.DatePanel;
 import ui.SocketGuiInterface;
@@ -136,10 +137,10 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
         JLabel lbSumTo = new JLabel("Сумма до");
         lbSumTo.setBounds(110, 55, 100, 20);
 
-        ftfSumFrom = new JFormattedTextField();
+        ftfSumFrom = new NumTextField();
         ftfSumFrom.setBounds(5, 80, 100, 20);
 
-        ftfSumTo = new JFormattedTextField();
+        ftfSumTo = new NumTextField();
         ftfSumTo.setBounds(110, 80, 100, 20);
 
         tabFilterPanel.add(lbDateFrom);
@@ -162,11 +163,11 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
         JLabel lbSumFind = new JLabel("Сумма:");
         lbSumFind.setBounds(5, 65, 100, 20);
 
-        ftfIdFind = new JFormattedTextField();
+        ftfIdFind = new NumTextField();
         ftfIdFind.setBounds(100, 5, 100, 20);
         datePanelFind = new DatePanel();
         datePanelFind.setBounds(100, 30, 100, 20);
-        ftfSumFind = new JFormattedTextField();
+        ftfSumFind = new NumTextField();
         ftfSumFind.setBounds(100, 65, 100, 20);
 
         btnFind = new JButton("Найти");
