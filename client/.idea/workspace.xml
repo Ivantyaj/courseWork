@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34397994-8a57-4afb-b7da-8c9b0e18214c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Instruments/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instruments/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/Instruments/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Instruments/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/ui/ServerGUI$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/ui/ServerGUI$ButtonActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/ui/ServerGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/ui/ServerGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/out/production/server/Instruments/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Instruments/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/out/production/server/Instruments/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Instruments/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/server/Instruments/ServerThread$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Instruments/ServerThread$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/out/production/server/Instruments/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Instruments/ServerThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI$ButtonActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI$DigitFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI$DigitFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI$TftCaractersListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI$TftCaractersListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/Instruments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Instruments/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/Instruments/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Instruments/Server.java" afterDir="false" />
@@ -94,11 +98,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Instruments/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="188" column="12" selection-start-line="188" selection-start-column="12" selection-end-line="188" selection-end-column="108" />
+            <state relative-caret-position="163">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,7 +150,7 @@
         <entry file="file://$PROJECT_DIR$/../server/src/ui/ServerGUI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="368">
-              <caret line="143" selection-start-line="143" selection-end-line="143" />
+              <caret line="141" selection-start-line="141" selection-end-line="141" />
               <folding>
                 <element signature="e#852#853#0" expanded="true" />
                 <element signature="e#895#896#0" expanded="true" />
@@ -177,11 +181,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/UserPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="286" selection-start-line="286" selection-end-line="298" selection-end-column="5" />
+            <state relative-caret-position="3728">
+              <caret line="288" column="29" lean-forward="true" selection-start-line="288" selection-start-column="29" selection-end-line="288" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -305,7 +309,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="133" />
     <option name="y" value="-1058" />
     <option name="width" value="1696" />
@@ -382,7 +386,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543762435730" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543764363637" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Java/Pattern" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -481,7 +485,7 @@
       <workItem from="1543229472845" duration="1026000" />
       <workItem from="1543236782820" duration="18391000" />
       <workItem from="1543308507282" duration="5947000" />
-      <workItem from="1543669146469" duration="46128000" />
+      <workItem from="1543669146469" duration="47620000" />
     </task>
     <servers />
   </component>
@@ -497,10 +501,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151268000" />
+    <option name="totallyTimeSpent" value="152760000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="133" y="-1058" width="1696" height="1026" extended-state="6" />
+    <frame x="133" y="-1058" width="1696" height="1026" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18337408" />
@@ -514,7 +518,7 @@
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32907802" />
       <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.27914798" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.39716312" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.396861" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -593,6 +597,12 @@
           <line>329</line>
           <properties />
           <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Instruments/Client.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/ui/graphics/GraphicsPanel.java</url>
@@ -890,7 +900,7 @@
     <entry file="file://$PROJECT_DIR$/../server/src/ui/ServerGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
-          <caret line="143" selection-start-line="143" selection-end-line="143" />
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
           <folding>
             <element signature="e#852#853#0" expanded="true" />
             <element signature="e#895#896#0" expanded="true" />
@@ -902,20 +912,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/UserPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/Instruments/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="286" selection-start-line="286" selection-end-line="298" selection-end-column="5" />
+        <state relative-caret-position="163">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instruments/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/UserPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="188" column="12" selection-start-line="188" selection-start-column="12" selection-end-line="188" selection-end-column="108" />
+        <state relative-caret-position="3728">
+          <caret line="288" column="29" lean-forward="true" selection-start-line="288" selection-start-column="29" selection-end-line="288" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

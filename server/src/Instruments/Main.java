@@ -7,6 +7,7 @@ public class Main {
 
         //Server server = new Server();
         ServerGUI serverGui = ServerGUI.INSTANCE;
+        serverGui.setSize(350,400);
         //serverGui.setServer(server);
         serverGui.setVisible(true);
         serverGui.setResizable(false);

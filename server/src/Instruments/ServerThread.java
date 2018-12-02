@@ -28,7 +28,7 @@ public class ServerThread extends Thread {
 
     Message message = new Message();
 
-    public ServerThread(Socket socket, int maxClient) {
+    public ServerThread(Socket socket) {
         this.socket = socket;
         //  daoFactory = new SqlDaoFactory();
         // connection = daoFactory.getConnection();

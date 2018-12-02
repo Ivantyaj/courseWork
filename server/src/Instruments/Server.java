@@ -14,7 +14,6 @@ public class Server extends Thread {
 
     public static final int PORT = 1502;
 
-    int maxClient;
 
     public void setPort(int port) {
         this.port = port;
@@ -26,9 +25,8 @@ public class Server extends Thread {
     //    this.sPort = sPort;
     //}
 
-    public Server(ServerSocket socket, int maxClient) {
+    public Server(ServerSocket socket) {
         this.serverSocket = socket;
-        this.maxClient = maxClient;
     }
 
 //    public void start() {
@@ -61,8 +59,8 @@ public class Server extends Thread {
         waitFrame.setLocationRelativeTo(null);
         try {
             while (true) {
-                new ServerThread(serverSocket.accept(), maxClient).start();
-                waitFrame.setVisible(false);
+                    new ServerThread(serverSocket.accept()).start();
+                    waitFrame.setVisible(false);
             }
         } catch (IOException e) {
             e.printStackTrace();

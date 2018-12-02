@@ -39,9 +39,6 @@ public class ServerGUI extends JFrame {
     ServerSocket serverSocket;
     JFormattedTextField ftfPort;
 
-
-    JSpinner spinInt;
-
     Server server;
 
 
@@ -66,16 +63,19 @@ public class ServerGUI extends JFrame {
         labelClient = new JLabel("Client: ");
         textAreaMessage = new JTextArea(9, 9);
         textAreaMessage.setEditable(false);
+        JScrollPane sp = new JScrollPane(textAreaMessage);
+
 
         //textIP.setEditable(false);
 
         setLayout(null);
 
        // textPort.setBounds(10, 10, 70, 20);
-        btnStart.setBounds(10, 80, 90, 20);
+        btnStart.setBounds(10, 50, 90, 20);
         //btnStop.setBounds(10, 65, 70, 20);
         labelClient.setBounds(10, 105, 90, 20);
-        textAreaMessage.setBounds(10, 130, 300, 200);
+        //textAreaMessage.setBounds(10, 130, 300, 200);
+        sp.setBounds(10, 130, 300, 200);
 
         JLabel lbPort = new JLabel("Port:");
         lbPort.setBounds(10, 10, 40, 20);
@@ -92,26 +92,23 @@ public class ServerGUI extends JFrame {
         ftfPort.setBounds(50,10,40,20);
         ftfPort.setText(String.valueOf(PORT));
 
-        SpinnerModel numbers = new SpinnerNumberModel(10, 1, 10, 1);
-        spinInt = new JSpinner(numbers);
-        spinInt.setBounds(10,50,40,25);
-
-        JLabel lbSpin = new JLabel("Максимум клиентов:");
-        lbSpin.setBounds(10,30,200,20);
-
         add(btnStart);
         //add(btnStop);
-        add(spinInt);
         add(lbPort);
-        add(lbSpin);
+
         add(labelClient);
-        add(textAreaMessage);
+//        add(textAreaMessage);
+        add(sp);
         add(ftfPort);
 
 
         //btnStop.addActionListener(new ServerGUI.ButtonActionListener());
         btnStart.addActionListener(new ServerGUI.ButtonActionListener());
 
+    }
+
+    public int getClientCount() {
+        return clientCount;
     }
 
     public void addClient() {
@@ -121,7 +118,7 @@ public class ServerGUI extends JFrame {
 
     public void removeClient() {
         clientCount--;
-        labelClient.setText("Client: " + String.valueOf(clientCount));
+        labelClient.setText("Client message: " + String.valueOf(clientCount));
     }
 
     public void setMessage(String message) {
@@ -137,6 +134,7 @@ public class ServerGUI extends JFrame {
                 System.out.println("Start server");
                 start();
                 btnStart.setEnabled(false);
+                ftfPort.setEnabled(false);
             }
         }
     }
@@ -148,7 +146,7 @@ public class ServerGUI extends JFrame {
     private void start() {
         try {
             serverSocket = new ServerSocket(port);
-            new Server(serverSocket, (Integer)spinInt.getValue()).start();
+            new Server(serverSocket).start();
         } catch (IOException e) {
             e.printStackTrace();
         }
