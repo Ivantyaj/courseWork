@@ -65,10 +65,9 @@ public class Client {
                         user = (User) message.getMessageArray().get(0);
                         switch (user.getRole()) {
                             case ADMIN:
+                            case USER:
                                 uiAdminMain.setVisible(true);
                                 uiAdminMain.setUser(user);
-                                break;
-                            case USER:
                                 break;
                             case FAIL:
                                 JOptionPane.showMessageDialog(null, "Данные не верны");
@@ -147,6 +146,8 @@ public class Client {
                     }
                     break;
                     case ReportRequest:
+                    case SearchReports:
+                    case FilterReports:
                         System.out.println(message.getMessageArray());
 
                         ArrayList<Report> reportArrayList = new ArrayList<>();

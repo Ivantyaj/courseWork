@@ -31,6 +31,8 @@ public class Message implements Serializable {
         ReportRequest,
         Evaluate,
         RequestReportOne,
+        SearchReports,
+        FilterReports,
         Fail
 
     }

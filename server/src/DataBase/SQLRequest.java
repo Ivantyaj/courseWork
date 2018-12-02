@@ -88,6 +88,47 @@ public class SQLRequest {
         return preparedStatement.executeQuery();
     }
 
+    public ResultSet searchInReports(Message message) throws SQLException {
+        String query;
+        query = "select * from report WHERE id LIKE ? and date LIKE ? and result LIKE ?";// and date = ? and result = ?";
+//        query = "select * from report WHERE id = ? and date = ? and result = ?";
+        PreparedStatement preparedStatement;
+        preparedStatement = dbWorker.getConnection().prepareStatement(query);
+        String id = (String) message.getMessageArray().get(0);
+        if(id.equals("")){
+            preparedStatement.setString(1,"%");
+        } else {
+            preparedStatement.setString(1,id);
+        }
+        String data = (String) message.getMessageArray().get(1);
+        if(data.equals("")){
+            preparedStatement.setString(2,"%");
+        } else {
+            preparedStatement.setString(2,data);
+        }
+        String result = (String) message.getMessageArray().get(2);
+        if(result.equals("")){
+            preparedStatement.setString(3,"%");
+        } else {
+            preparedStatement.setString(3,result);
+        }
+
+        return preparedStatement.executeQuery();
+    }
+
+    public ResultSet filterReports(Message message) throws SQLException {
+        String query;
+        query = "select * from report WHERE (date BETWEEN ? and ?) and (result BETWEEN ? and ?)";
+        PreparedStatement preparedStatement;
+        preparedStatement = dbWorker.getConnection().prepareStatement(query);
+        preparedStatement.setString(1,(String) message.getMessageArray().get(0));
+        preparedStatement.setString(2,(String) message.getMessageArray().get(1));
+        preparedStatement.setString(3,(String) message.getMessageArray().get(2));
+        preparedStatement.setString(4,(String) message.getMessageArray().get(3));
+
+        return preparedStatement.executeQuery();
+    }
+
     private void deleteFrom(String table, Message message) throws SQLException {
         String query;
         query = "delete from %s where id = ?";

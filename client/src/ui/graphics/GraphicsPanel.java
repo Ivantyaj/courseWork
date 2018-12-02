@@ -8,10 +8,13 @@ import ui.SocketGuiInterface;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -39,6 +42,7 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
     private JButton btnShow;
     private JButton btnFilter;
     private JButton btnFind;
+    private JButton btnToFile;
     private JTable tableReport;
 
     private JPanel tabSearchPanel;
@@ -55,6 +59,8 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
     private JFormattedTextField ftfSumTo;
     private JFormattedTextField ftfSumFind;
     private JFormattedTextField ftfIdFind;
+
+    private JFileChooser fileChooser = null;
 
     public GraphicsPanel(ObjectOutputStream css, Message mes) {
         setClientSendStream(css);
@@ -91,6 +97,13 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
         btnShow.setBounds(10, 630, 130, 25);
         btnShow.addActionListener(new ButtonActionListener());
 
+        btnToFile = new JButton("Сохранить");
+        btnToFile.setBounds(140, 630, 130, 25);
+        btnToFile.addActionListener(new ButtonActionListener());
+
+        // Создание экземпляра JFileChooser
+        fileChooser = new JFileChooser();
+
         tabbedPane = new JTabbedPane();
 
         tabSearchPanel = new JPanel();
@@ -102,26 +115,26 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
         btnFilter.addActionListener(new ButtonActionListener());
 
         JLabel lbDateFrom = new JLabel("Начальная дата:");
-        lbDateFrom.setBounds(5,5,100,20);
+        lbDateFrom.setBounds(5, 5, 100, 20);
         JLabel lbDateTo = new JLabel("Конечная дата:");
-        lbDateTo.setBounds(110,5,100,20);
+        lbDateTo.setBounds(110, 5, 100, 20);
 
         datePanelFrom = new DatePanel();
-        datePanelFrom.setBounds(5,30,90,20);
+        datePanelFrom.setBounds(5, 30, 90, 20);
 
         datePanelTo = new DatePanel();
-        datePanelTo.setBounds(110,30,90,20);
+        datePanelTo.setBounds(110, 30, 90, 20);
 
         JLabel lbSumFrom = new JLabel("Сумма от:");
-        lbSumFrom.setBounds(5,55,100,20);
+        lbSumFrom.setBounds(5, 55, 100, 20);
         JLabel lbSumTo = new JLabel("Сумма до");
-        lbSumTo.setBounds(110,55,100,20);
+        lbSumTo.setBounds(110, 55, 100, 20);
 
         ftfSumFrom = new JFormattedTextField();
-        ftfSumFrom.setBounds(5,80,100,20);
+        ftfSumFrom.setBounds(5, 80, 100, 20);
 
         ftfSumTo = new JFormattedTextField();
-        ftfSumTo.setBounds(110,80,100,20);
+        ftfSumTo.setBounds(110, 80, 100, 20);
 
         tabFilterPanel.add(lbDateFrom);
         tabFilterPanel.add(lbSumFrom);
@@ -137,18 +150,18 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
 
         tabSearchPanel.setLayout(null);
         JLabel lbIdFind = new JLabel("id:");
-        lbIdFind.setBounds(5,5,100,20);
+        lbIdFind.setBounds(5, 5, 100, 20);
         JLabel lbDateFind = new JLabel("Дата:");
-        lbDateFind.setBounds(5,35,100,20);
+        lbDateFind.setBounds(5, 35, 100, 20);
         JLabel lbSumFind = new JLabel("Сумма:");
-        lbSumFind.setBounds(5,65,100,20);
+        lbSumFind.setBounds(5, 65, 100, 20);
 
         ftfIdFind = new JFormattedTextField();
-        ftfIdFind.setBounds(100,5,100,20);
-        datePanelFind  = new DatePanel();
-        datePanelFind.setBounds(100,30,100,20);
+        ftfIdFind.setBounds(100, 5, 100, 20);
+        datePanelFind = new DatePanel();
+        datePanelFind.setBounds(100, 30, 100, 20);
         ftfSumFind = new JFormattedTextField();
-        ftfSumFind.setBounds(100,65,100,20);
+        ftfSumFind.setBounds(100, 65, 100, 20);
 
         btnFind = new JButton("Найти");
         btnFind.setBounds(250, 90, 130, 25);
@@ -172,6 +185,7 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
         add(chart);
         add(scrollPaneResult);
         add(btnShow);
+        add(btnToFile);
     }
 
     public void setClientSendStream(ObjectOutputStream clientSendStream) {
@@ -234,13 +248,86 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
-
             }
             if (e.getSource() == btnFilter) {
 
+                if (datePanelFrom.getTextDate().equals("") || datePanelTo.getTextDate().equals("")
+                        || ftfSumFrom.getText().equals("") || ftfSumTo.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Необходимо ввести все данные!");
+                    return;
+                }
+
+                message = new Message();
+                ArrayList<Object> filterList = new ArrayList<>();
+
+                filterList.add(datePanelFrom.getTextDate());
+                filterList.add(datePanelTo.getTextDate());
+                filterList.add(ftfSumFrom.getText());
+                filterList.add(ftfSumTo.getText());
+
+                message.setMessageArray(filterList);
+                message.setCommand(Message.cmd.FilterReports);
+                try {
+                    clientSendStream.writeObject(message);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             }
             if (e.getSource() == btnFind) {
+                message = new Message();
+                ArrayList<Object> filterList = new ArrayList<>();
 
+                filterList.add(ftfIdFind.getText());
+                filterList.add(datePanelFind.getTextDate());
+                filterList.add(ftfSumFind.getText());
+
+                message.setMessageArray(filterList);
+                message.setCommand(Message.cmd.SearchReports);
+                try {
+                    clientSendStream.writeObject(message);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
+            if (e.getSource() == btnToFile) {
+
+
+                FileNameExtensionFilter filter = new FileNameExtensionFilter(
+                        "Текстовый документ (*.txt)", "txt");
+                fileChooser.setFileFilter(filter);
+                fileChooser.setDialogTitle("Сохранение файла");
+                // Определение режима - только файл
+                fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+                int result = fileChooser.showSaveDialog(null);
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    File fi = fileChooser.getSelectedFile();
+                    try {
+                        FileWriter fw = new FileWriter(fi.getPath());
+                        int ColC = tableReport.getColumnCount(); //Определяем кол-во столбцов
+                        int ItemC = tableReport.getRowCount();  //и элементов (строк)
+
+                        StringBuilder sb;
+
+                        for (int i = 0; i < ItemC; i++) { //проходим все строки
+                            sb = new StringBuilder();
+                            for (int j = 0; j < ColC; j++) { //собираем одну строку из множества столбцов
+                                sb.append(tableReport.getValueAt(i, j));
+                                if (j < ColC - 1) sb.append(',');
+                                if (j == ColC - 1) sb.append("\r\n");
+                            }
+                            fw.write(sb.toString());
+                            sb = null;
+                        }
+
+                        fw.flush();
+                        fw.close();
+                    } catch (Exception e1) {
+                        JOptionPane.showMessageDialog(null, e1.getMessage());
+                    }
+                    JOptionPane.showMessageDialog(null,
+                            "Файл '" + fileChooser.getSelectedFile() +
+                                    "  сохранен");
+                }
             }
         }
     }

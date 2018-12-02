@@ -32,6 +32,8 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
         setMessage(mes);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
+        user = new User();
+        user.setRole(User.Role.USER);
 
         setSize(150, 200);
 
@@ -85,6 +87,10 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
             if (e.getSource() == btnBack) {
                 visible(false);
             } else if (e.getSource() == btnDBUser) {
+                if(user.getRole() == User.Role.USER){
+                    JOptionPane.showMessageDialog(null, "Недостаточно прав для доступа!\nОбратитесь к администратору!");
+                    return;
+                }
 
                 //message.setMessageArray(stringArrayList);
                 message = new Message();

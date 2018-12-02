@@ -182,6 +182,28 @@ public class ServerThread extends Thread {
 
                         serverSendStream.writeObject(message);
                         break;
+                    case SearchReports:
+                        ArrayList<Object> reportFindList = new ArrayList<>();
+                        ResultSet resultSetFindReport = sqlRequest.searchInReports(message);
+
+                        while (resultSetFindReport.next()) {
+                            reportFindList.add(new Report(resultSetFindReport));
+                        }
+
+                        message.setMessageArray(reportFindList);
+                        serverSendStream.writeObject(message);
+                        break;
+                    case FilterReports:
+                        ArrayList<Object> reportFilterList = new ArrayList<>();
+                        ResultSet resultSetFilterReport = sqlRequest.filterReports(message);
+
+                        while (resultSetFilterReport.next()) {
+                            reportFilterList.add(new Report(resultSetFilterReport));
+                        }
+
+                        message.setMessageArray(reportFilterList);
+                        serverSendStream.writeObject(message);
+                        break;
                     default:
                         sqlRequest.executeSqlQuery(message);
                         break;

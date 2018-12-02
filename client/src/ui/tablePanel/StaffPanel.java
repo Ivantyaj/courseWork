@@ -155,19 +155,6 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
 
     }
 
-    final static String DATE_FORMAT = "yyyy-MM-dd";
-
-    public static boolean isDateValid(String date) {
-        try {
-            DateFormat df = new SimpleDateFormat(DATE_FORMAT);
-            df.setLenient(false);
-            df.parse(date);
-            return true;
-        } catch (ParseException e) {
-            return false;
-        }
-    }
-
     public void setClientSendStream(ObjectOutputStream clientSendStream) {
         this.clientSendStream = clientSendStream;
     }
