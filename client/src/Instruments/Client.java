@@ -15,24 +15,34 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class Client {
-    public static final int PORT = 1502;
+    private static final int PORT = 1502;
 
-    MainMenu uiAdminMain = null;
-    User user;
+    private MainMenu uiAdminMain = null;
+    private DB db;
+    private EvaluateUI mrpUI;
+    private LogIN uiLogIN;
+
+
+    private User user;
+    private JPanel panel;
 
     public static void main(String[] args) {
         Client client = new Client();
         client.run();
     }
 
-    public void run() {
+    private Client() {
+        panel = new JPanel();
+    }
+
+    private void run() {
 
 
         Message message = new Message();
 
         Socket clientSocket;
         try {
-            LogIN uiLogIN = new LogIN("Вход");
+            uiLogIN = new LogIN("Вход");
 
             clientSocket = new Socket("127.0.0.1", PORT);
             ObjectOutputStream clientSendStream = new ObjectOutputStream(clientSocket.getOutputStream());
@@ -51,8 +61,8 @@ public class Client {
             uiAdminMain.setResizable(false);
             uiAdminMain.setLocationRelativeTo(null);
 
-            DB db = uiAdminMain.getDbUI();
-            EvaluateUI mrpUI = uiAdminMain.getEvaluateUI();
+            db = uiAdminMain.getDbUI();
+            mrpUI = uiAdminMain.getEvaluateUI();
 
             while (!message.getCommand().equals(Message.cmd.Stop)) {
 
@@ -90,7 +100,7 @@ public class Client {
                         }
                         db.setUserData(stringDa);
                     }
-                        break;
+                    break;
                     case StaffRequest: {
                         System.out.println(message.getMessageArray());
 
@@ -108,7 +118,7 @@ public class Client {
                         db.setStaffData(stringDaStaff);
                         mrpUI.setStaffData(stringDaStaff);
                     }
-                        break;
+                    break;
                     case RawRequest: {
                         System.out.println(message.getMessageArray());
 
@@ -189,17 +199,26 @@ public class Client {
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "СЕРВЕР НЕ ДОСТУПЕН", "ОШИБКА!", JOptionPane.ERROR_MESSAGE);
-        }
-    }
 
-    protected void workAdmin(ObjectOutputStream clientSendStream, Message message) {
-        uiAdminMain = new MainMenu(clientSendStream, message);
-        uiAdminMain.setVisible(true);
-        uiAdminMain.setResizable(false);
-        uiAdminMain.setLocationRelativeTo(null);
-        //uiAdminMain.setClientSendStream(clientSendStream);
-        //uiAdminMain.setMessage(message);
+            if (uiAdminMain != null)
+                uiAdminMain.setVisible(false);
+            if (mrpUI != null)
+                mrpUI.setVisible(false);
+            if (db != null)
+                db.setVisible(false);
+            if (uiLogIN != null)
+                uiLogIN.setVisible(false);
+
+            int dialogResult = JOptionPane.showConfirmDialog(panel,
+                    "СЕРВЕР НЕ ДОСТУПЕН\r\nПереподлючиться?",
+                    "Нет доступа",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.ERROR_MESSAGE);
+            if (dialogResult != JOptionPane.YES_OPTION) {
+                return;
+            }
+            run();
+        }
     }
 
 }

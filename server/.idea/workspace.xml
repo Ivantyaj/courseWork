@@ -3,35 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="230fcb3f-3dd5-47cd-ab9b-cad21832a6fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/DataBase/SQLRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/DataBase/SQLRequest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/DataBase/SQLRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/DataBase/SQLRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/Message/Message$cmd.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/Message/Message$cmd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/Message/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/Message/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/EvaluateUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/EvaluateUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/evaluatePanel/MainReportPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/evaluatePanel/MainReportPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/graphics/GraphicsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/graphics/GraphicsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/tablePanel/UserPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/tablePanel/UserPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/Instruments/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Instruments/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/Instruments/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/Instruments/Client$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/Instruments/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/Instruments/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/EvaluateUI$TabActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/EvaluateUI$TabActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/EvaluateUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/EvaluateUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/evaluatePanel/MainReportPanel$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/evaluatePanel/MainReportPanel$ButtonActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/graphics/GraphicsPanel$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/graphics/GraphicsPanel$ButtonActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/graphics/GraphicsPanel$TableSelectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/graphics/GraphicsPanel$TableSelectListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/graphics/GraphicsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/graphics/GraphicsPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/RawPackagePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/RawPackagePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$ButtonActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$TabActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$TabActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$TableSelectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$TableSelectListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/DataBase/SQLRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/DataBase/SQLRequest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/DataBase/SQLRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/DataBase/SQLRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/Message/Message$cmd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Message/Message$cmd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/Message/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Message/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataBase/SQLRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/SQLRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Message/Message.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -193,11 +168,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DataBase/SQLRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="73" column="34" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
+            <state relative-caret-position="374">
+              <caret line="70" column="17" lean-forward="true" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -232,11 +207,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ui/ServerGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+            <state relative-caret-position="272">
+              <caret line="16" column="69" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -338,7 +316,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
@@ -415,7 +393,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/БГУИР 672302/Курс 3/Курсач 5 сем/Курсач git/server/src/Instruments/ServerThread.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543778303431" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543779575575" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ситаирис/webapp" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -483,15 +461,15 @@
       <workItem from="1543236628698" duration="11264000" />
       <workItem from="1543308454323" duration="5200000" />
       <workItem from="1543333220691" duration="156000" />
-      <workItem from="1543668549212" duration="48099000" />
+      <workItem from="1543668549212" duration="49202000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124712000" />
+    <option name="totallyTimeSpent" value="125815000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Capture Tool" order="0" />
@@ -720,13 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/ServerGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Message/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -760,8 +731,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DataBase/SQLRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="73" column="34" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
+        <state relative-caret-position="374">
+          <caret line="70" column="17" lean-forward="true" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/ServerGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="69" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
