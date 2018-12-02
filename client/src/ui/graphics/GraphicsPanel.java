@@ -1,5 +1,6 @@
 package ui.graphics;
 
+import BDTable.User;
 import Message.Message;
 import org.jfree.chart.ChartPanel;
 import ui.DatePanel;
@@ -43,6 +44,7 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
     private JButton btnFilter;
     private JButton btnFind;
     private JButton btnToFile;
+    private JButton btnDelete;
     private JTable tableReport;
 
     private JPanel tabSearchPanel;
@@ -62,6 +64,8 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
 
     private JFileChooser fileChooser;
 
+    private User user;
+
     public GraphicsPanel(ObjectOutputStream css, Message mes) {
         setClientSendStream(css);
         setMessage(mes);
@@ -71,6 +75,10 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
         Float[] data = {
                 0f, 0f, 0f
         };
+
+        user = new User();
+        user.setId(-1);
+        user.setRole(User.Role.FAIL);
 
         ui = new chartPieUI("Самая затратная статья расходов");
         ui.createChart(chartsColumnName, data);
@@ -89,12 +97,16 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
         scrollPaneResult.setBounds(10, 430, 400, 150);
 
         btnShow = new JButton("Отобразить");
-        btnShow.setBounds(10, 630, 130, 25);
+        btnShow.setBounds(10, 630, 125, 25);
         btnShow.addActionListener(new ButtonActionListener());
 
         btnToFile = new JButton("Сохранить");
-        btnToFile.setBounds(140, 630, 130, 25);
+        btnToFile.setBounds(140, 630, 125, 25);
         btnToFile.addActionListener(new ButtonActionListener());
+
+        btnDelete = new JButton("Удалить");
+        btnDelete.setBounds(270, 630, 125, 25);
+        btnDelete.addActionListener(new ButtonActionListener());
 
         fileChooser = new JFileChooser();
 
@@ -178,6 +190,7 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
 
         add(chart);
         add(scrollPaneResult);
+        add(btnDelete);
         add(btnShow);
         add(btnToFile);
     }
@@ -199,15 +212,14 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
         tableReport.setModel(new DefaultTableModel(data, columnNameReport));
     }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public void setChartData(Float[] data) {
         ui = new chartPieUI("Самая затратная статья расходов");
         ui.createChart(chartsColumnName, data);
-        //ui.getChart();
         chart.setChart(ui.getChart());
-        //chart = ui.getPanel();
-
-
-        //chart.setChart(ui.getChart());
     }
 
     public class TableSelectListener implements ListSelectionListener {
@@ -231,15 +243,8 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
                     JOptionPane.showMessageDialog(null, "Выберите данные для отображения!");
                     return;
                 }
-
                 message = new Message();
-
-//                ArrayList<Object> arrayList = new ArrayList<>();
-//                arrayList.add(tableReport.getValueAt(id, 0));
-
                 message.setArrayOneObject(tableReport.getValueAt(id, 0));
-                //message.setMessageArray(arrayList);
-
                 message.setCommand(Message.cmd.RequestReportOne);
                 try {
                     clientSendStream.writeObject(message);
@@ -325,6 +330,43 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
                     JOptionPane.showMessageDialog(null,
                             "Файл '" + fileChooser.getSelectedFile() +
                                     "  сохранен");
+                }
+            }
+            if(e.getSource() == btnDelete){
+                if(user.getRole() != User.Role.ADMIN){
+                    JOptionPane.showMessageDialog(null, "Недостаточно прав для доступа!\nОбратитесь к администратору!");
+                    return;
+                }
+
+                int dialogResult = JOptionPane.showConfirmDialog(null,
+                        "Вы уверены?\r\nЭто действие необратимо!",
+                        "Удаление",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.WARNING_MESSAGE);
+                if (dialogResult != JOptionPane.YES_OPTION){
+                    return;
+                }
+                int[] selectedRows = tableReport.getSelectedRows();
+                ArrayList<Object> listID = new ArrayList<>();
+                for (int id : selectedRows) {
+                    listID.add(tableReport.getValueAt(id, 0));
+                }
+                message = new Message();
+                if (!listID.isEmpty()) {
+                    message.setMessageArray(listID);
+                    message.setCommand(Message.cmd.ReportDelete);
+                    try {
+                        clientSendStream.writeObject(message);
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+                message = new Message();
+                message.setCommand(Message.cmd.ReportRequest);
+                try {
+                    clientSendStream.writeObject(message);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
                 }
             }
         }

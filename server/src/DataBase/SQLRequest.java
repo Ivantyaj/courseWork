@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class SQLRequest {
 
-    DBWorker dbWorker = new DBWorker();
+    private DBWorker dbWorker = new DBWorker();
 
     //TODO объединить case
     public ResultSet executeSqlQuery(Message message) throws SQLException {
@@ -70,6 +70,9 @@ public class SQLRequest {
             case ReportRequest:
                 resultSet = selectFrom("report");
                 break;
+            case ReportDelete:
+                deleteFrom("report", message);
+                break;
             case ProdactionRedact:
                 updateData(message);
                 break;
@@ -89,7 +92,7 @@ public class SQLRequest {
 
     public ResultSet searchInReports(Message message) throws SQLException {
         String query;
-        query = "select * from report WHERE id LIKE ? and date LIKE ? and result LIKE ?";// and date = ? and result = ?";
+        query = "select * from report WHERE id LIKE ? and date LIKE ? and result LIKE ?";
 //        query = "select * from report WHERE id = ? and date = ? and result = ?";
         PreparedStatement preparedStatement;
         preparedStatement = dbWorker.getConnection().prepareStatement(query);

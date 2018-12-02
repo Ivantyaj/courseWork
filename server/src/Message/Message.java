@@ -29,6 +29,7 @@ public class Message implements Serializable {
         RawDelete,
 
         ReportRequest,
+        ReportDelete,
         Evaluate,
         RequestReportOne,
         SearchReports,

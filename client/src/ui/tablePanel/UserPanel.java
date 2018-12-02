@@ -87,15 +87,12 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
         btnTabRedact = new JButton("Изменить");
         btnTabRedact.addActionListener(new ButtonActionListener());
         btnTabRedact.setBounds(300, 100, 140, 20);
-        //tabModifyPanel = new JPanel();
 
         ftfLogin = new JFormattedTextField();
         ftfLogin.setBounds(100, 5, 120, 20);
-        //ftfName.addKeyListener(new TftCaractersListener());
 
         ftfPassword = new JFormattedTextField();
         ftfPassword.setBounds(100, 45, 120, 20);
-        //ftfCount.addKeyListener(new TftCaractersListener());
 
         String[] items = {
                 "Администратор",
@@ -181,7 +178,6 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
         tabDeletePanel.add(btnTabDelete);
 
         tabbedPane.addTab("Удалить", tabDeletePanel);
-        //tabbedPane.addTab("Изменить", tabModifyPanel);
 
         tabbedPane.setBounds(10, 360, 890, 310);
         tabbedPane.addChangeListener(new UserPanel.TabActionListener());

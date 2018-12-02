@@ -213,7 +213,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         public void actionPerformed(ActionEvent e) {
 
             if (e.getSource() == btnEvaluate) {
-                if(user.getRole() == User.Role.USER){
+                if(user.getRole() != User.Role.ADMIN){
                     JOptionPane.showMessageDialog(null, "Недостаточно прав для доступа!\nОбратитесь к администратору!");
                     return;
                 }

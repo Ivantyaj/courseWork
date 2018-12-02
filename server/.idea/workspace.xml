@@ -2,89 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="230fcb3f-3dd5-47cd-ab9b-cad21832a6fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/target/classes/ui/MainMenu$ButtonActionListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/target/classes/ui/MainMenu.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/RawPackagePanel$ButtonActionListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/RawPackagePanel$TabActionListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/RawPackagePanel$TableSelectListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/RawPackagePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/out/production/server/DataBase/SQLRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/DataBase/SQLRequest$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/out/production/server/DataBase/SQLRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/DataBase/SQLRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/Instruments/ServerThread$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/Instruments/ServerThread$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/out/production/server/Message/Message$cmd.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/Message/Message$cmd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/ui/ServerGUI$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/ui/ServerGUI$ButtonActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/ui/ServerGUI$DigitFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/ui/ServerGUI$TftCaractersListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/ui/ServerGUI$TftCaractersListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/ui/ServerGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/ui/ServerGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/server/ui/WaitFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/ui/WaitFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/Instruments/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Instruments/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/Instruments/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/AdminMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/DB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/DatePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/DatePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/server/Message/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/server/Message/Message.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/ui/EvaluateUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/EvaluateUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/LogIN.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/LogIN.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/ui/evaluatePanel/MainReportPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/evaluatePanel/MainReportPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/ui/graphics/GraphicsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/graphics/GraphicsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/graphics/chartPieUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/graphics/chartPieUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/tablePanel/AccessoriesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/tablePanel/RawPackagePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/tablePanel/ProdactionPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/tablePanel/ProdactionPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/ui/tablePanel/StaffPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/tablePanel/StaffPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/ui/tablePanel/UserPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/tablePanel/UserPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/Instruments/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/Instruments/Client$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/Instruments/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/Instruments/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/Instruments/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/AdminMainMenu$ButtonActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/AdminMainMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/DB$TabActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/DB$TabActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/DB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/DB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/DatePanel$DateLabelFormatter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/DatePanel$DateLabelFormatter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/DatePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/DatePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/EvaluateUI$TabActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/EvaluateUI$TabActionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/EvaluateUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/EvaluateUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/LogIN$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/LogIN$ButtonActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/LogIN.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/LogIN.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/evaluatePanel/MainReportPanel$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/evaluatePanel/MainReportPanel$ButtonActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/evaluatePanel/MainReportPanel$CheckBoxActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/evaluatePanel/MainReportPanel$CheckBoxActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/evaluatePanel/MainReportPanel$TableSelectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/evaluatePanel/MainReportPanel$TableSelectListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/evaluatePanel/MainReportPanel$TftCaractersListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/evaluatePanel/MainReportPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/evaluatePanel/MainReportPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/graphics/GraphicsPanel$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/graphics/GraphicsPanel$ButtonActionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/graphics/GraphicsPanel$TableSelectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/graphics/GraphicsPanel$TableSelectListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/graphics/GraphicsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/graphics/GraphicsPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/graphics/chartPieUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/graphics/chartPieUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/AccessoriesPanel$ButtonActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/AccessoriesPanel$TabActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/AccessoriesPanel$TableSelectListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/AccessoriesPanel$TftCaractersListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/AccessoriesPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/ProdactionPanel$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/ProdactionPanel$ButtonActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/ProdactionPanel$TabActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/ProdactionPanel$TabActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/ProdactionPanel$TableSelectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/ProdactionPanel$TableSelectListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/ProdactionPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/ProdactionPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/StaffPanel$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/StaffPanel$ButtonActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/StaffPanel$TabActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/StaffPanel$TabActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/StaffPanel$TableSelectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/StaffPanel$TableSelectListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/StaffPanel$TftCaractersListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/StaffPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/StaffPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/RawPackagePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/RawPackagePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$ButtonActionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$TabActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$TabActionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$TableSelectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$TableSelectListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel$TftCaractersListener.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ui/tablePanel/UserPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BDTable/Accessories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BDTable/RawPackage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BDTable/Prodaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BDTable/Prodaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BDTable/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BDTable/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/DataBase/SQLRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/DataBase/SQLRequest$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/DataBase/SQLRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/DataBase/SQLRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/Message/Message$cmd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Message/Message$cmd.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/Message/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Message/Message.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataBase/SQLRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/SQLRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Instruments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instruments/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Instruments/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instruments/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Instruments/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instruments/ServerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Message/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ServerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ServerGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/WaitFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/WaitFrame.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -182,13 +129,13 @@
         <counts>
           <entry key="cell" value="282" />
           <entry key="dummy" value="30" />
-          <entry key="java" value="9993" />
+          <entry key="java" value="10008" />
           <entry key="txt" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9992" />
+          <entry key="JAVA" value="10007" />
           <entry key="PLAIN_TEXT" value="36" />
           <entry key="SQL" value="1" />
           <entry key="Scratch" value="282" />
@@ -249,8 +196,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DataBase/SQLRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="260" column="48" selection-start-line="260" selection-start-column="48" selection-end-line="260" selection-end-column="48" />
+            <state relative-caret-position="425">
+              <caret line="73" column="34" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -280,7 +227,7 @@
         <entry file="file://$PROJECT_DIR$/src/Message/Message.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+              <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -468,7 +415,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/БГУИР 672302/Курс 3/Курсач 5 сем/Курсач git/server/src/Instruments/ServerThread.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543777457688" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543778303431" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ситаирис/webapp" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -536,19 +483,19 @@
       <workItem from="1543236628698" duration="11264000" />
       <workItem from="1543308454323" duration="5200000" />
       <workItem from="1543333220691" duration="156000" />
-      <workItem from="1543668549212" duration="46869000" />
+      <workItem from="1543668549212" duration="48099000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123482000" />
+    <option name="totallyTimeSpent" value="124712000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Capture Tool" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18926175" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18926175" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -559,14 +506,14 @@
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.32765958" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="5" weight="0.19432624" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.19432624" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.3148936" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32907802" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Application Servers" order="13" />
       <window_info anchor="right" id="Theme Preview" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -630,7 +577,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/DataBase/SQLRequest.java</url>
-          <line>182</line>
+          <line>185</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
@@ -783,7 +730,7 @@
     <entry file="file://$PROJECT_DIR$/src/Message/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -813,8 +760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DataBase/SQLRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="260" column="48" selection-start-line="260" selection-start-column="48" selection-end-line="260" selection-end-column="48" />
+        <state relative-caret-position="425">
+          <caret line="73" column="34" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
