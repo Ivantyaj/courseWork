@@ -2,6 +2,7 @@ package ui.graphics;
 
 import Message.Message;
 import org.jfree.chart.ChartPanel;
+import ui.DatePanel;
 import ui.SocketGuiInterface;
 
 import javax.swing.*;
@@ -37,6 +38,7 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
 
     private JButton btnShow;
     private JButton btnFilter;
+    private JButton btnFind;
     private JTable tableReport;
 
     private JPanel tabSearchPanel;
@@ -44,6 +46,15 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
 
     private JTabbedPane tabbedPane;
     private int id;
+
+    private DatePanel datePanelFrom;
+    private DatePanel datePanelTo;
+    private DatePanel datePanelFind;
+
+    private JFormattedTextField ftfSumFrom;
+    private JFormattedTextField ftfSumTo;
+    private JFormattedTextField ftfSumFind;
+    private JFormattedTextField ftfIdFind;
 
     public GraphicsPanel(ObjectOutputStream css, Message mes) {
         setClientSendStream(css);
@@ -90,11 +101,66 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
         btnFilter.setBounds(250, 90, 130, 25);
         btnFilter.addActionListener(new ButtonActionListener());
 
+        JLabel lbDateFrom = new JLabel("Начальная дата:");
+        lbDateFrom.setBounds(5,5,100,20);
+        JLabel lbDateTo = new JLabel("Конечная дата:");
+        lbDateTo.setBounds(110,5,100,20);
+
+        datePanelFrom = new DatePanel();
+        datePanelFrom.setBounds(5,30,90,20);
+
+        datePanelTo = new DatePanel();
+        datePanelTo.setBounds(110,30,90,20);
+
+        JLabel lbSumFrom = new JLabel("Сумма от:");
+        lbSumFrom.setBounds(5,55,100,20);
+        JLabel lbSumTo = new JLabel("Сумма до");
+        lbSumTo.setBounds(110,55,100,20);
+
+        ftfSumFrom = new JFormattedTextField();
+        ftfSumFrom.setBounds(5,80,100,20);
+
+        ftfSumTo = new JFormattedTextField();
+        ftfSumTo.setBounds(110,80,100,20);
+
+        tabFilterPanel.add(lbDateFrom);
+        tabFilterPanel.add(lbSumFrom);
+        tabFilterPanel.add(lbSumTo);
+        tabFilterPanel.add(lbDateTo);
+        tabFilterPanel.add(ftfSumFrom);
+        tabFilterPanel.add(ftfSumTo);
+        tabFilterPanel.add(datePanelFrom);
+        tabFilterPanel.add(datePanelTo);
         tabFilterPanel.add(btnFilter);
 
         tabbedPane.addTab("Фильтр", tabFilterPanel);
 
+        tabSearchPanel.setLayout(null);
+        JLabel lbIdFind = new JLabel("id:");
+        lbIdFind.setBounds(5,5,100,20);
+        JLabel lbDateFind = new JLabel("Дата:");
+        lbDateFind.setBounds(5,35,100,20);
+        JLabel lbSumFind = new JLabel("Сумма:");
+        lbSumFind.setBounds(5,65,100,20);
 
+        ftfIdFind = new JFormattedTextField();
+        ftfIdFind.setBounds(100,5,100,20);
+        datePanelFind  = new DatePanel();
+        datePanelFind.setBounds(100,30,100,20);
+        ftfSumFind = new JFormattedTextField();
+        ftfSumFind.setBounds(100,65,100,20);
+
+        btnFind = new JButton("Найти");
+        btnFind.setBounds(250, 90, 130, 25);
+        btnFind.addActionListener(new ButtonActionListener());
+
+        tabSearchPanel.add(lbDateFind);
+        tabSearchPanel.add(lbSumFind);
+        tabSearchPanel.add(lbIdFind);
+        tabSearchPanel.add(ftfIdFind);
+        tabSearchPanel.add(ftfSumFind);
+        tabSearchPanel.add(datePanelFind);
+        tabSearchPanel.add(btnFind);
         tabbedPane.addTab("Поиск", tabSearchPanel);
 
 
@@ -171,6 +237,9 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
 
             }
             if (e.getSource() == btnFilter) {
+
+            }
+            if (e.getSource() == btnFind) {
 
             }
         }
