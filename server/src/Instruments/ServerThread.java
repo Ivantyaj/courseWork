@@ -173,6 +173,15 @@ public class ServerThread extends Thread {
                         message.setMessageArray(reportArrayList);
                         serverSendStream.writeObject(message);
                         break;
+                    case RequestReportOne:
+                        ResultSet resultSetOneReport = sqlRequest.requestOneReport(Integer.parseInt((String)message.getArrayOneObject()));
+
+                        while (resultSetOneReport.next()) {
+                            message.setArrayOneObject(new Report(resultSetOneReport));
+                        }
+
+                        serverSendStream.writeObject(message);
+                        break;
                     default:
                         sqlRequest.executeSqlQuery(message);
                         break;

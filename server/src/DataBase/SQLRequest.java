@@ -234,8 +234,19 @@ public class SQLRequest {
         return arrayList;
     }
 
+    public ResultSet requestOneReport(int id) throws SQLException {
+        String query;
+        query = "select * from report WHERE id = ?";
+        PreparedStatement preparedStatement;
+        preparedStatement = dbWorker.getConnection().prepareStatement(query);
+        preparedStatement.setInt(1, id);
+
+        return preparedStatement.executeQuery();
+    }
+
     public void insertIntoReport(Report report) throws SQLException {
-        String query = "insert into report(date, result, id_user, id_staff, id_accessories, id_prodaction) values(?,?,?,?,?,?)";
+        String query = "insert into report(date, result, id_user, id_staff, id_accessories, id_prodaction, total_staff, total_accessories,total_prodaction)" +
+                " values(?,?,?,?,?,?,?,?,?)";
         PreparedStatement preparedStatement = dbWorker.getConnection().prepareStatement(query);
         preparedStatement.setDate(1, report.getDate());
         preparedStatement.setFloat(2, report.getResult());
@@ -243,6 +254,9 @@ public class SQLRequest {
         preparedStatement.setInt(4, report.getId_staff());
         preparedStatement.setInt(5, report.getId_accessories());
         preparedStatement.setInt(6, report.getId_prodaction());
+        preparedStatement.setFloat(7, report.getTotalStaff());
+        preparedStatement.setFloat(8, report.getTotalAccessories());
+        preparedStatement.setFloat(9, report.getTotalProdaction());
 
         preparedStatement.execute();
     }

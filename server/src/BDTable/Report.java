@@ -16,18 +16,16 @@ public class Report implements Serializable {
     private int id_staff;
     private int id_accessories;
     private int id_prodaction;
+    private float totalStaff;
+    private float totalProdaction;
+    private float totalAccessories;
 
-    public Report(int id, Date date, float result, int id_user, int id_staff, int id_accessories, int id_prodaction) {
-        this.id = id;
-        this.date = date;
-        this.result = result;
-        this.id_user = id_user;
-        this.id_staff = id_staff;
-        this.id_accessories = id_accessories;
-        this.id_prodaction = id_prodaction;
-    }
+    private float persentDefect;
+    private float transport;
+    private float additional;
 
-    public Report(ArrayList<Object> arrayList) {  //TODO /////???
+
+    public Report(ArrayList<Object> arrayList) {
         //this.id = id;
         this.date = Date.valueOf((String) arrayList.get(4));
         this.result = 0;
@@ -35,6 +33,13 @@ public class Report implements Serializable {
         this.id_staff = Integer.parseInt((String) arrayList.get(0));
         this.id_accessories = Integer.parseInt((String) arrayList.get(1));
         this.id_prodaction = Integer.parseInt((String) arrayList.get(2));
+        this.persentDefect = Float.parseFloat((String) arrayList.get(5));
+        this.transport = Float.parseFloat((String) arrayList.get(6));
+        this.additional = Float.parseFloat((String) arrayList.get(7));
+//        this.totalStaff = Float.parseFloat((String) arrayList.get(8));
+//        this.totalAccessories = Float.parseFloat((String) arrayList.get(9));
+//        this.totalProdaction = Float.parseFloat((String) arrayList.get(10));
+
     }
 
 
@@ -46,10 +51,16 @@ public class Report implements Serializable {
         this.id_staff = resultSet.getInt("id_staff");
         this.id_accessories =resultSet.getInt( "id_accessories");
         this.id_prodaction = resultSet.getInt("id_prodaction");
+        this.totalStaff = resultSet.getFloat("total_staff");
+        this.totalAccessories = resultSet.getFloat("total_accessories");
+        this.totalProdaction = resultSet.getFloat("total_prodaction");
     }
 
     public String[] toStringArray() {
-        return new String[]{String.valueOf(id),String.valueOf(date),String.valueOf(result),String.valueOf(id_user),String.valueOf(id_staff),String.valueOf(id_accessories),String.valueOf(id_prodaction)};
+        return new String[]{String.valueOf(id),String.valueOf(date),String.valueOf(result),
+                String.valueOf(id_user),String.valueOf(id_staff),String.valueOf(id_accessories),
+                String.valueOf(id_prodaction),String.valueOf(totalStaff),String.valueOf(totalAccessories),
+                String.valueOf(totalProdaction)};
     }
 
     public void evaluateResult(SQLRequest sql){
@@ -59,9 +70,14 @@ public class Report implements Serializable {
             Prodaction prodaction = (Prodaction)arrayList.get(1);
             Accessories accessories = (Accessories)arrayList.get(2);
 
-            this.result += staff.getSalary()*staff.getGoverment() +
-                    prodaction.getAmortisation() + prodaction.getEnergy()*prodaction.getTariff() +
-                    accessories.getCount()*accessories.getPrice();
+            totalStaff += staff.getSalary()*staff.getGoverment();
+
+            totalProdaction += prodaction.getAmortisation() + prodaction.getEnergy()*prodaction.getTariff() + transport;
+            totalProdaction *= persentDefect;
+
+            totalAccessories += accessories.getCount()*accessories.getPrice();
+
+            this.result += totalStaff + totalProdaction + totalAccessories  + additional;
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -74,6 +90,18 @@ public class Report implements Serializable {
 
     public float getResult() {
         return result;
+    }
+
+    public float getTotalStaff() {
+        return totalStaff;
+    }
+
+    public float getTotalProdaction() {
+        return totalProdaction;
+    }
+
+    public float getTotalAccessories() {
+        return totalAccessories;
     }
 
     public int getId_user() {

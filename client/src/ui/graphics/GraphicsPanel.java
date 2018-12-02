@@ -11,7 +11,9 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 public class GraphicsPanel extends JPanel implements SocketGuiInterface {
 
@@ -24,10 +26,16 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
             "Итоговая сумма"
     };
 
+    private String[] chartsColumnName = {
+            "Налоги",
+            "Сырье",
+            "Зарплата",
+    };
+
     private chartPieUI ui;
     private ChartPanel chart;
 
-    private JButton btnRequest;
+    private JButton btnShow;
     private JButton btnFilter;
     private JTable tableReport;
 
@@ -35,29 +43,24 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
     private JPanel tabFilterPanel;
 
     private JTabbedPane tabbedPane;
+    private int id;
 
     public GraphicsPanel(ObjectOutputStream css, Message mes) {
         setClientSendStream(css);
         setMessage(mes);
         setLayout(null);
 
-        String[] str = {
-                "Налоги",
-                "Сырье",
-                "Зарплата",
-                "Долги",
-        };
 
         Float[] data = {
-                30f, 120f, 45f, 78f,
+                30f, 120f, 45f
 
         };
-//        String[] str = {};
+//        String[] chartsColumnName = {};
 //
 //        Float[] data = {};
         ui = new chartPieUI("Самая затратная статья расходов");
-        ui.createChart(str, data);
-        ChartPanel chart = ui.getPanel();
+        ui.createChart(chartsColumnName, data);
+        chart = ui.getPanel();
         chart.setBounds(160, 10, 600, 400);
 
 
@@ -73,9 +76,9 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
         tableReport.setDefaultEditor(Object.class, null); //
         scrollPaneResult.setBounds(10, 430, 400, 150);
 
-        btnRequest = new JButton("Отобразить");
-        btnRequest.setBounds(10, 630, 130, 25);
-        btnRequest.addActionListener(new ButtonActionListener());
+        btnShow = new JButton("Отобразить");
+        btnShow.setBounds(10, 630, 130, 25);
+        btnShow.addActionListener(new ButtonActionListener());
 
         tabbedPane = new JTabbedPane();
 
@@ -92,7 +95,6 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
         tabbedPane.addTab("Фильтр", tabFilterPanel);
 
 
-
         tabbedPane.addTab("Поиск", tabSearchPanel);
 
 
@@ -103,7 +105,7 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
 
         add(chart);
         add(scrollPaneResult);
-        add(btnRequest);
+        add(btnShow);
     }
 
     public void setClientSendStream(ObjectOutputStream clientSendStream) {
@@ -123,15 +125,25 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
         tableReport.setModel(new DefaultTableModel(data, columnNameReport));
     }
 
+    public void setChartData(Float[] data) {
+        ui = new chartPieUI("Самая затратная статья расходов");
+        ui.createChart(chartsColumnName, data);
+        //ui.getChart();
+        chart.setChart(ui.getChart());
+        //chart = ui.getPanel();
+
+
+        //chart.setChart(ui.getChart());
+    }
+
     public class TableSelectListener implements ListSelectionListener {
         @Override
         public void valueChanged(ListSelectionEvent e) {
-            if (e.getSource() == tableReport) {
-                int selectedRow = tableReport.getSelectedRow();
-                if (selectedRow >= 0) {
-                    TableModel model = tableReport.getModel();
-                    //id = Integer.parseInt((String) model.getValueAt(selectedRow, 0));
-                }
+
+            int selectedRow = tableReport.getSelectedRow();
+            if (selectedRow >= 0) {
+                TableModel model = tableReport.getModel();
+
             }
         }
     }
@@ -139,10 +151,26 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
     public class ButtonActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
-            if (e.getSource() == btnRequest) {
+            if (e.getSource() == btnShow) {
+                id = tableReport.getSelectedRow();
+
+                message = new Message();
+
+//                ArrayList<Object> arrayList = new ArrayList<>();
+//                arrayList.add(tableReport.getValueAt(id, 0));
+
+                message.setArrayOneObject(tableReport.getValueAt(id, 0));
+                //message.setMessageArray(arrayList);
+
+                message.setCommand(Message.cmd.RequestReportOne);
+                try {
+                    clientSendStream.writeObject(message);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
 
             }
-            if (e.getSource() == btnFilter){
+            if (e.getSource() == btnFilter) {
 
             }
         }

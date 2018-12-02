@@ -11,13 +11,9 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import javax.swing.text.MaskFormatter;
 import java.awt.event.*;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class MainReportPanel extends JPanel implements SocketGuiInterface {
@@ -52,16 +48,16 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
     private JButton btnEvaluate;
 
     private DatePanel datePanel;
-    private JFormattedTextField ftfDebtSum;
+    private JFormattedTextField ftfTransportSum;
     private JFormattedTextField ftfAddSum;
 
     private JCheckBox cbDefect;
-    private JCheckBox cbDebt;
+    private JCheckBox cbTransport;
     private JCheckBox cbAdditional;
 
     private JComboBox comboBox;
 
-    JLabel lbDebtSum;
+    JLabel lbTransportSum;
     JLabel lbDebtPersent;
 
     private int idUser;
@@ -129,7 +125,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         lbDate.setBounds(10, 380, 80, 20);
 
         datePanel = new DatePanel();
-        datePanel.setBounds(30,400,90,20);
+        datePanel.setBounds(30, 400, 90, 20);
 
         cbDefect = new JCheckBox("Учитывать возможный брак?");
         cbDefect.setBounds(10, 430, 200, 20);
@@ -146,17 +142,17 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         comboBox.setEditable(false);
         comboBox.setEnabled(false);
 
-        cbDebt = new JCheckBox("Вносить в расчет сумму по задолженностям?");
-        cbDebt.setBounds(10, 490, 250, 20);
-        cbDebt.addItemListener(new CheckBoxActionListener());
+        cbTransport = new JCheckBox("Вносить расходы на перевозку?");
+        cbTransport.setBounds(10, 490, 250, 20);
+        cbTransport.addItemListener(new CheckBoxActionListener());
 
-        lbDebtSum = new JLabel("Сумма по долгу");
-        lbDebtSum.setBounds(120, 520, 150, 20);
-        lbDebtSum.setEnabled(false);
+        lbTransportSum = new JLabel("транспортные расходы:");
+        lbTransportSum.setBounds(120, 520, 150, 20);
+        lbTransportSum.setEnabled(false);
 
-        ftfDebtSum = new JFormattedTextField();
-        ftfDebtSum.setBounds(30, 520, 90, 20);
-        ftfDebtSum.setEnabled(false);
+        ftfTransportSum = new JFormattedTextField();
+        ftfTransportSum.setBounds(30, 520, 90, 20);
+        ftfTransportSum.setEnabled(false);
 
         cbAdditional = new JCheckBox("Добавить сумму неучтенных расходов");
         cbAdditional.setBounds(10, 550, 250, 20);
@@ -174,16 +170,16 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         add(lbAccessories);
         add(lbProdaction);
         add(lbDate);
-        add(lbDebtSum);
-        add(lbDebtSum);
+        add(lbTransportSum);
+        add(lbTransportSum);
 
         add(btnEvaluate);
         add(datePanel);
-        add(ftfDebtSum);
+        add(ftfTransportSum);
         add(ftfAddSum);
         add(comboBox);
         //add(cbAdditional);
-        add(cbDebt);
+        add(cbTransport);
         add(cbDefect);
         add(cbAdditional);
     }
@@ -197,17 +193,6 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
     }
 
     final static String DATE_FORMAT = "yyyy-MM-dd";
-
-    public static boolean isDateValid(String date) {
-        try {
-            DateFormat df = new SimpleDateFormat(DATE_FORMAT);
-            df.setLenient(false);
-            df.parse(date);
-            return true;
-        } catch (ParseException e) {
-            return false;
-        }
-    }
 
     public void setClientSendStream(ObjectOutputStream clientSendStream) {
         this.clientSendStream = clientSendStream;
@@ -333,69 +318,65 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         public void actionPerformed(ActionEvent e) {
 
             if (e.getSource() == btnEvaluate) {
-                if (!isDateValid(datePanel.getTextDate())) {
-                    JOptionPane.showMessageDialog(null, "Дата введена не корректно");
+
+                ArrayList<Object> listID = new ArrayList<>();
+
+                int selectStaff = tableStaff.getSelectedRow();
+                int selectAccessories = tableAccessories.getSelectedRow();
+                int selectProdaction = tableProdaction.getSelectedRow();
+                if (selectStaff < 0 || selectAccessories < 0 || selectProdaction < 0) {
+                    JOptionPane.showMessageDialog(null, "Выберите все данные для расчета!");
                 } else {
-                    ArrayList<Object> listID = new ArrayList<>();
+                    listID.add(tableStaff.getValueAt(selectStaff, 0));
+                    listID.add(tableAccessories.getValueAt(selectAccessories, 0));
+                    listID.add(tableProdaction.getValueAt(selectProdaction, 0));
+                    listID.add(String.valueOf(idUser));
+                    listID.add(datePanel.getTextDate());
 
-                    int selectStaff = tableStaff.getSelectedRow();
-                    int selectAccessories = tableAccessories.getSelectedRow();
-                    int selectProdaction = tableProdaction.getSelectedRow();
-                    if (selectStaff < 0 || selectAccessories < 0 || selectProdaction < 0) {
-                        JOptionPane.showMessageDialog(null, "Выберите все данные для расчета!");
+                    if (cbDefect.isSelected()) {
+                        int index = comboBox.getSelectedIndex();
+                        Float persent;
+                        switch (index) {
+                            case 0:
+                                persent = (float) 1.05;
+                                break;
+                            case 1:
+                                persent = (float) 1.10;
+                                break;
+                            case 2:
+                                persent = (float) 1.15;
+                                break;
+                            default:
+                                persent = (float) 1;
+                                break;
+                        }
+
+                        listID.add(String.valueOf(persent));
                     } else {
-                        listID.add(tableStaff.getValueAt(selectStaff, 0));
-                        listID.add(tableAccessories.getValueAt(selectAccessories, 0));
-                        listID.add(tableProdaction.getValueAt(selectProdaction, 0));
-                        listID.add(String.valueOf(idUser));
-                        listID.add(datePanel.getTextDate());
-
-                        if (cbDefect.isSelected()) {
-                            int index = comboBox.getSelectedIndex();
-                            Float persent;
-                            switch (index) {
-                                case 0:
-                                    persent = (float) 0.05;
-                                    break;
-                                case 1:
-                                    persent = (float) 0.10;
-                                    break;
-                                case 2:
-                                    persent = (float) 0.15;
-                                    break;
-                                default:
-                                    persent = (float) 0;
-                                    break;
-                            }
-
-                            listID.add(String.valueOf(persent));
-                        } else {
-                            listID.add("0");
-                        }
-                        if (cbDebt.isSelected()) {
-                            listID.add(ftfDebtSum.getText());
-                        } else {
-                            listID.add("0");
-                        }
-                        if (cbAdditional.isSelected()) {
-                            listID.add(ftfAddSum.getText());
-                        } else {
-                            listID.add("0");
-                        }
-
-
-                        message = new Message();
-                        if (!listID.isEmpty()) {
-                            message.setMessageArray(listID);
-                            message.setCommand(Message.cmd.Evaluate);
-                            try {
-                                clientSendStream.writeObject(message);
-                            } catch (IOException e1) {
-                                e1.printStackTrace();
-                            }
-                        }
+                        listID.add("0");
+                    }
+                    if (cbTransport.isSelected()) {
+                        listID.add(ftfTransportSum.getText());
+                    } else {
+                        listID.add("0");
+                    }
+                    if (cbAdditional.isSelected()) {
+                        listID.add(ftfAddSum.getText());
+                    } else {
+                        listID.add("0");
                     }
 
+
+                    message = new Message();
+                    if (!listID.isEmpty()) {
+                        message.setMessageArray(listID);
+                        message.setCommand(Message.cmd.Evaluate);
+                        try {
+                            clientSendStream.writeObject(message);
+                        } catch (IOException e1) {
+                            e1.printStackTrace();
+                        }
+                    }
                 }
             }
         }
@@ -413,12 +394,12 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
                 comboBox.setEnabled(false);
                 //comboBox.setEditable(false);
             }
-            if (cbDebt.isSelected()) {
-                lbDebtSum.setEnabled(true);
-                ftfDebtSum.setEnabled(true);
+            if (cbTransport.isSelected()) {
+                lbTransportSum.setEnabled(true);
+                ftfTransportSum.setEnabled(true);
             } else {
-                lbDebtSum.setEnabled(false);
-                ftfDebtSum.setEnabled(false);
+                lbTransportSum.setEnabled(false);
+                ftfTransportSum.setEnabled(false);
             }
             if (cbAdditional.isSelected()) {
                 ftfAddSum.setEnabled(true);

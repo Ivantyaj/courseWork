@@ -161,6 +161,20 @@ public class Client {
                             i++;
                         }
                         mrpUI.setReportData(stringDaReport);
+
+                        break;
+                    case RequestReportOne:
+                        System.out.println(message.getMessageArray());
+
+                        Report report = (Report) message.getArrayOneObject();
+
+                        Float[] floatData = {
+                                report.getTotalStaff(),
+                                report.getTotalAccessories(),
+                                report.getTotalProdaction(),
+                        };
+
+                        mrpUI.setGraphicsData(floatData);
                         break;
                     default:
                         break;

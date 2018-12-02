@@ -81,6 +81,7 @@ public class EvaluateUI extends JFrame implements SocketGuiInterface {
     }
 
     public void setReportData(Object[][] data) { tabGraphicsPanel.setSourseReport(data);}
+    public void setGraphicsData(Float[] data) { tabGraphicsPanel.setChartData(data);}
 
     public User getUser() {
         return user;

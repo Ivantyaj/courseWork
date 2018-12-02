@@ -30,7 +30,7 @@ public class Message implements Serializable {
 
         ReportRequest,
         Evaluate,
-        //GraphicsMostCost,
+        RequestReportOne,
         Fail
 
     }
@@ -56,6 +56,9 @@ public class Message implements Serializable {
         this.messageArray.add(messageObject);
     }
 
+    public Object getArrayOneObject(){
+        return messageArray.toArray()[0];
+    }
 
     public ArrayList<Object> getMessageArray() {
         return messageArray;
