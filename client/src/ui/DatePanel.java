@@ -6,17 +6,15 @@ import org.jdatepicker.impl.UtilDateModel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Properties;
 
 public class DatePanel extends JPanel {
 
 
-    JDatePickerImpl datePicker;
+    private JDatePickerImpl datePicker;
     public DatePanel() {
 
         UtilDateModel model = new UtilDateModel();
@@ -28,7 +26,6 @@ public class DatePanel extends JPanel {
 
         datePicker = new JDatePickerImpl(datePanel, new DateLabelFormatter());
         datePicker.setPreferredSize(new Dimension(90,20));
-        //datePicker
         datePicker.getJFormattedTextField().setPreferredSize(new Dimension(90,20));
         add(datePicker);
     }
@@ -44,11 +41,7 @@ public class DatePanel extends JPanel {
 
         datePicker.getComponent(1).setPreferredSize(new Dimension(height,height));
 
-
-
-        System.out.println(datePicker.getComponent(1));
         add(datePicker);
-        //datePicker.setSize(width,height);
     }
     
     public String getText(){

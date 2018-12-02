@@ -17,32 +17,12 @@ public class chartPieUI{
 
     void createChart(String[] name, Float[] data) {
 
-
         DefaultPieDataset pieDataset = new DefaultPieDataset();
 
         for(int i = 0; name.length > i && data.length > i; i++){
             pieDataset.setValue(name[i], data[i]);
         }
-
-         chart = ChartFactory.createPieChart(
-                title,  // chart title
-                 pieDataset,             // data
-                false,               // no legend
-                true,                // tooltips
-                true                // no URL generation
-        );
-
-//        TextTitle t = chart.getTitle();
-//        t.setHorizontalAlignment(HorizontalAlignment.LEFT);
-//        t.setPaint(new Color(240, 240, 240));
-//        t.setFont(new Font("Arial", Font.BOLD, 26));
-//
-//        PiePlot plot = (PiePlot) chart.getPlot();
-//        plot.setBackgroundPaint(null);
-//        plot.setInteriorGap(0.04);
-//        plot.setOutlineVisible(false);
-
-        //add(new ChartPanel(chart));
+         chart = ChartFactory.createPieChart(title, pieDataset,false,true,true);
     }
 
     ChartPanel getPanel(){

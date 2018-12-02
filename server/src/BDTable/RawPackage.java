@@ -5,23 +5,23 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Accessories implements Serializable {
+public class RawPackage implements Serializable {
     private int id;
     private String name;
     private int count;
     private float price;
 
-    public Accessories() {
+    public RawPackage() {
     }
 
-    public Accessories(int id, String name, int count, float price) {
+    public RawPackage(int id, String name, int count, float price) {
         this.id = id;
         this.name = name;
         this.count = count;
         this.price = price;
     }
 
-    public Accessories(ResultSet resultSet) throws SQLException {
+    public RawPackage(ResultSet resultSet) throws SQLException {
         this.id = resultSet.getInt("id");
         this.name = resultSet.getString("name");
         this.count = resultSet.getInt("count");
@@ -34,7 +34,7 @@ public class Accessories implements Serializable {
 
     @Override
     public String toString() {
-        return "Accessories{" +
+        return "RawPackage{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", count=" + count +

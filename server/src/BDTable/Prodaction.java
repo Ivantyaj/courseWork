@@ -46,15 +46,15 @@ public class Prodaction implements Serializable {
                 '}';
     }
 
-    public int getEnergy() {
+    int getEnergy() {
         return energy;
     }
 
-    public float getTariff() {
+    float getTariff() {
         return tariff;
     }
 
-    public float getAmortisation() {
+    float getAmortisation() {
         return amortisation;
     }
 }

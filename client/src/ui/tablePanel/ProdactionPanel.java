@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class ProdactionPanel extends JPanel implements SocketGuiInterface {
 
-    String[] columnName = {
+    private String[] columnName = {
             "id",
             "кВт/ч",
             "Тариф",
@@ -29,27 +29,27 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
             "Дата"
     };
 
-    ObjectOutputStream clientSendStream;
-    Message message;
+    private ObjectOutputStream clientSendStream;
+    private Message message;
 
-    JTable table;
-    JTabbedPane tabbedPane;
+    private JTable table;
+    private JTabbedPane tabbedPane;
 
 
-    JButton btnTabDelete;
+    private JButton btnTabDelete;
 
-    JPanel tabDeletePanel;
-    JPanel tabInsertPanel;
+    private JPanel tabDeletePanel;
+    private JPanel tabInsertPanel;
     //JPanel tabModifyPanel;
 
-    JFormattedTextField ftfEnergy;
-    JFormattedTextField ftfTariff;
-    JFormattedTextField ftfAmortisation;
-    DatePanel datePanel;
+    private JFormattedTextField ftfEnergy;
+    private JFormattedTextField ftfTariff;
+    private JFormattedTextField ftfAmortisation;
+    private DatePanel datePanel;
 
 
-    JButton btnTabAdd;
-    JButton btnTabRedact;
+    private JButton btnTabAdd;
+    private JButton btnTabRedact;
     private int id;
 
 

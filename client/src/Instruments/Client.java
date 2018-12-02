@@ -2,7 +2,7 @@ package Instruments;
 
 import BDTable.*;
 import Message.Message;
-import ui.AdminMainMenu;
+import ui.MainMenu;
 import ui.EvaluateUI;
 import ui.LogIN;
 import ui.DB;
@@ -11,14 +11,13 @@ import javax.swing.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.ConnectException;
 import java.net.Socket;
 import java.util.ArrayList;
 
 public class Client {
     public static final int PORT = 1502;
 
-    AdminMainMenu uiAdminMain = null;
+    MainMenu uiAdminMain = null;
     User user;
 
     public static void main(String[] args) {
@@ -47,7 +46,7 @@ public class Client {
             uiLogIN.setClientSendStream(clientSendStream);
             uiLogIN.setMessage(message);
 
-            uiAdminMain = new AdminMainMenu(clientSendStream, message);
+            uiAdminMain = new MainMenu(clientSendStream, message);
             uiAdminMain.setVisible(false);
             uiAdminMain.setResizable(false);
             uiAdminMain.setLocationRelativeTo(null);
@@ -56,12 +55,9 @@ public class Client {
             EvaluateUI mrpUI = uiAdminMain.getEvaluateUI();
 
             while (!message.getCommand().equals(Message.cmd.Stop)) {
-                //System.out.println(message);
 
                 uiLogIN.setClientSendStream(clientSendStream);
                 uiLogIN.setMessage(message);
-
-                //clientSendStream.writeObject(message); //вынести
 
                 message = (Message) clientReadStream.readObject();
                 switch (message.getCommand()) {
@@ -113,22 +109,22 @@ public class Client {
                         mrpUI.setStaffData(stringDaStaff);
                     }
                         break;
-                    case AccessoriesRequest: {
+                    case RawRequest: {
                         System.out.println(message.getMessageArray());
 
-                        ArrayList<Accessories> accessoriesArrayList = new ArrayList<>();
+                        ArrayList<RawPackage> rawPackageArrayList = new ArrayList<>();
                         for (Object object : message.getMessageArray()) {
-                            accessoriesArrayList.add((Accessories) object);
+                            rawPackageArrayList.add((RawPackage) object);
                         }
 
-                        String[][] stringDaAccessories = new String[accessoriesArrayList.size()][];
+                        String[][] stringDaRawPackage = new String[rawPackageArrayList.size()][];
                         int i = 0;
-                        for (Accessories accessories : accessoriesArrayList) {
-                            stringDaAccessories[i] = accessories.toStringArray();
+                        for (RawPackage rawPackage : rawPackageArrayList) {
+                            stringDaRawPackage[i] = rawPackage.toStringArray();
                             i++;
                         }
-                        db.setAccessoriesData(stringDaAccessories);
-                        mrpUI.setAccessoriesData(stringDaAccessories);
+                        db.setRawData(stringDaRawPackage);
+                        mrpUI.setRawData(stringDaRawPackage);
                     }
                     break;
                     case ProdactionRequest: {
@@ -175,7 +171,7 @@ public class Client {
 
                         Float[] floatData = {
                                 report.getTotalStaff(),
-                                report.getTotalAccessories(),
+                                report.getTotalRawPackage(),
                                 report.getTotalProdaction(),
                         };
 
@@ -198,7 +194,7 @@ public class Client {
     }
 
     protected void workAdmin(ObjectOutputStream clientSendStream, Message message) {
-        uiAdminMain = new AdminMainMenu(clientSendStream, message);
+        uiAdminMain = new MainMenu(clientSendStream, message);
         uiAdminMain.setVisible(true);
         uiAdminMain.setResizable(false);
         uiAdminMain.setLocationRelativeTo(null);

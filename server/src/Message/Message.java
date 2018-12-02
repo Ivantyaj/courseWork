@@ -23,10 +23,10 @@ public class Message implements Serializable {
         ProdactionRedact,
         ProdactionDelete,
 
-        AccessoriesRequest,
-        AccessoriesAdd,
-        AccessoriesRedact,
-        AccessoriesDelete,
+        RawRequest,
+        RawAdd,
+        RawRedact,
+        RawDelete,
 
         ReportRequest,
         Evaluate,

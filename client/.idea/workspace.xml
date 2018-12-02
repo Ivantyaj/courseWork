@@ -2,60 +2,89 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34397994-8a57-4afb-b7da-8c9b0e18214c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/target/classes/ui/MainMenu$ButtonActionListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ui/MainMenu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/RawPackagePanel$ButtonActionListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/RawPackagePanel$TabActionListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/RawPackagePanel$TableSelectListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/RawPackagePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/DataBase/SQLRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/DataBase/SQLRequest$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/server/DataBase/SQLRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/DataBase/SQLRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/Instruments/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Instruments/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/Instruments/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Instruments/Server.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/server/Instruments/ServerThread$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Instruments/ServerThread$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/Instruments/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Instruments/ServerThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/server/Message/Message$cmd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Message/Message$cmd.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/server/ui/ServerGUI$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/ui/ServerGUI$ButtonActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/ui/ServerGUI$DigitFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/ui/ServerGUI$DigitFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/ui/ServerGUI$DigitFilter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/server/ui/ServerGUI$TftCaractersListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/ui/ServerGUI$TftCaractersListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/server/ui/ServerGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/ui/ServerGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/ui/WaitFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/ui/WaitFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Instruments/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instruments/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Instruments/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/AdminMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/DB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/DatePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/DatePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/EvaluateUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/EvaluateUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/LogIN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/LogIN.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/evaluatePanel/MainReportPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/evaluatePanel/MainReportPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/graphics/GraphicsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/graphics/GraphicsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/graphics/chartPieUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/graphics/chartPieUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/tablePanel/AccessoriesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/tablePanel/RawPackagePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/tablePanel/ProdactionPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/tablePanel/ProdactionPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/tablePanel/StaffPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/tablePanel/StaffPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/tablePanel/UserPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/tablePanel/UserPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Instruments/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Instruments/Client$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Instruments/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Instruments/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Instruments/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/AdminMainMenu$ButtonActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/AdminMainMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/DB$TabActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/DB$TabActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/DB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/DB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/DatePanel$DateLabelFormatter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/DatePanel$DateLabelFormatter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/DatePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/DatePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/EvaluateUI$TabActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/EvaluateUI$TabActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/EvaluateUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/EvaluateUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/LogIN$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/LogIN$ButtonActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/LogIN.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/LogIN.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/evaluatePanel/MainReportPanel$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/evaluatePanel/MainReportPanel$ButtonActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/evaluatePanel/MainReportPanel$CheckBoxActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/evaluatePanel/MainReportPanel$CheckBoxActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/evaluatePanel/MainReportPanel$TableSelectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/evaluatePanel/MainReportPanel$TableSelectListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/evaluatePanel/MainReportPanel$TftCaractersListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/evaluatePanel/MainReportPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/evaluatePanel/MainReportPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/graphics/GraphicsPanel$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/graphics/GraphicsPanel$ButtonActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/graphics/GraphicsPanel$TableSelectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/graphics/GraphicsPanel$TableSelectListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/graphics/GraphicsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/graphics/GraphicsPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/graphics/chartPieUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/graphics/chartPieUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/AccessoriesPanel$ButtonActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/AccessoriesPanel$TabActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/AccessoriesPanel$TableSelectListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/AccessoriesPanel$TftCaractersListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/AccessoriesPanel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/ProdactionPanel$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/ProdactionPanel$ButtonActionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/ProdactionPanel$TabActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/ProdactionPanel$TabActionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/ProdactionPanel$TableSelectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/ProdactionPanel$TableSelectListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/ProdactionPanel$TftCaractersListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/ProdactionPanel$TftCaractersListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/ProdactionPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/ProdactionPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/StaffPanel$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/StaffPanel$ButtonActionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/StaffPanel$TabActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/StaffPanel$TabActionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/StaffPanel$TableSelectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/StaffPanel$TableSelectListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/StaffPanel$TftCaractersListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/StaffPanel$TftCaractersListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/StaffPanel$TftCaractersListener.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/StaffPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/StaffPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/UserPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/UserPanel$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/UserPanel$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/UserPanel$ButtonActionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/UserPanel$TabActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/UserPanel$TabActionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/UserPanel$TableSelectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/UserPanel$TableSelectListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/UserPanel$TftCaractersListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/UserPanel$TftCaractersListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/UserPanel$TftCaractersListener.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/tablePanel/UserPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/tablePanel/UserPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/server/DataBase/SQLRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/DataBase/SQLRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/server/Instruments/ServerThread$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Instruments/ServerThread$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/server/Instruments/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Instruments/ServerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/server/Message/Message$cmd.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Message/Message$cmd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI$ButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI$ButtonActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI$DigitFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI$DigitFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI$TftCaractersListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI$TftCaractersListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/ui/ServerGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/BDTable/Accessories.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/BDTable/RawPackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/BDTable/Prodaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/BDTable/Prodaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/BDTable/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/BDTable/Report.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/DataBase/SQLRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/DataBase/SQLRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/Instruments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Instruments/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/Instruments/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Instruments/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/Instruments/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Instruments/ServerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/Message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Message/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/ui/ServerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/ui/ServerGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/ui/WaitFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/ui/WaitFrame.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -106,7 +135,7 @@
         <counts>
           <entry key="class" value="4" />
           <entry key="form" value="1" />
-          <entry key="java" value="73" />
+          <entry key="java" value="94" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
@@ -114,21 +143,21 @@
         <counts>
           <entry key="CLASS" value="4" />
           <entry key="GUI_DESIGNER_FORM" value="1" />
-          <entry key="JAVA" value="73" />
+          <entry key="JAVA" value="94" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="25" />
-          <entry key="java" value="15296" />
+          <entry key="dummy" value="46" />
+          <entry key="java" value="15721" />
           <entry key="xml" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="15296" />
-          <entry key="PLAIN_TEXT" value="25" />
+          <entry key="JAVA" value="15721" />
+          <entry key="PLAIN_TEXT" value="46" />
           <entry key="XML" value="16" />
         </counts>
       </usages-collector>
@@ -136,56 +165,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Instruments/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Instruments/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/AdminMainMenu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="91" selection-start-line="91" selection-end-line="94" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/EvaluateUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1775#1776#0" expanded="true" />
-                <element signature="e#1830#1831#0" expanded="true" />
-                <element signature="n#!!doc;n#TabActionListener#0;n#EvaluateUI#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/StaffPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+            <state relative-caret-position="163">
+              <caret line="63" column="22" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -194,35 +178,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../server/src/ui/ServerGUI.java">
+        <entry file="file://$PROJECT_DIR$/src/ui/LogIN.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="128" selection-start-line="128" selection-end-line="128" />
+            <state relative-caret-position="-44">
+              <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
               <folding>
-                <element signature="e#852#853#0" expanded="true" />
-                <element signature="e#895#896#0" expanded="true" />
-                <element signature="e#939#940#0" expanded="true" />
-                <element signature="e#975#976#0" expanded="true" />
-                <element signature="e#3367#3368#0" expanded="true" />
-                <element signature="e#3399#3400#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/UserPanel.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ui/MainMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+            <state relative-caret-position="330">
+              <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/graphics/GraphicsPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="230" column="89" selection-start-line="230" selection-start-column="89" selection-end-line="230" selection-end-column="89" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6411#6412#0" expanded="true" />
-                <element signature="e#6467#6468#0" expanded="true" />
-                <element signature="e#6514#6515#0" expanded="true" />
-                <element signature="e#6552#6553#0" expanded="true" />
-                <element signature="e#9403#9404#0" expanded="true" />
-                <element signature="e#9474#9475#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -231,8 +213,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/DatePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="60" column="24" lean-forward="true" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+            <state relative-caret-position="163">
+              <caret line="53" column="72" selection-start-line="53" selection-start-column="72" selection-end-line="53" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -241,22 +223,60 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/SocketGuiInterface.java">
+        <entry file="file://$PROJECT_DIR$/src/ui/DB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            <state relative-caret-position="163">
+              <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../server/src/Message/Message.java">
+        <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/StaffPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="317">
+              <caret line="90" column="29" selection-start-line="90" selection-start-column="29" selection-end-line="90" selection-end-column="29" />
               <folding>
-                <element signature="e#1191#1192#0" expanded="true" />
-                <element signature="e#1238#1239#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/UserPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/RawPackagePanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="163" column="46" selection-start-line="163" selection-start-column="46" selection-end-line="163" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/ProdactionPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="108" column="14" selection-start-line="108" selection-start-column="14" selection-end-line="108" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -276,9 +296,14 @@
       <find>Staff</find>
       <find>20</find>
       <find>90</find>
+      <find>Accessories</find>
+      <find>System</find>
+      <find>Acce</find>
+      <find>Acc</find>
     </findStrings>
     <replaceStrings>
       <replace>Result</replace>
+      <replace>Raw</replace>
       <replace>120</replace>
     </replaceStrings>
   </component>
@@ -301,30 +326,32 @@
         <option value="$PROJECT_DIR$/src/ui/AccessoriesPanel.java" />
         <option value="$PROJECT_DIR$/../server/src/BDTable/Accessories.java" />
         <option value="$PROJECT_DIR$/../server/src/BDTable/Prodaction.java" />
-        <option value="$PROJECT_DIR$/src/ui/DB.java" />
         <option value="$PROJECT_DIR$/src/ui/UserPanel.java" />
         <option value="$PROJECT_DIR$/../server/src/BDTable/User.java" />
-        <option value="$PROJECT_DIR$/src/ui/LogIN.java" />
         <option value="$PROJECT_DIR$/src/ui/chartPieUI.java" />
         <option value="$PROJECT_DIR$/src/ui/evaluatePanel/TestTab.form" />
         <option value="$PROJECT_DIR$/src/ui/evaluatePanel/TestTab.java" />
-        <option value="$PROJECT_DIR$/src/ui/graphics/chartPieUI.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/ui/tablePanel/AccessoriesPanel.java" />
-        <option value="$PROJECT_DIR$/src/ui/tablePanel/ProdactionPanel.java" />
         <option value="$PROJECT_DIR$/../server/src/BDTable/Report.java" />
         <option value="$PROJECT_DIR$/../server/src/DataBase/SQLRequest.java" />
-        <option value="$PROJECT_DIR$/src/ui/graphics/GraphicsPanel.java" />
-        <option value="$PROJECT_DIR$/src/ui/AdminMainMenu.java" />
-        <option value="$PROJECT_DIR$/src/ui/evaluatePanel/MainReportPanel.java" />
-        <option value="$PROJECT_DIR$/src/ui/EvaluateUI.java" />
         <option value="$PROJECT_DIR$/../server/src/ui/ServerGUI.java" />
         <option value="$PROJECT_DIR$/../server/src/Message/Message.java" />
         <option value="$PROJECT_DIR$/src/ui/tablePanel/DeletePanel.java" />
-        <option value="$PROJECT_DIR$/src/ui/tablePanel/UserPanel.java" />
-        <option value="$PROJECT_DIR$/src/ui/DatePanel.java" />
-        <option value="$PROJECT_DIR$/src/ui/tablePanel/StaffPanel.java" />
         <option value="$PROJECT_DIR$/src/Instruments/Client.java" />
+        <option value="$PROJECT_DIR$/src/ui/tablePanel/UserPanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/tablePanel/ProdactionPanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/LogIN.java" />
+        <option value="$PROJECT_DIR$/src/ui/graphics/chartPieUI.java" />
+        <option value="$PROJECT_DIR$/src/ui/AdminMainMenu.java" />
+        <option value="$PROJECT_DIR$/src/ui/DatePanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/graphics/GraphicsPanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/MainMenu.java" />
+        <option value="$PROJECT_DIR$/src/ui/tablePanel/StaffPanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/tablePanel/AccessoriesPanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/evaluatePanel/MainReportPanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/tablePanel/RawPackagePanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/DB.java" />
+        <option value="$PROJECT_DIR$/src/ui/EvaluateUI.java" />
       </list>
     </option>
   </component>
@@ -429,7 +456,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543771317338" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543777457769" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Java/Pattern" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -528,7 +555,7 @@
       <workItem from="1543229472845" duration="1026000" />
       <workItem from="1543236782820" duration="18391000" />
       <workItem from="1543308507282" duration="5947000" />
-      <workItem from="1543669146469" duration="52451000" />
+      <workItem from="1543669146469" duration="57320000" />
     </task>
     <servers />
   </component>
@@ -544,10 +571,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157591000" />
+    <option name="totallyTimeSpent" value="162460000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="133" y="-1058" width="1696" height="1026" extended-state="6" />
+    <frame x="133" y="-1058" width="1696" height="1026" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18337408" />
@@ -560,7 +587,7 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32399103" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32847533" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.27914798" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.27914798" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.396861" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -575,7 +602,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.2557047" />
+      <window_info active="true" anchor="right" id="Database" order="6" visible="true" weight="0.2555012" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
@@ -612,38 +639,20 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ui/tablePanel/UserPanel.java</url>
-          <line>300</line>
-          <properties />
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ui/graphics/chartPieUI.java</url>
-          <line>30</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Instruments/Client.java</url>
-          <line>170</line>
+          <line>169</line>
           <properties />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ui/evaluatePanel/MainReportPanel.java</url>
-          <line>329</line>
-          <properties />
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Instruments/Client.java</url>
-          <line>37</line>
+          <line>36</line>
           <properties />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/ui/graphics/GraphicsPanel.java</url>
-          <line>207</line>
+          <line>201</line>
           <properties class="ui.graphics.GraphicsPanel" method="setChartData">
             <option name="EMULATED" value="true" />
           </properties>
@@ -670,7 +679,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/SaffPanel.java" />
-    <entry file="file://$PROJECT_DIR$/../server/src/BDTable/Accessories.java">
+    <entry file="file://$PROJECT_DIR$/../server/src/BDTable/RawPackage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="42" selection-end-column="5" />
@@ -735,16 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/graphics/chartPieUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="656">
@@ -759,27 +758,6 @@
           <folding>
             <element signature="e#79483#79484#0" expanded="true" />
             <element signature="e#79527#79528#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/DB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="79" column="63" selection-start-line="79" selection-start-column="63" selection-end-line="79" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="n#!!doc;n#TabActionListener#0;n#DB#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/ProdactionPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="263" column="73" selection-start-line="263" selection-start-column="73" selection-end-line="263" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -816,54 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/graphics/GraphicsPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="70" column="13" lean-forward="true" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4037#4038#0" expanded="true" />
-            <element signature="e#4093#4094#0" expanded="true" />
-            <element signature="e#4140#4141#0" expanded="true" />
-            <element signature="e#4178#4179#0" expanded="true" />
-            <element signature="e#4258#4259#0" expanded="true" />
-            <element signature="e#4310#4311#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/AccessoriesPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="203" column="50" selection-start-line="203" selection-start-column="50" selection-end-line="203" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/evaluatePanel/MainReportPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="203" column="7" lean-forward="true" selection-start-line="203" selection-start-column="7" selection-end-line="203" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#10512#10513#0" expanded="true" />
-            <element signature="e#10593#10594#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/LogIN.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../server/src/ui/ServerGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -890,33 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/AdminMainMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="91" selection-start-line="91" selection-end-line="94" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instruments/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/EvaluateUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1775#1776#0" expanded="true" />
-            <element signature="e#1830#1831#0" expanded="true" />
-            <element signature="n#!!doc;n#TabActionListener#0;n#EvaluateUI#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/DeletePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -931,17 +834,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/SocketGuiInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/Instruments/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        <state relative-caret-position="232">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/DatePanel.java">
+    <entry file="file://$PROJECT_DIR$/src/Instruments/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="60" column="24" lean-forward="true" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+        <state relative-caret-position="102">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/SocketGuiInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/evaluatePanel/MainReportPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-196">
+          <caret line="225" column="62" lean-forward="true" selection-start-line="225" selection-start-column="62" selection-end-line="225" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6184#6185#0" expanded="true" />
+            <element signature="e#6216#6217#0" expanded="true" />
+            <element signature="e#6095#6096#0" expanded="true" />
+            <element signature="e#6172#6173#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/graphics/chartPieUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/graphics/GraphicsPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="230" column="89" selection-start-line="230" selection-start-column="89" selection-end-line="230" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/ProdactionPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="108" column="14" selection-start-line="108" selection-start-column="14" selection-end-line="108" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/RawPackagePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="163" column="46" selection-start-line="163" selection-start-column="46" selection-end-line="163" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/StaffPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="90" column="29" selection-start-line="90" selection-start-column="29" selection-end-line="90" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -950,37 +924,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/UserPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6411#6412#0" expanded="true" />
-            <element signature="e#6467#6468#0" expanded="true" />
-            <element signature="e#6514#6515#0" expanded="true" />
-            <element signature="e#6552#6553#0" expanded="true" />
-            <element signature="e#9403#9404#0" expanded="true" />
-            <element signature="e#9474#9475#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/tablePanel/StaffPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+        <state relative-caret-position="92">
+          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instruments/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/DatePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+        <state relative-caret-position="163">
+          <caret line="53" column="72" selection-start-line="53" selection-start-column="72" selection-end-line="53" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/DB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/EvaluateUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="63" column="22" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/LogIN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/MainMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
         </state>
       </provider>
     </entry>

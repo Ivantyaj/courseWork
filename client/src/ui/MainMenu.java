@@ -10,22 +10,22 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-public class AdminMainMenu extends JFrame implements SocketGuiInterface {
+public class MainMenu extends JFrame implements SocketGuiInterface {
 
-    ObjectOutputStream clientSendStream;
-    Message message;
+    private ObjectOutputStream clientSendStream;
+    private Message message;
 
-    JButton btnDBUser;
-    JButton btnUser;
-    JButton btnBack;
+    private JButton btnDBUser;
+    private JButton btnUser;
+    private JButton btnBack;
 
-    DB dbUI;
-    EvaluateUI evaluateUI;
+    private DB dbUI;
+    private EvaluateUI evaluateUI;
 
-    User user;
+    private User user;
 
 
-    public AdminMainMenu(ObjectOutputStream objectOutputStream, Message mes){
+    public MainMenu(ObjectOutputStream objectOutputStream, Message mes){
         super("Администратор");
 
         setClientSendStream(objectOutputStream);
@@ -35,11 +35,10 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
         user = new User();
         user.setRole(User.Role.USER);
 
-
-        setSize(150, 200);
+        setSize(185, 200);
 
         btnUser = new JButton("Расчет затрат");
-        btnDBUser = new JButton("Войти в базу данных");
+        btnDBUser = new JButton("Работа с данными");
         btnBack = new JButton("Назад");
 
         dbUI = new DB(clientSendStream, message);
@@ -51,13 +50,11 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
         evaluateUI.setLocationRelativeTo(null);
         evaluateUI.setUser(user);
 
-        //setDefaultCloseOperation(HIDE_ON_CLOSE);
-
         setLayout(null);
 
-        btnUser.setBounds(10, 10, 120, 30);
-        btnDBUser.setBounds(10, 60, 120, 30);
-        btnBack.setBounds(10, 110, 120, 30);
+        btnUser.setBounds(10, 10, 150, 30);
+        btnDBUser.setBounds(10, 60, 150, 30);
+        btnBack.setBounds(10, 110, 150, 30);
 
         add(btnBack);
         add(btnDBUser);
@@ -66,11 +63,6 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
         btnBack.addActionListener(new ButtonActionListener());
         btnDBUser.addActionListener(new ButtonActionListener());
         btnUser.addActionListener(new ButtonActionListener());
-
-    }
-
-    private void visible(boolean b) {
-        setVisible(b);
     }
 
     @Override
@@ -87,14 +79,13 @@ public class AdminMainMenu extends JFrame implements SocketGuiInterface {
         public void actionPerformed(ActionEvent e) {
 
             if (e.getSource() == btnBack) {
-                visible(false);
+                setVisible(false);
             } else if (e.getSource() == btnDBUser) {
                 if(user.getRole() == User.Role.USER){
                     JOptionPane.showMessageDialog(null, "Недостаточно прав для доступа!\nОбратитесь к администратору!");
                     return;
                 }
 
-                //message.setMessageArray(stringArrayList);
                 message = new Message();
                 message.setCommand(Message.cmd.UserRequest);
                 try {

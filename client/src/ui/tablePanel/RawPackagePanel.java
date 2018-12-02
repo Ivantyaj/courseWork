@@ -12,48 +12,39 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-public class AccessoriesPanel extends JPanel implements SocketGuiInterface {
+public class RawPackagePanel extends JPanel implements SocketGuiInterface {
 
-    String[] columnName = {
+    private String[] columnName = {
             "id",
-            "Название",
+            "Назначение",
             "Количество",
             "Цена"
     };
 
-    ObjectOutputStream clientSendStream;
-    Message message;
+    private ObjectOutputStream clientSendStream;
+    private Message message;
 
-    JTable table;
-    JTabbedPane tabbedPane;
+    private JTable table;
 
+    private JButton btnTabDelete;
 
-    JButton btnTabDelete;
+    private JPanel tabDeletePanel;
+    private JPanel tabInsertPanel;
 
-    JPanel tabDeletePanel;
-    JPanel tabInsertPanel;
-    //JPanel tabModifyPanel;
+    private JFormattedTextField ftfName;
+    private JFormattedTextField ftfCount;
+    private JFormattedTextField ftfPrice;
 
-    JFormattedTextField ftfName;
-    JFormattedTextField ftfCount;
-    JFormattedTextField ftfPrice;
-
-
-    JButton btnTabAdd;
-    JButton btnTabRedact;
+    private JButton btnTabAdd;
+    private JButton btnTabRedact;
     private int id;
 
 
-    public AccessoriesPanel(ObjectOutputStream css, Message mes) {
+    public RawPackagePanel(ObjectOutputStream css, Message mes) {
         setClientSendStream(css);
         setMessage(mes);
 
@@ -63,23 +54,20 @@ public class AccessoriesPanel extends JPanel implements SocketGuiInterface {
         table = new JTable(new Object[][]{}, columnName);
         JScrollPane scrollPane = new JScrollPane(table);
 
-        //table.setSize(400,50);
         table.setCellSelectionEnabled(false);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         table.setRowSelectionAllowed(true);
-        table.getSelectionModel().addListSelectionListener(new AccessoriesPanel.TableSelectListener());
-        table.setDefaultEditor(Object.class, null); //? /////////////////////////////////
+        table.getSelectionModel().addListSelectionListener(new RawPackagePanel.TableSelectListener());
+        table.setDefaultEditor(Object.class, null);
 
         scrollPane.setBounds(10, 10, 890, 350);
-        //add(table);
 
-
-        tabbedPane = new JTabbedPane();
+        JTabbedPane tabbedPane = new JTabbedPane();
 
         tabDeletePanel = new JPanel();
         tabDeletePanel.setLayout(null);
         btnTabDelete = new JButton("Удалить");
-        btnTabDelete.addActionListener(new AccessoriesPanel.ButtonActionListener());
+        btnTabDelete.addActionListener(new RawPackagePanel.ButtonActionListener());
         btnTabDelete.setBounds(10, 50, 90, 20);
         tabDeletePanel.add(btnTabDelete);
 
@@ -87,31 +75,29 @@ public class AccessoriesPanel extends JPanel implements SocketGuiInterface {
         tabInsertPanel.setLayout(null);
 
         btnTabAdd = new JButton("Добавить");
-        btnTabAdd.addActionListener(new AccessoriesPanel.ButtonActionListener());
+        btnTabAdd.addActionListener(new RawPackagePanel.ButtonActionListener());
         btnTabAdd.setBounds(300, 70, 100, 20);
 
         btnTabRedact = new JButton("Изменить");
-        btnTabRedact.addActionListener(new AccessoriesPanel.ButtonActionListener());
+        btnTabRedact.addActionListener(new RawPackagePanel.ButtonActionListener());
         btnTabRedact.setBounds(300, 90, 100, 20);
-        //tabModifyPanel = new JPanel();
 
         ftfName = new JFormattedTextField();
-        ftfName.setBounds(100, 5, 90, 20);
-        //ftfName.addKeyListener(new TftCaractersListener());
+        ftfName.setBounds(130, 5, 90, 20);
 
         ftfCount = new JFormattedTextField();
-        ftfCount.setBounds(100, 35, 90, 20);
+        ftfCount.setBounds(130, 35, 90, 20);
 
         ftfPrice = new JFormattedTextField();
-        ftfPrice.setBounds(100, 65, 90, 20);
+        ftfPrice.setBounds(130, 65, 90, 20);
 
-        JLabel lbName = new JLabel("Название пакета");
+        JLabel lbName = new JLabel("Назначение пакета");
         JLabel lbCount = new JLabel("Количество");
         JLabel lbPrice = new JLabel("Цена за пакет");
 
-        lbName.setBounds(5, 5, 90, 20);
-        lbCount.setBounds(5, 30, 90, 20);
-        lbPrice.setBounds(5, 55, 90, 20);
+        lbName.setBounds(5, 5, 130, 20);
+        lbCount.setBounds(5, 30, 130, 20);
+        lbPrice.setBounds(5, 55, 130, 20);
 
         tabInsertPanel.add(lbName);
         tabInsertPanel.add(lbCount);
@@ -123,7 +109,6 @@ public class AccessoriesPanel extends JPanel implements SocketGuiInterface {
         tabInsertPanel.add(ftfCount);
         tabInsertPanel.add(ftfPrice);
 
-
         tabbedPane.addTab("Добавить", tabInsertPanel);
 
         JLabel labelDelete = new JLabel("Выберите запись/записи для удаления");
@@ -132,27 +117,12 @@ public class AccessoriesPanel extends JPanel implements SocketGuiInterface {
         tabDeletePanel.add(labelDelete);
 
         tabbedPane.addTab("Удалить", tabDeletePanel);
-        //tabbedPane.addTab("Изменить", tabModifyPanel);
 
         tabbedPane.setBounds(10, 360, 890, 310);
-        tabbedPane.addChangeListener(new AccessoriesPanel.TabActionListener());
+        tabbedPane.addChangeListener(new RawPackagePanel.TabActionListener());
 
         add(scrollPane);
         add(tabbedPane);
-
-    }
-
-    final static String DATE_FORMAT = "yyyy-MM-dd";
-
-    public static boolean isDateValid(String date) {
-        try {
-            DateFormat df = new SimpleDateFormat(DATE_FORMAT);
-            df.setLenient(false);
-            df.parse(date);
-            return true;
-        } catch (ParseException e) {
-            return false;
-        }
     }
 
     public void setClientSendStream(ObjectOutputStream clientSendStream) {
@@ -175,7 +145,7 @@ public class AccessoriesPanel extends JPanel implements SocketGuiInterface {
                 message = new Message();
                 if (!listID.isEmpty()) {
                     message.setMessageArray(listID);
-                    message.setCommand(Message.cmd.AccessoriesDelete);
+                    message.setCommand(Message.cmd.RawDelete);
                     try {
                         clientSendStream.writeObject(message);
                     } catch (IOException e1) {
@@ -184,14 +154,14 @@ public class AccessoriesPanel extends JPanel implements SocketGuiInterface {
                 }
             }
             if (e.getSource() == btnTabAdd) {
-                setSendData(Message.cmd.AccessoriesAdd);
+                setSendData(Message.cmd.RawAdd);
             }
             if (e.getSource() == btnTabRedact) {
-                setSendData(Message.cmd.AccessoriesRedact);
+                setSendData(Message.cmd.RawRedact);
             }
 
             message = new Message();
-            message.setCommand(Message.cmd.AccessoriesRequest);
+            message.setCommand(Message.cmd.RawRequest);
             try {
                 clientSendStream.writeObject(message);
             } catch (IOException e1) {
@@ -201,7 +171,7 @@ public class AccessoriesPanel extends JPanel implements SocketGuiInterface {
     }
 
     private void setSendData(Message.cmd cmd){
-        ArrayList<Object> addData = new ArrayList<>();
+        ArrayList<Object> addData = new ArrayList<Object>();
         addData.add(String.valueOf(id));
         addData.add(ftfName.getText());
         addData.add(ftfCount.getText());
@@ -227,28 +197,12 @@ public class AccessoriesPanel extends JPanel implements SocketGuiInterface {
                 table.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
             } else if (sourcePanel == tabInsertPanel) {
                 table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//            } else if (sourcePanel == tabModifyPanel) {
-//                table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
             }
         }
     }
 
     public void setSourse(Object[][] data) {
         table.setModel(new DefaultTableModel(data, columnName));
-    }
-
-    public class TftCaractersListener extends KeyAdapter {
-
-        public void keyTyped(KeyEvent e) {
-            char c = e.getKeyChar();
-            if (!((c >= 'А') && (c <= 'я') ||
-                    (c == KeyEvent.VK_BACK_SPACE) ||
-                    (c == KeyEvent.VK_DELETE))) {
-                JOptionPane.showMessageDialog(null, "Только русские символы!");
-                e.consume();
-            }
-        }
-
     }
 
     public class TableSelectListener implements ListSelectionListener {

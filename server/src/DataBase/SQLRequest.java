@@ -1,6 +1,6 @@
 package DataBase;
 
-import BDTable.Accessories;
+import BDTable.RawPackage;
 import BDTable.Prodaction;
 import BDTable.Report;
 import BDTable.Staff;
@@ -9,7 +9,6 @@ import Message.Message;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 
 public class SQLRequest {
@@ -46,16 +45,16 @@ public class SQLRequest {
                 updateData(message);
                 break;
             //////////////////////////////////
-            case AccessoriesRequest:
-                resultSet = selectFrom("accessories");
+            case RawRequest:
+                resultSet = selectFrom("rawpackage");
                 break;
-            case AccessoriesAdd:
+            case RawAdd:
                 insertInto(message);
                 break;
-            case AccessoriesDelete:
-                deleteFrom("accessories", message);
+            case RawDelete:
+                deleteFrom("rawpackage", message);
                 break;
-            case AccessoriesRedact:
+            case RawRedact:
                 updateData(message);
                 break;
             //////////////////////////////////
@@ -174,8 +173,8 @@ public class SQLRequest {
                 preparedStatement.setFloat(3, Float.valueOf((String)message.getMessageArray().get(3)));
                 preparedStatement.setString(4, (String) message.getMessageArray().get(4));
                 break;
-            case AccessoriesAdd:
-                query = "insert into accessories(name, count, price) values (?,?,?)";
+            case RawAdd:
+                query = "insert into rawpackage(name, count, price) values (?,?,?)";
                 preparedStatement = dbWorker.getConnection().prepareStatement(query);
                 preparedStatement.setString(1, (String) message.getMessageArray().get(1));
                 preparedStatement.setInt(2, Integer.valueOf((String)message.getMessageArray().get(2)));
@@ -219,8 +218,8 @@ public class SQLRequest {
                 preparedStatement.setString(4, (String) message.getMessageArray().get(4));
                 preparedStatement.setInt(5,Integer.parseInt((String) message.getMessageArray().get(0)));
                 break;
-            case AccessoriesRedact:
-                query = "UPDATE accessories set name = ?, count = ?, price = ? WHERE id = ?";
+            case RawRedact:
+                query = "UPDATE rawpackage set name = ?, count = ?, price = ? WHERE id = ?";
                 preparedStatement = dbWorker.getConnection().prepareStatement(query);
                 preparedStatement.setString(1, (String) message.getMessageArray().get(1));
                 preparedStatement.setInt(2, Integer.valueOf((String)message.getMessageArray().get(2)));
@@ -233,7 +232,7 @@ public class SQLRequest {
     }
 
     //TODO divide
-    public ArrayList<Object> requestDataForEvaluate(int idStaff, int idProdaction, int idAccessories) throws SQLException {
+    public ArrayList<Object> requestDataForEvaluate(int idStaff, int idProdaction, int idRawPackage) throws SQLException {
         String query = "select * from %s where id=?";
         PreparedStatement preparedStatement;
 
@@ -257,20 +256,20 @@ public class SQLRequest {
             prodaction = new Prodaction(resultSet);
         }
 
-        queryTable = String.format(query, "accessories");
+        queryTable = String.format(query, "rawPackage");
         preparedStatement = dbWorker.getConnection().prepareStatement(queryTable);
-        preparedStatement.setInt(1,idAccessories);
+        preparedStatement.setInt(1,idRawPackage);
         resultSet = preparedStatement.executeQuery();
-        Accessories accessories = null;
+        RawPackage rawPackage = null;
         if(resultSet.next()) {
-            accessories = new Accessories(resultSet);
+            rawPackage = new RawPackage(resultSet);
         }
 
         ArrayList<Object> arrayList = new ArrayList<>();
 
         arrayList.add(staff);
         arrayList.add(prodaction);
-        arrayList.add(accessories);
+        arrayList.add(rawPackage);
 
         return arrayList;
     }
@@ -286,17 +285,17 @@ public class SQLRequest {
     }
 
     public void insertIntoReport(Report report) throws SQLException {
-        String query = "insert into report(date, result, id_user, id_staff, id_accessories, id_prodaction, total_staff, total_accessories,total_prodaction)" +
+        String query = "insert into report(date, result, id_user, id_staff, id_rawpackage, id_prodaction, total_staff, total_rawpackage,total_prodaction)" +
                 " values(?,?,?,?,?,?,?,?,?)";
         PreparedStatement preparedStatement = dbWorker.getConnection().prepareStatement(query);
         preparedStatement.setDate(1, report.getDate());
         preparedStatement.setFloat(2, report.getResult());
         preparedStatement.setInt(3, report.getId_user());
         preparedStatement.setInt(4, report.getId_staff());
-        preparedStatement.setInt(5, report.getId_accessories());
+        preparedStatement.setInt(5, report.getId_rawpackage());
         preparedStatement.setInt(6, report.getId_prodaction());
         preparedStatement.setFloat(7, report.getTotalStaff());
-        preparedStatement.setFloat(8, report.getTotalAccessories());
+        preparedStatement.setFloat(8, report.getTotalRawPackage());
         preparedStatement.setFloat(9, report.getTotalProdaction());
 
         preparedStatement.execute();

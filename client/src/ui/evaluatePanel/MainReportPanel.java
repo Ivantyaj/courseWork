@@ -2,10 +2,8 @@ package ui.evaluatePanel;
 
 import BDTable.User;
 import Message.Message;
-import org.jfree.chart.ChartPanel;
 import ui.DatePanel;
 import ui.SocketGuiInterface;
-import ui.graphics.chartPieUI;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -24,9 +22,9 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
             "Процент отчислений",
             "Дата"
     };
-    private String[] columnNameAcceccories = {
+    private String[] columnNameRaw = {
             "id",
-            "Название",
+            "Назначение",
             "Количество",
             "Цена"
     };
@@ -39,7 +37,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
     };
 
     private JTable tableStaff;
-    private JTable tableAccessories;
+    private JTable tableRaw;
     private JTable tableProdaction;
 
 
@@ -58,15 +56,8 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
 
     private JComboBox comboBox;
 
-    JLabel lbTransportSum;
-    JLabel lbDebtPersent;
-
     //private int idUser;
     private User user;
-
-
-    private chartPieUI ui;
-    ChartPanel chart;
 
     public MainReportPanel(ObjectOutputStream css, Message mes) {
         setClientSendStream(css);
@@ -82,7 +73,6 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         tableStaff = new JTable(new Object[][]{}, columnNameStaff);
         JScrollPane scrollPaneStaff = new JScrollPane(tableStaff);
 
-        //table.setSize(400,50);
         tableStaff.setCellSelectionEnabled(false);
         tableStaff.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tableStaff.setRowSelectionAllowed(true);
@@ -93,24 +83,22 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         JLabel lbStaff = new JLabel("Персонал:");
         lbStaff.setBounds(10, 0, 100, 20);
 
-        tableAccessories = new JTable(new Object[][]{}, columnNameAcceccories);
-        JScrollPane scrollPaneAccessories = new JScrollPane(tableAccessories);
+        tableRaw = new JTable(new Object[][]{}, columnNameRaw);
+        JScrollPane scrollPaneRaw = new JScrollPane(tableRaw);
 
-        //table.setSize(400,50);
-        tableAccessories.setCellSelectionEnabled(false);
-        tableAccessories.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        tableAccessories.setRowSelectionAllowed(true);
-        tableAccessories.getSelectionModel().addListSelectionListener(new MainReportPanel.TableSelectListener());
-        tableAccessories.setDefaultEditor(Object.class, null); //
+        tableRaw.setCellSelectionEnabled(false);
+        tableRaw.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        tableRaw.setRowSelectionAllowed(true);
+        tableRaw.getSelectionModel().addListSelectionListener(new MainReportPanel.TableSelectListener());
+        tableRaw.setDefaultEditor(Object.class, null); //
 
-        scrollPaneAccessories.setBounds(10, 145, 890, 105);
-        JLabel lbAccessories = new JLabel("Сырье:");
-        lbAccessories.setBounds(10, 125, 100, 20);
+        scrollPaneRaw.setBounds(10, 145, 890, 105);
+        JLabel lbRaw = new JLabel("Набор сырья:");
+        lbRaw.setBounds(10, 125, 130, 20);
 
         tableProdaction = new JTable(new Object[][]{}, columnNameProdaction);
         JScrollPane scrollPaneProdaction = new JScrollPane(tableProdaction);
 
-        //table.setSize(400,50);
         tableProdaction.setCellSelectionEnabled(false);
         tableProdaction.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tableProdaction.setRowSelectionAllowed(true);
@@ -120,8 +108,6 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         scrollPaneProdaction.setBounds(10, 270, 890, 105);
         JLabel lbProdaction = new JLabel("Производство:");
         lbProdaction.setBounds(10, 250, 100, 20);
-
-        //add(table);
 
         btnEvaluate = new JButton("Рассчитать");
         btnEvaluate.setBounds(10, 630, 100, 25);
@@ -152,10 +138,6 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         cbTransport.setBounds(10, 490, 250, 20);
         cbTransport.addItemListener(new CheckBoxActionListener());
 
-        lbTransportSum = new JLabel("транспортные расходы:");
-        lbTransportSum.setBounds(120, 520, 150, 20);
-        lbTransportSum.setEnabled(false);
-
         ftfTransportSum = new JFormattedTextField();
         ftfTransportSum.setBounds(30, 520, 90, 20);
         ftfTransportSum.setEnabled(false);
@@ -169,22 +151,19 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         ftfAddSum.setEnabled(false);
 
         add(scrollPaneStaff);
-        add(scrollPaneAccessories);
+        add(scrollPaneRaw);
         add(scrollPaneProdaction);
 
         add(lbStaff);
-        add(lbAccessories);
+        add(lbRaw);
         add(lbProdaction);
         add(lbDate);
-        add(lbTransportSum);
-        add(lbTransportSum);
 
         add(btnEvaluate);
         add(datePanel);
         add(ftfTransportSum);
         add(ftfAddSum);
         add(comboBox);
-        //add(cbAdditional);
         add(cbTransport);
         add(cbDefect);
         add(cbAdditional);
@@ -192,16 +171,11 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
 
     public void setUser(User user) {
         this.user = user;
-        //this.setIdUser(user.getId());
     }
 
     public int getIdUser() {
         return user.getId();
     }
-
-//    public void setIdUser(int idUser) {
-//        this.user.setId(idUser);
-//    }
 
     public void setClientSendStream(ObjectOutputStream clientSendStream) {
         this.clientSendStream = clientSendStream;
@@ -211,103 +185,16 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         this.message = message;
     }
 
-//    public class ButtonActionListener implements ActionListener {
-//        public void actionPerformed(ActionEvent e) {
-//
-//            if (e.getSource() == btnTabDelete) {
-//                int[] selectedRows = table.getSelectedRows();
-//                ArrayList<Object> listID = new ArrayList<>();
-//                for (int id : selectedRows) {
-//                    listID.add(table.getValueAt(id, 0));
-//                }
-//                message = new Message();
-//                if (!listID.isEmpty()) {
-//                    message.setMessageArray(listID);
-//                    message.setCommand(Message.cmd.UserDelete);
-//                    try {
-//                        clientSendStream.writeObject(message);
-//                    } catch (IOException e1) {
-//                        e1.printStackTrace();
-//                    }
-//                }
-////
-////                message = new Message();
-////                message.setCommand(Message.cmd.UserRequest);
-////                try {
-////                    clientSendStream.writeObject(message);
-////                } catch (IOException e1) {
-////                    e1.printStackTrace();
-////                }
-//            }
-//            if (e.getSource() == btnTabAdd) {
-//                ArrayList<Object> addData = new ArrayList<>();
-//                addData.add(ftfFName.getText());
-//                addData.add(ftfSName.getText());
-//
-//                if (comboBox.getSelectedIndex() == 0)
-//                    addData.add(String.valueOf(User.Role.ADMIN));
-//                else
-//                    addData.add(String.valueOf(User.Role.USER));
-//
-//                message = new Message();
-//
-//                message.setMessageArray(addData);
-//                message.setCommand(Message.cmd.UserAdd);
-//                try {
-//                    clientSendStream.writeObject(message);
-//                } catch (IOException e1) {
-//                    e1.printStackTrace();
-//                }
-//            }
-//
-//            message = new Message();
-//            message.setCommand(Message.cmd.UserRequest);
-//            try {
-//                clientSendStream.writeObject(message);
-//            } catch (IOException e1) {
-//                e1.printStackTrace();
-//            }
-//        }
-//    }
-//
-//    public class TabActionListener implements ChangeListener {
-//        @Override
-//        public void stateChanged(ChangeEvent e) {
-//            JPanel sourcePanel = (JPanel) ((JTabbedPane) e.getSource()).getSelectedComponent();
-//            if (sourcePanel == tabDeletePanel) {
-//                table.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-//            } else if (sourcePanel == tabInsertPanel) {
-//                table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-////            } else if (sourcePanel == tabModifyPanel) {
-////                table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//            }
-//        }
-//    }
-
     public void setSourseStaff(Object[][] data) {
         tableStaff.setModel(new DefaultTableModel(data, columnNameStaff));
     }
 
-    public void setSourseAccessories(Object[][] data) {
-        tableAccessories.setModel(new DefaultTableModel(data, columnNameAcceccories));
+    public void setSourseRaw(Object[][] data) {
+        tableRaw.setModel(new DefaultTableModel(data, columnNameRaw));
     }
 
     public void setSourseProdaction(Object[][] data) {
         tableProdaction.setModel(new DefaultTableModel(data, columnNameProdaction));
-    }
-
-    public class TftCaractersListener extends KeyAdapter {
-
-        public void keyTyped(KeyEvent e) {
-            char c = e.getKeyChar();
-            if (!((c >= 'А') && (c <= 'я') ||
-                    (c == KeyEvent.VK_BACK_SPACE) ||
-                    (c == KeyEvent.VK_DELETE))) {
-                JOptionPane.showMessageDialog(null, "Только русские символы!");
-                e.consume();
-            }
-        }
-
     }
 
     public class TableSelectListener implements ListSelectionListener {
@@ -317,7 +204,6 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
                 int selectedRow = tableStaff.getSelectedRow();
                 if (selectedRow >= 0) {
                     TableModel model = tableStaff.getModel();
-                    //id = Integer.parseInt((String) model.getValueAt(selectedRow, 0));
                 }
             }
         }
@@ -338,13 +224,13 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
                 ArrayList<Object> listID = new ArrayList<>();
 
                 int selectStaff = tableStaff.getSelectedRow();
-                int selectAccessories = tableAccessories.getSelectedRow();
+                int selectRaw = tableRaw.getSelectedRow();
                 int selectProdaction = tableProdaction.getSelectedRow();
-                if (selectStaff < 0 || selectAccessories < 0 || selectProdaction < 0) {
+                if (selectStaff < 0 || selectRaw < 0 || selectProdaction < 0) {
                     JOptionPane.showMessageDialog(null, "Выберите все данные для расчета!");
                 } else {
                     listID.add(tableStaff.getValueAt(selectStaff, 0));
-                    listID.add(tableAccessories.getValueAt(selectAccessories, 0));
+                    listID.add(tableRaw.getValueAt(selectRaw, 0));
                     listID.add(tableProdaction.getValueAt(selectProdaction, 0));
                     listID.add(String.valueOf(user.getId()));
                     listID.add(datePanel.getText());
@@ -405,16 +291,12 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         public void itemStateChanged(ItemEvent e) {
             if (cbDefect.isSelected()) {
                 comboBox.setEnabled(true);
-                //comboBox.setEditable(true);
             } else {
                 comboBox.setEnabled(false);
-                //comboBox.setEditable(false);
             }
             if (cbTransport.isSelected()) {
-                lbTransportSum.setEnabled(true);
                 ftfTransportSum.setEnabled(true);
             } else {
-                lbTransportSum.setEnabled(false);
                 ftfTransportSum.setEnabled(false);
             }
             if (cbAdditional.isSelected()) {

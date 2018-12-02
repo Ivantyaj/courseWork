@@ -30,8 +30,6 @@ public class ServerThread extends Thread {
 
     public ServerThread(Socket socket) {
         this.socket = socket;
-        //  daoFactory = new SqlDaoFactory();
-        // connection = daoFactory.getConnection();
     }
 
     @Override
@@ -42,11 +40,9 @@ public class ServerThread extends Thread {
         serverGui.setResizable(false);
         serverGui.setLocationRelativeTo(null);
         serverGui.addClient();
-        System.out.println("socet--------------------" + socket.getChannel() + socket.getInetAddress() + socket.getPort());
 
         System.out.println(socket.getInetAddress().getHostName() +
                 " " + socket.getInetAddress() + "connected");
-
 
         dbWorker = new DBWorker();
         sqlRequest = new SQLRequest();
@@ -76,10 +72,6 @@ public class ServerThread extends Thread {
                                 ResultSet resultSet = statement.executeQuery(query);
 
                                 if (resultSet.next()) {
-//                                user.setId(resultSet.getInt("id"));
-//                                user.setRole(resultSet.getString("role"));
-//                                user.setLogin(resultSet.getString("login"));
-//                                user.setPassword(resultSet.getString("password"));
                                     user = new User(resultSet);
                                 }
                             }
@@ -89,9 +81,6 @@ public class ServerThread extends Thread {
                         break;
                         case UserRequest: {
                             ArrayList<Object> userArrayList = new ArrayList<>();
-                            //String query = "select * from users";
-                            //Statement statement = dbWorker.getConnection().createStatement();
-//                        ResultSet resultSet = statement.executeQuery(query);
                             ResultSet resultSet = sqlRequest.executeSqlQuery(message);
                             while (resultSet.next()) {
                                 userArrayList.add(new User(resultSet));
@@ -104,37 +93,21 @@ public class ServerThread extends Thread {
                             ArrayList<Object> staffArrayList = new ArrayList<>();
                             ResultSet resultSet = sqlRequest.executeSqlQuery(message);
 
-                            //if(resultSet != null) {
                             while (resultSet.next()) {
                                 staffArrayList.add(new Staff(resultSet));
                             }
-                            //}
+
                             message.setMessageArray(staffArrayList);
                             serverSendStream.writeObject(message);
                             break;
-//                    case AccessoriesDelete:
-//                    case AccessoriesAdd:
-//                    case ProdactionDelete:
-//                    case ProdactionAdd:
-//                    case UserDelete:
-//                    case UserAdd:
-//                    case StaffDelete:
-//                    case StaffAdd:
-//                    case StaffRedact:
-//                    case UserRedact:
-//                    case ProdactionRedact:
-//                    case AccessoriesRedact:
-//                        sqlRequest.executeSqlQuery(message);
-//                        break;
-                        case AccessoriesRequest: {
+                        case RawRequest: {
                             ArrayList<Object> accessoriesArrayList = new ArrayList<>();
                             ResultSet resultSetAccessories = sqlRequest.executeSqlQuery(message);
 
-                            //if(resultSet != null) {
                             while (resultSetAccessories.next()) {
-                                accessoriesArrayList.add(new Accessories(resultSetAccessories));
+                                accessoriesArrayList.add(new RawPackage(resultSetAccessories));
                             }
-                            //}
+
                             message.setMessageArray(accessoriesArrayList);
                             serverSendStream.writeObject(message);
                         }
@@ -144,11 +117,9 @@ public class ServerThread extends Thread {
                             ArrayList<Object> prodactionArrayList = new ArrayList<>();
                             ResultSet resultSetProdaction = sqlRequest.executeSqlQuery(message);
 
-                            //if(resultSet != null) {
                             while (resultSetProdaction.next()) {
                                 prodactionArrayList.add(new Prodaction(resultSetProdaction));
                             }
-                            //}
                             message.setMessageArray(prodactionArrayList);
                             serverSendStream.writeObject(message);
                         }

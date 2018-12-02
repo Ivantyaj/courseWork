@@ -22,7 +22,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 
 public class UserPanel extends JPanel implements SocketGuiInterface {
-    String[] columnName = {
+    private String[] columnName = {
             "id",
             "Логин",
             "Пароль",
@@ -32,27 +32,27 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
             "Телефон"
     };
 
-    ObjectOutputStream clientSendStream;
-    Message message;
+    private ObjectOutputStream clientSendStream;
+    private Message message;
 
-    JTable table;
-    JTabbedPane tabbedPane;
+    private JTable table;
+    private JTabbedPane tabbedPane;
 
 
-    JPanel tabDeletePanel;
-    JPanel tabInsertPanel;
+    private JPanel tabDeletePanel;
+    private JPanel tabInsertPanel;
 
-    JFormattedTextField ftfLogin;
-    JFormattedTextField ftfPassword;
+    private JFormattedTextField ftfLogin;
+    private JFormattedTextField ftfPassword;
 
-    JFormattedTextField ftfFName;
-    JFormattedTextField ftfSName;
-    JFormattedTextField ftfPhone;
-    JComboBox comboBox;
+    private JFormattedTextField ftfFName;
+    private JFormattedTextField ftfSName;
+    private JFormattedTextField ftfPhone;
+    private JComboBox comboBox;
 
-    JButton btnTabAdd;
-    JButton btnTabRedact;
-    JButton btnTabDelete;
+    private JButton btnTabAdd;
+    private JButton btnTabRedact;
+    private JButton btnTabDelete;
 
     private int id;
 
@@ -67,24 +67,15 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
         table = new JTable(new Object[][]{}, columnName);
         JScrollPane scrollPane = new JScrollPane(table);
 
-        //table.setSize(400,50);
         table.setCellSelectionEnabled(false);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         table.setRowSelectionAllowed(true);
         table.getSelectionModel().addListSelectionListener(new TableSelectListener());
-        table.setDefaultEditor(Object.class, null); //? /////////////////////////////////
+        table.setDefaultEditor(Object.class, null);
 
         scrollPane.setBounds(10, 10, 890, 350);
-        //add(table);
-
 
         tabbedPane = new JTabbedPane();
-
-
-
-        //JLabel =
-
-
 
         tabInsertPanel = new JPanel();
         tabInsertPanel.setLayout(null);
@@ -296,20 +287,6 @@ public class UserPanel extends JPanel implements SocketGuiInterface {
 
     public void setSourse(Object[][] data) {
         table.setModel(new DefaultTableModel(data, columnName));
-    }
-
-    public class TftCaractersListener extends KeyAdapter {
-
-        public void keyTyped(KeyEvent e) {
-            char c = e.getKeyChar();
-            if (!((c >= 'А') && (c <= 'я') ||
-                    (c == KeyEvent.VK_BACK_SPACE) ||
-                    (c == KeyEvent.VK_DELETE))) {
-                JOptionPane.showMessageDialog(null, "Только русские символы!");
-                e.consume();
-            }
-        }
-
     }
 
     public class TableSelectListener implements ListSelectionListener {

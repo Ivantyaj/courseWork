@@ -1,12 +1,8 @@
 package ui;
 
 import Instruments.Server;
-import Instruments.ServerThread;
 
 import javax.swing.*;
-import javax.swing.text.AttributeSet;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.DocumentFilter;
 import javax.swing.text.MaskFormatter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,7 +11,6 @@ import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.text.ParseException;
-import java.util.ArrayList;
 
 public class ServerGUI extends JFrame {
 
@@ -24,33 +19,14 @@ public class ServerGUI extends JFrame {
     private static final int PORT = 1502;
     private int port = PORT;
 
+    private int clientCount = 0;
 
-    private Thread thead;
+    private JButton btnStart;
 
-
-    int clientCount = 0;
-
-    JButton btnStart;
-    //JButton btnStop;
-    //JTextField textPort;
-
-    JLabel labelClient;
-    JTextArea textAreaMessage;
-    ServerSocket serverSocket;
-    JFormattedTextField ftfPort;
-
-    Server server;
-
-
-    ArrayList<Thread> threadArrayList = new ArrayList<>();
-
-    public void addToThreadArray(Thread thread){
-        threadArrayList.add(thread);
-    }
-
-    public void setServer(Server server) {
-        this.server = server;
-    }
+    private JLabel labelClient;
+    private JTextArea textAreaMessage;
+    private ServerSocket serverSocket;
+    private JFormattedTextField ftfPort;
 
     private ServerGUI(String str) {
         super(str);
@@ -97,7 +73,6 @@ public class ServerGUI extends JFrame {
 
     }
 
-
     public void addClient() {
         clientCount++;
         labelClient.setText("Client: " + String.valueOf(clientCount));
@@ -112,13 +87,15 @@ public class ServerGUI extends JFrame {
         textAreaMessage.setText(textAreaMessage.getText() + message + "\r\n");
     }
 
+    public void setPort(int port) {
+        this.port = port;
+    }
+
     public class ButtonActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-//            if (e.getSource() == btnStop) {
-//
-//            }
             if (e.getSource() == btnStart) {
                 System.out.println("Start server");
+                setPort(port);
                 start();
                 btnStart.setEnabled(false);
                 ftfPort.setEnabled(false);
@@ -126,10 +103,6 @@ public class ServerGUI extends JFrame {
         }
     }
 
-
-    public void setPort(int port) {
-        this.port = port;
-    }
     private void start() {
         try {
             serverSocket = new ServerSocket(port);
@@ -139,25 +112,6 @@ public class ServerGUI extends JFrame {
         }
 
 
-    }
-
-    class DigitFilter extends DocumentFilter {
-        private static final String DIGITS = "\\d+";
-
-        @Override
-        public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException {
-
-            if (string.matches(DIGITS)) {
-                super.insertString(fb, offset, string, attr);
-            }
-        }
-
-        @Override
-        public void replace(FilterBypass fb, int offset, int length, String string, AttributeSet attrs) throws BadLocationException {
-            if (string.matches(DIGITS)) {
-                super.replace(fb, offset, length, string, attrs);
-            }
-        }
     }
 
     public class TftCaractersListener extends KeyAdapter {

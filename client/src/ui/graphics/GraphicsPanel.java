@@ -60,7 +60,7 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
     private JFormattedTextField ftfSumFind;
     private JFormattedTextField ftfIdFind;
 
-    private JFileChooser fileChooser = null;
+    private JFileChooser fileChooser;
 
     public GraphicsPanel(ObjectOutputStream css, Message mes) {
         setClientSendStream(css);
@@ -69,12 +69,9 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
 
 
         Float[] data = {
-                30f, 120f, 45f
-
+                0f, 0f, 0f
         };
-//        String[] chartsColumnName = {};
-//
-//        Float[] data = {};
+
         ui = new chartPieUI("Самая затратная статья расходов");
         ui.createChart(chartsColumnName, data);
         chart = ui.getPanel();
@@ -84,8 +81,6 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
         tableReport = new JTable(new Object[][]{}, columnNameReport);
         JScrollPane scrollPaneResult = new JScrollPane(tableReport);
 
-
-        //table.setSize(400,50);
         tableReport.setCellSelectionEnabled(false);
         tableReport.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tableReport.setRowSelectionAllowed(true);
@@ -101,7 +96,6 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
         btnToFile.setBounds(140, 630, 130, 25);
         btnToFile.addActionListener(new ButtonActionListener());
 
-        // Создание экземпляра JFileChooser
         fileChooser = new JFileChooser();
 
         tabbedPane = new JTabbedPane();
@@ -233,6 +227,10 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
 
             if (e.getSource() == btnShow) {
                 id = tableReport.getSelectedRow();
+                if(id < 0){
+                    JOptionPane.showMessageDialog(null, "Выберите данные для отображения!");
+                    return;
+                }
 
                 message = new Message();
 

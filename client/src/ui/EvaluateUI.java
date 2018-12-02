@@ -15,28 +15,17 @@ import java.io.ObjectOutputStream;
 public class EvaluateUI extends JFrame implements SocketGuiInterface {
 
 
-    ObjectOutputStream clientSendStream;
-    Message message;
+    private ObjectOutputStream clientSendStream;
+    private Message message;
 
-    //JTable table;
-    JTabbedPane tabbedPane;
+    private JTabbedPane tabbedPane;
 
+    private MainReportPanel tabMainReportPanel;
+    private GraphicsPanel tabGraphicsPanel;
 
-    //JButton btnTabDelete;
+    private User user;
 
-    MainReportPanel tabMainReportPanel;
-    GraphicsPanel tabGraphicsPanel;
-
-    User user;
-
-//    StaffPanel tabStaffPanel;
-//    AccessoriesPanel tabAccessoriesPanel;
-//    ProdactionPanel tabProdactionPanel;
-//    JPanel tabInsertPanel;
-//    JPanel tabModifyPanel;
-
-
-    public EvaluateUI(ObjectOutputStream objectOutputStream, Message mes) {
+    EvaluateUI(ObjectOutputStream objectOutputStream, Message mes) {
         super("Затраты");
 
         setClientSendStream(objectOutputStream);
@@ -72,8 +61,8 @@ public class EvaluateUI extends JFrame implements SocketGuiInterface {
         tabMainReportPanel.setSourseStaff(data);
     }
 
-    public void setAccessoriesData(Object[][] data) {
-        tabMainReportPanel.setSourseAccessories(data);
+    public void setRawData(Object[][] data) {
+        tabMainReportPanel.setSourseRaw(data);
     }
 
     public void setProdactionData(Object[][] data) {
@@ -87,10 +76,9 @@ public class EvaluateUI extends JFrame implements SocketGuiInterface {
         return user;
     }
 
-    public void setUser(User user) {
+    void setUser(User user) {
         this.user = user;
         tabMainReportPanel.setUser(user);
-        //tabMainReportPanel.setIdUser(user.getId());
     }
 
     void requestAll(Message mes, ObjectOutputStream sendStream) throws IOException {
@@ -99,12 +87,10 @@ public class EvaluateUI extends JFrame implements SocketGuiInterface {
 
         sendStream.writeObject(mes);
 
-
         mes = new Message();
-        mes.setCommand(Message.cmd.AccessoriesRequest);
+        mes.setCommand(Message.cmd.RawRequest);
 
         sendStream.writeObject(mes);
-
 
         mes = new Message();
         mes.setCommand(Message.cmd.ProdactionRequest);
@@ -112,55 +98,6 @@ public class EvaluateUI extends JFrame implements SocketGuiInterface {
         sendStream.writeObject(mes);
     }
 
-    //    public class ButtonActionListener implements ActionListener {
-//        public void actionPerformed(ActionEvent e) {
-//
-//            if (e.getSource() == btnTabDelete) {
-//                int[] selectedRows = table.getSelectedRows();
-//                ArrayList<Object> listID = new ArrayList<>();
-//                for (int id: selectedRows){
-//                    listID.add(table.getValueAt(id,0));
-//                }
-//                if(!listID.isEmpty()) {
-//                    message.setMessageArray(listID);
-//                    message.setCommand(Message.cmd.UserDelete);
-//                    try {
-//                        clientSendStream.writeObject(message);
-//                    } catch (IOException e1) {
-//                        e1.printStackTrace();
-//                    }
-//                }
-//
-//                message = new Message();
-//                message.setCommand(Message.cmd.UserRequest);
-//                try {
-//                    clientSendStream.writeObject(message);
-//                } catch (IOException e1) {
-//                    e1.printStackTrace();
-//                }
-////
-////                message.setCommand(Message.cmd.UserRequest);
-////                try {
-////                    clientSendStream.writeObject(new Message());
-////                } catch (IOException e1) {
-////                    e1.printStackTrace();
-////                }
-//            }
-////            else if (e.getSource() == btnEnter) {
-////                ArrayList<Object> stringArrayList = new ArrayList<>();
-////                stringArrayList.add(textFieldLogin.getText());
-////                stringArrayList.add(textFieldPassword.getText());
-////                message.setMessageArray(stringArrayList);
-////                message.setCommand(Message.cmd.LogIn);
-////                try {
-////                    clientSendStream.writeObject(message);
-////                } catch (IOException e1) {
-////                    e1.printStackTrace();
-////                }
-////            }
-//        }
-//    }
-//
     public class TabActionListener implements ChangeListener {
         @Override
         public void stateChanged(ChangeEvent e) {
@@ -181,24 +118,6 @@ public class EvaluateUI extends JFrame implements SocketGuiInterface {
                     e1.printStackTrace();
                 }
             }
-//            if (sourcePanel == tabAccessoriesPanel) {
-//                message = new Message();
-//                message.setCommand(Message.cmd.AccessoriesRequest);
-//                try {
-//                    clientSendStream.writeObject(message);
-//                } catch (IOException e1) {
-//                    e1.printStackTrace();
-//                }
-//            }
-//            if (sourcePanel == tabProdactionPanel) {
-//                message = new Message();
-//                message.setCommand(Message.cmd.ProdactionRequest);
-//                try {
-//                    clientSendStream.writeObject(message);
-//                } catch (IOException e1) {
-//                    e1.printStackTrace();
-//                }
-//            }
         }
     }
 }

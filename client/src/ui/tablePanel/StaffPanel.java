@@ -11,46 +11,41 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import javax.swing.text.MaskFormatter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.text.ParseException;
 import java.util.ArrayList;
 
 public class StaffPanel extends JPanel implements SocketGuiInterface {
 
-    String[] columnName = {
+    private String[] columnName = {
             "id",
             "Сумма з/п",
             "Процент отчислений",
             "Дата"
     };
 
-    ObjectOutputStream clientSendStream;
-    Message message;
+    private ObjectOutputStream clientSendStream;
+    private Message message;
 
-    JTable table;
-    JTabbedPane tabbedPane;
-
-
-    JButton btnTabDelete;
-
-    JPanel tabDeletePanel;
-    JPanel tabInsertPanel;
-    //JPanel tabModifyPanel;
-
-    JFormattedTextField ftfFName;
-    JFormattedTextField ftfSName;
+    private JTable table;
+    private JTabbedPane tabbedPane;
 
 
-    JButton btnTabAdd;
-    JButton btnTabRedact;
+    private JButton btnTabDelete;
 
-    DatePanel datePanel;
+    private JPanel tabDeletePanel;
+    private JPanel tabInsertPanel;
+
+    private JFormattedTextField ftfFName;
+    private JFormattedTextField ftfSName;
+
+
+    private JButton btnTabAdd;
+    private JButton btnTabRedact;
+
+    private DatePanel datePanel;
     private int id;
 
 
@@ -71,8 +66,6 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
         table.setDefaultEditor(Object.class, null);
 
         scrollPane.setBounds(10, 10, 890, 350);
-        //add(table);
-
 
         tabbedPane = new JTabbedPane();
 
@@ -95,21 +88,21 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
         btnTabRedact.setBounds(300, 90, 100, 20);
 
         ftfFName = new JFormattedTextField();
-        ftfFName.setBounds(100, 5, 90, 20);
+        ftfFName.setBounds(130, 5, 90, 20);
 
         ftfSName = new JFormattedTextField();
-        ftfSName.setBounds(100, 35, 90, 20);
+        ftfSName.setBounds(130, 35, 90, 20);
 
         datePanel = new DatePanel();
-        datePanel.setBounds(100,55,90,20);
+        datePanel.setBounds(130,55,90,20);
 
         JLabel lbSumSalary = new JLabel("Cумма з/п");
         JLabel lbGoverment = new JLabel("Процент отчислений");
         JLabel lbDate = new JLabel("Дата гггг-мм-дд");
 
-        lbSumSalary.setBounds(5, 5, 90, 20);
-        lbGoverment.setBounds(5, 30, 90, 20);
-        lbDate.setBounds(5, 55, 90, 20);
+        lbSumSalary.setBounds(5, 5, 130, 20);
+        lbGoverment.setBounds(5, 30, 130, 20);
+        lbDate.setBounds(5, 55, 130, 20);
 
         tabInsertPanel.add(lbSumSalary);
         tabInsertPanel.add(lbGoverment);
@@ -130,7 +123,6 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
         tabDeletePanel.add(labelDelete);
 
         tabbedPane.addTab("Удалить", tabDeletePanel);
-        //tabbedPane.addTab("Изменить", tabModifyPanel);
 
         tabbedPane.setBounds(10, 360, 890, 310);
         tabbedPane.addChangeListener(new StaffPanel.TabActionListener());
@@ -213,28 +205,12 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
                 table.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
             } else if (sourcePanel == tabInsertPanel) {
                 table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//            } else if (sourcePanel == tabModifyPanel) {
-//                table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
             }
         }
     }
 
     public void setSourse(Object[][] data) {
         table.setModel(new DefaultTableModel(data, columnName));
-    }
-
-    public class TftCaractersListener extends KeyAdapter {
-
-        public void keyTyped(KeyEvent e) {
-            char c = e.getKeyChar();
-            if (!((c >= 'А') && (c <= 'я') ||
-                    (c == KeyEvent.VK_BACK_SPACE) ||
-                    (c == KeyEvent.VK_DELETE))) {
-                JOptionPane.showMessageDialog(null, "Только русские символы!");
-                e.consume();
-            }
-        }
-
     }
 
     public class TableSelectListener implements ListSelectionListener {
@@ -245,9 +221,8 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
                 TableModel model = table.getModel();
                 id = Integer.parseInt((String) model.getValueAt(selectedRow, 0));
                 ftfFName.setValue(model.getValueAt(selectedRow, 1));
-                ftfSName.setValue(model.getValueAt(selectedRow, 2));
-                //ftfDate.setValue(model.getValueAt(selectedRow,3));
                 datePanel.setValue(model.getValueAt(selectedRow,3));
+                ftfSName.setValue(model.getValueAt(selectedRow, 2));
             }
 
         }

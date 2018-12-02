@@ -1,7 +1,7 @@
 package ui;
 
 import Message.Message;
-import ui.tablePanel.AccessoriesPanel;
+import ui.tablePanel.RawPackagePanel;
 import ui.tablePanel.ProdactionPanel;
 import ui.tablePanel.StaffPanel;
 import ui.tablePanel.UserPanel;
@@ -14,31 +14,18 @@ import java.io.ObjectOutputStream;
 
 
 public class DB extends JFrame implements SocketGuiInterface {
-//    String[] columnName = {
-//      "id",
-//      "Логин",
-//      "Пароль",
-//      "Роль"
-//    };
 
-    ObjectOutputStream clientSendStream;
-    Message message;
+    private ObjectOutputStream clientSendStream;
+    private Message message;
 
-    //JTable table;
-    JTabbedPane tabbedPane;
+    private JTabbedPane tabbedPane;
 
+    private UserPanel tabUserPanel;
+    private StaffPanel tabStaffPanel;
+    private RawPackagePanel tabRawPackagePanel;
+    private ProdactionPanel tabProdactionPanel;
 
-    //JButton btnTabDelete;
-
-    UserPanel tabUserPanel;
-    StaffPanel tabStaffPanel;
-    AccessoriesPanel tabAccessoriesPanel;
-    ProdactionPanel tabProdactionPanel;
-//    JPanel tabInsertPanel;
-//    JPanel tabModifyPanel;
-
-
-    public DB(ObjectOutputStream objectOutputStream, Message mes){
+    DB(ObjectOutputStream objectOutputStream, Message mes){
         super("База данных");
 
         setClientSendStream(objectOutputStream);
@@ -51,12 +38,12 @@ public class DB extends JFrame implements SocketGuiInterface {
 
         tabUserPanel = new UserPanel(clientSendStream, message);
         tabStaffPanel = new StaffPanel(clientSendStream, message);
-        tabAccessoriesPanel = new AccessoriesPanel(clientSendStream, message);
+        tabRawPackagePanel = new RawPackagePanel(clientSendStream, message);
         tabProdactionPanel = new ProdactionPanel(clientSendStream, message);
 
         tabbedPane.addTab("Пользователи", tabUserPanel);
         tabbedPane.addTab("Штат", tabStaffPanel);
-        tabbedPane.addTab("Сырье", tabAccessoriesPanel);
+        tabbedPane.addTab("Сырье", tabRawPackagePanel);
         tabbedPane.addTab("Производство", tabProdactionPanel);
 
 
@@ -78,59 +65,9 @@ public class DB extends JFrame implements SocketGuiInterface {
         tabUserPanel.setSourse(data);
     }
     public void setStaffData(Object[][] data){ tabStaffPanel.setSourse(data); }
-    public void setAccessoriesData(Object[][] data){ tabAccessoriesPanel.setSourse(data); }
+    public void setRawData(Object[][] data){ tabRawPackagePanel.setSourse(data); }
     public void setProdactionData(Object[][] data){ tabProdactionPanel.setSourse(data); }
 
-
-//    public class ButtonActionListener implements ActionListener {
-//        public void actionPerformed(ActionEvent e) {
-//
-//            if (e.getSource() == btnTabDelete) {
-//                int[] selectedRows = table.getSelectedRows();
-//                ArrayList<Object> listID = new ArrayList<>();
-//                for (int id: selectedRows){
-//                    listID.add(table.getValueAt(id,0));
-//                }
-//                if(!listID.isEmpty()) {
-//                    message.setMessageArray(listID);
-//                    message.setCommand(Message.cmd.UserDelete);
-//                    try {
-//                        clientSendStream.writeObject(message);
-//                    } catch (IOException e1) {
-//                        e1.printStackTrace();
-//                    }
-//                }
-//
-//                message = new Message();
-//                message.setCommand(Message.cmd.UserRequest);
-//                try {
-//                    clientSendStream.writeObject(message);
-//                } catch (IOException e1) {
-//                    e1.printStackTrace();
-//                }
-////
-////                message.setCommand(Message.cmd.UserRequest);
-////                try {
-////                    clientSendStream.writeObject(new Message());
-////                } catch (IOException e1) {
-////                    e1.printStackTrace();
-////                }
-//            }
-////            else if (e.getSource() == btnEnter) {
-////                ArrayList<Object> stringArrayList = new ArrayList<>();
-////                stringArrayList.add(textFieldLogin.getText());
-////                stringArrayList.add(textFieldPassword.getText());
-////                message.setMessageArray(stringArrayList);
-////                message.setCommand(Message.cmd.LogIn);
-////                try {
-////                    clientSendStream.writeObject(message);
-////                } catch (IOException e1) {
-////                    e1.printStackTrace();
-////                }
-////            }
-//        }
-//    }
-//
     public class TabActionListener implements ChangeListener {
         @Override
         public void stateChanged(ChangeEvent e) {
@@ -153,9 +90,9 @@ public class DB extends JFrame implements SocketGuiInterface {
                     e1.printStackTrace();
                 }
             }
-            if (sourcePanel == tabAccessoriesPanel) {
+            if (sourcePanel == tabRawPackagePanel) {
                 message = new Message();
-                message.setCommand(Message.cmd.AccessoriesRequest);
+                message.setCommand(Message.cmd.RawRequest);
                 try {
                     clientSendStream.writeObject(message);
                 } catch (IOException e1) {

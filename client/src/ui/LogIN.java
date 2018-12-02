@@ -1,37 +1,23 @@
 package ui;
 
 import Message.Message;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartFrame;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.data.general.DatasetChangeListener;
-import org.jfree.data.general.DatasetGroup;
-import org.jfree.data.general.DefaultPieDataset;
-import org.jfree.data.general.PieDataset;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.*;
-import java.io.*;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 public class LogIN extends JFrame implements SocketGuiInterface{
 
-    ObjectOutputStream clientSendStream;
-    Message message;
+    private ObjectOutputStream clientSendStream;
+    private Message message;
 
-    JButton btnClear;
-    JButton btnEnter;
-    JTextField textFieldLogin;
-    JTextField textFieldPassword;
-    JLabel labelLogin;
-    JLabel labelPassword;
-
-
+    private JButton btnClear;
+    private JButton btnEnter;
+    private JTextField textFieldLogin;
+    private JTextField textFieldPassword;
 
 
     public LogIN(String title){
@@ -45,8 +31,8 @@ public class LogIN extends JFrame implements SocketGuiInterface{
         textFieldPassword = new JTextField(9);
         textFieldLogin.setText("");
         textFieldPassword.setText("");
-        labelLogin = new JLabel("Логин:");
-        labelPassword = new JLabel("Пароль");
+        JLabel labelLogin = new JLabel("Логин:");
+        JLabel labelPassword = new JLabel("Пароль");
 
         setLayout(null);
 
