@@ -70,7 +70,7 @@ public class Report implements Serializable {
             Prodaction prodaction = (Prodaction)arrayList.get(1);
             Accessories accessories = (Accessories)arrayList.get(2);
 
-            totalStaff += staff.getSalary()*staff.getGoverment();
+            totalStaff += staff.getSalary()*(staff.getGoverment()/100);
 
             totalProdaction += prodaction.getAmortisation() + prodaction.getEnergy()*prodaction.getTariff() + transport;
             totalProdaction *= persentDefect;

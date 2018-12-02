@@ -318,7 +318,10 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         public void actionPerformed(ActionEvent e) {
 
             if (e.getSource() == btnEvaluate) {
-
+                if(datePanel.getTextDate().equals("")){
+                    JOptionPane.showMessageDialog(null, "Выберите дату!");
+                    return;
+                }
                 ArrayList<Object> listID = new ArrayList<>();
 
                 int selectStaff = tableStaff.getSelectedRow();
@@ -353,7 +356,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
 
                         listID.add(String.valueOf(persent));
                     } else {
-                        listID.add("0");
+                        listID.add("1");
                     }
                     if (cbTransport.isSelected()) {
                         listID.add(ftfTransportSum.getText());
