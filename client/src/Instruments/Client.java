@@ -40,6 +40,7 @@ public class Client {
             uiLogIN.setVisible(true);
             uiLogIN.setResizable(false);
             uiLogIN.setLocationRelativeTo(null);
+
             uiLogIN.setClientSendStream(clientSendStream);
             uiLogIN.setMessage(message);
 

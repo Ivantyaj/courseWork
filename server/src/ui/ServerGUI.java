@@ -4,23 +4,52 @@ import Instruments.Server;
 import Instruments.ServerThread;
 
 import javax.swing.*;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
+import javax.swing.text.MaskFormatter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.text.ParseException;
+import java.util.ArrayList;
 
 public class ServerGUI extends JFrame {
 
     public static final ServerGUI INSTANCE = new ServerGUI("Сервер");
 
+    private static final int PORT = 1502;
+    private int port = PORT;
+
+
+    private Thread thead;
+
+
     int clientCount = 0;
 
     JButton btnStart;
-    JButton btnPort;
-    JTextField textPort;
-    JTextField textIP;
-    JLabel labelPort;
+    //JButton btnStop;
+    //JTextField textPort;
+
+    JLabel labelClient;
     JTextArea textAreaMessage;
+    ServerSocket serverSocket;
+    JFormattedTextField ftfPort;
+
+
+    JSpinner spinInt;
 
     Server server;
+
+
+    ArrayList<Thread> threadArrayList = new ArrayList<>();
+
+    public void addToThreadArray(Thread thread){
+        threadArrayList.add(thread);
+    }
 
     public void setServer(Server server) {
         this.server = server;
@@ -32,60 +61,131 @@ public class ServerGUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         btnStart = new JButton("Запуск");
-        btnPort = new JButton("Установить порт");
-        textPort = new JTextField(9);
-        textIP = new JTextField(9);
-        labelPort = new JLabel("Client: ");
-        textAreaMessage = new JTextArea(9,9);
+        //btnStop = new JButton("Остановка");
+        //textIP = new JTextField(9);
+        labelClient = new JLabel("Client: ");
+        textAreaMessage = new JTextArea(9, 9);
+        textAreaMessage.setEditable(false);
 
-        textIP.setEditable(false);
+        //textIP.setEditable(false);
 
         setLayout(null);
 
-        textPort.setBounds(10, 10, 70, 20);
-        btnStart.setBounds(10, 40, 70, 20);
-        btnPort.setBounds(10, 65, 70, 20);
-        labelPort.setBounds(10, 95, 90, 20);
-        textAreaMessage.setBounds(10, 120, 300, 200);
+       // textPort.setBounds(10, 10, 70, 20);
+        btnStart.setBounds(10, 80, 90, 20);
+        //btnStop.setBounds(10, 65, 70, 20);
+        labelClient.setBounds(10, 105, 90, 20);
+        textAreaMessage.setBounds(10, 130, 300, 200);
+
+        JLabel lbPort = new JLabel("Port:");
+        lbPort.setBounds(10, 10, 40, 20);
+
+        MaskFormatter mf = null;
+        try {
+            mf = new MaskFormatter("####");
+            mf.setPlaceholderCharacter('*');
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        ftfPort = new JFormattedTextField(mf);
+        ftfPort.addKeyListener(new TftCaractersListener());
+        ftfPort.setBounds(50,10,40,20);
+        ftfPort.setText(String.valueOf(PORT));
+
+        SpinnerModel numbers = new SpinnerNumberModel(10, 1, 10, 1);
+        spinInt = new JSpinner(numbers);
+        spinInt.setBounds(10,50,40,25);
+
+        JLabel lbSpin = new JLabel("Максимум клиентов:");
+        lbSpin.setBounds(10,30,200,20);
 
         add(btnStart);
-        add(btnPort);
-        add(textPort);
-        add(labelPort);
+        //add(btnStop);
+        add(spinInt);
+        add(lbPort);
+        add(lbSpin);
+        add(labelClient);
         add(textAreaMessage);
+        add(ftfPort);
 
 
-        btnPort.addActionListener(new ServerGUI.ButtonActionListener());
+        //btnStop.addActionListener(new ServerGUI.ButtonActionListener());
         btnStart.addActionListener(new ServerGUI.ButtonActionListener());
 
     }
 
-    public void addClient(){
+    public void addClient() {
         clientCount++;
-        labelPort.setText("Client: " + String.valueOf(clientCount));
+        labelClient.setText("Client: " + String.valueOf(clientCount));
     }
 
-    public void removeClient(){
+    public void removeClient() {
         clientCount--;
-        labelPort.setText("Client: " + String.valueOf(clientCount));
+        labelClient.setText("Client: " + String.valueOf(clientCount));
     }
 
-    public void setMessage(String message){
-        textAreaMessage.setText(message);
+    public void setMessage(String message) {
+        textAreaMessage.setText(textAreaMessage.getText() + message + "\r\n");
     }
 
     public class ButtonActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            if (e.getSource() == btnPort) {
-                System.out.println(textPort.getText());
-                server.setsPort(textPort.getText()); //try/cath
-            }
+//            if (e.getSource() == btnStop) {
+//
+//            }
             if (e.getSource() == btnStart) {
-                System.out.println("Start serv");
-                server.start();
+                System.out.println("Start server");
+                start();
+                btnStart.setEnabled(false);
             }
         }
     }
 
 
+    public void setPort(int port) {
+        this.port = port;
+    }
+    private void start() {
+        try {
+            serverSocket = new ServerSocket(port);
+            new Server(serverSocket, (Integer)spinInt.getValue()).start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    class DigitFilter extends DocumentFilter {
+        private static final String DIGITS = "\\d+";
+
+        @Override
+        public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException {
+
+            if (string.matches(DIGITS)) {
+                super.insertString(fb, offset, string, attr);
+            }
+        }
+
+        @Override
+        public void replace(FilterBypass fb, int offset, int length, String string, AttributeSet attrs) throws BadLocationException {
+            if (string.matches(DIGITS)) {
+                super.replace(fb, offset, length, string, attrs);
+            }
+        }
+    }
+
+    public class TftCaractersListener extends KeyAdapter {
+
+        public void keyTyped(KeyEvent e) {
+            char c = e.getKeyChar();
+            if (!((c >= '0') && (c <= '9') ||
+                    (c == KeyEvent.VK_BACK_SPACE) ||
+                    (c == KeyEvent.VK_DELETE))) {
+                JOptionPane.showMessageDialog(null, "Вводите олько цифры!", "ОШИБКА!", JOptionPane.ERROR_MESSAGE);
+                e.consume();
+            }
+        }
+
+    }
 }

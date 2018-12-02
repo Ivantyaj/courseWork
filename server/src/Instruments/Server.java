@@ -1,57 +1,73 @@
 package Instruments;
 
+import ui.ServerGUI;
 import ui.WaitFrame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.net.ServerSocket;
 import javax.swing.*;
 
-public class Server{
+public class Server extends Thread {
+    private ServerSocket serverSocket;
+
     public static final int PORT = 1502;
 
+    int maxClient;
 
-    String sPort = "";
-    int port = 0;
-
-    public void setsPort(String sPort) {
-        this.sPort = sPort;
+    public void setPort(int port) {
+        this.port = port;
     }
 
-//    public Server(String str) {
-//        this.sPort = str;
+    private int port = PORT;
+
+    // public void setsPort(String sPort) {
+    //    this.sPort = sPort;
+    //}
+
+    public Server(ServerSocket socket, int maxClient) {
+        this.serverSocket = socket;
+        this.maxClient = maxClient;
+    }
+
+//    public void start() {
+//        try {
+//
+//            ServerSocket serverSocket = new ServerSocket(port);
+//
+//            WaitFrame waitFrame = new WaitFrame("Wait");
+//            waitFrame .setVisible(true);
+//            waitFrame .setResizable(false);
+//            waitFrame .setLocationRelativeTo(null);
+//
+//            //serverGui.setVisible(false);
+//            ServerThread thread;
+//            while (true) {
+//                new ServerThread(serverSocket.accept()).start();
+//                waitFrame.setVisible(false);
+//            }
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 //    }
 
-    public void start() {
+    @Override
+    public void run() {
+        WaitFrame waitFrame = new WaitFrame("Wait");
+        waitFrame.setVisible(true);
+        waitFrame.setResizable(false);
+        waitFrame.setLocationRelativeTo(null);
         try {
-            if (sPort.length() == 0) {
-                port = PORT;
-                System.out.println("second");
-            }else if (Integer.parseInt(sPort) != 0 && sPort.length() == 4) {
-                port = Integer.parseInt(sPort);
-                System.out.println("first");
-            } else {
-                System.out.println("Invalid port!");
-                //System.exit(0);
-                return;
-            }
-            ServerSocket serverSocket = new ServerSocket(port);
-
-            WaitFrame waitFrame = new WaitFrame("Wait");
-            waitFrame .setVisible(true);
-            waitFrame .setResizable(false);
-            waitFrame .setLocationRelativeTo(null);
-
-            while (true) { //????
-                new ServerThread(serverSocket.accept()).start();
+            while (true) {
+                new ServerThread(serverSocket.accept(), maxClient).start();
                 waitFrame.setVisible(false);
             }
-
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 
 }
 

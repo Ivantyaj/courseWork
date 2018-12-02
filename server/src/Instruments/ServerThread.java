@@ -15,10 +15,6 @@ import java.util.ArrayList;
 
 public class ServerThread extends Thread {
 
-    private PrintStream printStream;
-    private BufferedReader bufferedReader;
-    private ObjectOutput objectOutput;
-    private ObjectInput objectInput;
     private Socket socket;
     private DBWorker dbWorker;
     private SQLRequest sqlRequest;
@@ -32,7 +28,7 @@ public class ServerThread extends Thread {
 
     Message message = new Message();
 
-    public ServerThread(Socket socket) {
+    public ServerThread(Socket socket, int maxClient) {
         this.socket = socket;
         //  daoFactory = new SqlDaoFactory();
         // connection = daoFactory.getConnection();
@@ -46,12 +42,11 @@ public class ServerThread extends Thread {
         serverGui.setResizable(false);
         serverGui.setLocationRelativeTo(null);
         serverGui.addClient();
-
-        //ServerGUI a = new ServerGUI("Сервер");
-        //a.setVisible(true);
+        System.out.println("socet--------------------" + socket.getChannel() + socket.getInetAddress() + socket.getPort());
 
         System.out.println(socket.getInetAddress().getHostName() +
                 " " + socket.getInetAddress() + "connected");
+
 
         dbWorker = new DBWorker();
         sqlRequest = new SQLRequest();
