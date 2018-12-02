@@ -11,13 +11,13 @@ public class User implements Serializable {
         FAIL
     }
 
-    Role role = Role.FAIL;
-    String login;
-    String password;
-    String name;
-    String lastname;
-    String phone;
-    int id;
+    private Role role = Role.FAIL;
+    private String login;
+    private String password;
+    private String name;
+    private String lastname;
+    private String phone;
+    private int id;
 
     public User() {
     }
@@ -48,7 +48,7 @@ public class User implements Serializable {
         this.role = role;
     }
 
-    public Role setRole(String role) {
+    private Role setRole(String role) {
         Role roleToSet;
         switch (role){
             case "ADMIN":

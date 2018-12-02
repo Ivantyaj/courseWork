@@ -20,8 +20,6 @@ public class ServerThread extends Thread {
     private SQLRequest sqlRequest;
 
     ServerGUI serverGui;
-//    private SqlDaoFactory   daoFactory;
-
 
     ObjectInputStream serverReadStream;
     ObjectOutputStream serverSendStream;
