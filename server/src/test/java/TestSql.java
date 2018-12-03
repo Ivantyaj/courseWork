@@ -1,7 +1,9 @@
+import BDTable.Prodaction;
+import BDTable.RawPackage;
 import BDTable.Report;
+import BDTable.Staff;
 import DataBase.DBWorker;
 import DataBase.SQLRequest;
-import Message.Message;
 import org.junit.*;
 
 import java.sql.ResultSet;
@@ -14,11 +16,14 @@ public class TestSql {
 
     private static SQLRequest sql;
     private static DBWorker db;
+    private static ArrayList<Object> arrayList;
 
     @BeforeClass
     public static void createObject() throws SQLException {
         sql = new SQLRequest();
         db = new DBWorker();
+        arrayList = new ArrayList<>();
+
         Statement statement = db.getConnection().createStatement();
 
         String query = "insert into staff(id, salary,goverment,date) values (-1,1,2,'1111-11-11');";
@@ -52,6 +57,7 @@ public class TestSql {
 
         sql = null;
         db = null;
+        arrayList = null;
     }
 
     @Test
@@ -78,4 +84,45 @@ public class TestSql {
 
     }
 
+    @Test
+    public void testRequestDataForEvaluateArray() throws SQLException {
+        arrayList = sql.requestDataForEvaluate(-1, -1, -1);
+
+        Staff staff = (Staff) arrayList.get(0);
+        Prodaction prodaction = (Prodaction) arrayList.get(1);
+        RawPackage rawPackage = (RawPackage) arrayList.get(2);
+
+        Assert.assertEquals(1, staff.getSalary(), 0.01);
+        Assert.assertEquals(2, staff.getGoverment(), 0.01);
+
+        Assert.assertEquals(String.valueOf(-1), prodaction.toStringArray()[0]);
+        Assert.assertEquals(String.valueOf(3), prodaction.toStringArray()[1]);
+        Assert.assertEquals(Float.valueOf(4), Float.valueOf(prodaction.toStringArray()[2]));
+        Assert.assertEquals(Float.valueOf(5), Float.valueOf(prodaction.toStringArray()[3]));
+        Assert.assertEquals("1111-11-11", prodaction.toStringArray()[4]);
+
+        Assert.assertEquals(7, rawPackage.getCount());
+        Assert.assertEquals(8, rawPackage.getPrice(), 0.01);
+    }
+
+    @Test
+    public void testRequestDataForEvaluateExeption() throws SQLException {
+        arrayList = sql.requestDataForEvaluate(-3, -3, -3);
+        Object[] expect = {null, null, null};
+        Assert.assertArrayEquals(expect, arrayList.toArray());
+
+    }
+
+    @Test
+    public void testEvaluate() throws SQLException {
+        ResultSet resultSetReport = sql.requestOneReport(-1);
+        resultSetReport.next();
+        Report report = new Report(resultSetReport);
+
+        Assert.assertEquals(-1,report.getResult(),0.01);
+
+        report.evaluateResult(sql);
+
+        Assert.assertEquals(53.02,report.getResult(),0.01);
+    }
 }

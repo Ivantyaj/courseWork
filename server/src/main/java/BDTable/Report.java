@@ -36,10 +36,6 @@ public class Report implements Serializable {
         this.persentDefect = Float.parseFloat((String) arrayList.get(5));
         this.transport = Float.parseFloat((String) arrayList.get(6));
         this.additional = Float.parseFloat((String) arrayList.get(7));
-//        this.totalStaff = Float.parseFloat((String) arrayList.get(8));
-//        this.totalRawPackage = Float.parseFloat((String) arrayList.get(9));
-//        this.totalProdaction = Float.parseFloat((String) arrayList.get(10));
-
     }
 
 

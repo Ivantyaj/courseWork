@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34397994-8a57-4afb-b7da-8c9b0e18214c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BDTable/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BDTable/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Instruments/ServerThread$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Instruments/ServerThread$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Instruments/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Instruments/ServerThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/BDTable/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/BDTable/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Instruments/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Instruments/ServerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/target/classes/BDTable/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/BDTable/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/target/classes/Instruments/ServerThread$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/Instruments/ServerThread$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/target/classes/Instruments/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/Instruments/ServerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/BDTable/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/BDTable/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/test/java/TestSql.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/test/java/TestSql.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/BDTable/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/BDTable/Report.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/test-classes/TestSql.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/test-classes/TestSql.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -63,7 +58,7 @@
           <entry key="class" value="4" />
           <entry key="form" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="110" />
+          <entry key="java" value="111" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
@@ -72,7 +67,7 @@
           <entry key="CLASS" value="4" />
           <entry key="GUI_DESIGNER_FORM" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="110" />
+          <entry key="JAVA" value="111" />
           <entry key="XML" value="4" />
         </counts>
       </usages-collector>
@@ -96,7 +91,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Instruments/Client.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -111,8 +106,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ui/graphics/GraphicsPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="1224">
               <caret line="81" column="16" lean-forward="true" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ui/DatePanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="53" column="72" selection-start-line="53" selection-start-column="72" selection-end-line="53" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -185,18 +192,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="223">
               <caret line="195" column="22" selection-start-line="195" selection-start-column="22" selection-end-line="195" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/TextField/NumTextField.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -315,7 +310,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
@@ -468,7 +463,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543793893304" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543819435463" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../server" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -578,7 +573,7 @@
       <workItem from="1543236782820" duration="18391000" />
       <workItem from="1543308507282" duration="5947000" />
       <workItem from="1543669146469" duration="63527000" />
-      <workItem from="1543785679302" duration="2833000" />
+      <workItem from="1543785679302" duration="2985000" />
     </task>
     <servers />
   </component>
@@ -597,13 +592,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171500000" />
+    <option name="totallyTimeSpent" value="171652000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18590604" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18590604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -613,7 +608,7 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32399103" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32847533" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.27801418" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.27801418" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.396861" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -778,13 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/DatePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="53" column="72" selection-start-line="53" selection-start-column="72" selection-end-line="53" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/LogIN.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-44">
@@ -931,9 +919,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/graphics/GraphicsPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Instruments/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/graphics/GraphicsPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
           <caret line="81" column="16" lean-forward="true" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -941,10 +939,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Instruments/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/DatePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="308">
+          <caret line="53" column="72" selection-start-line="53" selection-start-column="72" selection-end-line="53" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
