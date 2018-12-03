@@ -1,7 +1,7 @@
 package ui.tablePanel;
 
 import Message.Message;
-import TextField.StrTextField;
+import TextField.NumTextField;
 import ui.DatePanel;
 import ui.SocketGuiInterface;
 
@@ -39,8 +39,8 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
     private JPanel tabDeletePanel;
     private JPanel tabInsertPanel;
 
-    private JFormattedTextField ftfFName;
-    private JFormattedTextField ftfSName;
+    private JFormattedTextField ftfSalary;
+    private JFormattedTextField ftfPersent;
 
 
     private JButton btnTabAdd;
@@ -93,11 +93,11 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
         btnTabRedact.addActionListener(new ButtonActionListener());
         btnTabRedact.setBounds(300, 90, 100, 20);
 
-        ftfFName = new StrTextField();
-        ftfFName.setBounds(130, 5, 90, 20);
+        ftfSalary = new NumTextField();
+        ftfSalary.setBounds(130, 5, 90, 20);
 
-        ftfSName = new StrTextField();
-        ftfSName.setBounds(130, 35, 90, 20);
+        ftfPersent = new NumTextField();
+        ftfPersent.setBounds(130, 35, 90, 20);
 
         datePanel = new DatePanel();
         datePanel.setBounds(130,55,90,20);
@@ -117,8 +117,8 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
         tabInsertPanel.add(btnTabAdd);
         tabInsertPanel.add(btnTabRedact);
         tabInsertPanel.add(datePanel);
-        tabInsertPanel.add(ftfFName);
-        tabInsertPanel.add(ftfSName);
+        tabInsertPanel.add(ftfSalary);
+        tabInsertPanel.add(ftfPersent);
 
 
         tabbedPane.addTab("Добавить", tabInsertPanel);
@@ -191,8 +191,8 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
 
             ArrayList<Object> addData = new ArrayList<>();
             addData.add(String.valueOf(id));
-            addData.add(ftfFName.getText());
-            addData.add(ftfSName.getText());
+            addData.add(ftfSalary.getText());
+            addData.add(ftfPersent.getText());
             addData.add(datePanel.getText());
 
             message = new Message();
@@ -230,9 +230,9 @@ public class StaffPanel extends JPanel implements SocketGuiInterface {
             if (selectedRow >= 0) {
                 TableModel model = table.getModel();
                 id = Integer.parseInt((String) model.getValueAt(selectedRow, 0));
-                ftfFName.setValue(model.getValueAt(selectedRow, 1));
+                ftfSalary.setValue(model.getValueAt(selectedRow, 1));
                 datePanel.setValue(model.getValueAt(selectedRow,3));
-                ftfSName.setValue(model.getValueAt(selectedRow, 2));
+                ftfPersent.setValue(model.getValueAt(selectedRow, 2));
             }
 
         }

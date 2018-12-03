@@ -123,6 +123,6 @@ public class TestSql {
 
         report.evaluateResult(sql);
 
-        Assert.assertEquals(53.02,report.getResult(),0.01);
+        Assert.assertEquals(54.02,report.getResult(),0.01);
     }
 }

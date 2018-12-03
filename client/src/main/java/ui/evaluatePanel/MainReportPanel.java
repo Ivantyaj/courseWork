@@ -144,7 +144,7 @@ public class MainReportPanel extends JPanel implements SocketGuiInterface {
         ftfTransportSum.setEnabled(false);
 
         cbAdditional = new JCheckBox("Добавить сумму неучтенных расходов");
-        cbAdditional.setBounds(10, 550, 250, 20);
+        cbAdditional.setBounds(10, 550, 270, 20);
         cbAdditional.addItemListener(new CheckBoxActionListener());
 
         ftfAddSum = new NumTextField();

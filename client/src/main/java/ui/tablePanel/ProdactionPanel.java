@@ -96,26 +96,26 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
         btnTabRedact.setBounds(300, 90, 100, 20);
 
         ftfEnergy = new NumTextField();
-        ftfEnergy.setBounds(100, 5, 90, 20);
+        ftfEnergy.setBounds(120, 5, 90, 20);
 
         ftfTariff = new NumTextField();
-        ftfTariff.setBounds(100, 35, 90, 20);
+        ftfTariff.setBounds(120, 35, 90, 20);
 
         ftfAmortisation = new NumTextField();
-        ftfAmortisation.setBounds(100, 65, 90, 20);
+        ftfAmortisation.setBounds(120, 65, 90, 20);
 
         datePanel = new DatePanel();
-        datePanel.setBounds(100, 80, 90, 20);
+        datePanel.setBounds(120, 80, 90, 20);
 
         JLabel lbEnergy = new JLabel("Затраты энергии");
         JLabel lbTariff = new JLabel("Тариф");
         JLabel lbAmortisation = new JLabel("Амортизация");
         JLabel lbDate = new JLabel("Дата гггг-мм-дд");
 
-        lbEnergy.setBounds(5, 5, 90, 20);
-        lbTariff.setBounds(5, 30, 90, 20);
-        lbAmortisation.setBounds(5, 55, 90, 20);
-        lbDate.setBounds(5, 80, 90, 20);
+        lbEnergy.setBounds(5, 5, 110, 20);
+        lbTariff.setBounds(5, 30, 110, 20);
+        lbAmortisation.setBounds(5, 55, 110, 20);
+        lbDate.setBounds(5, 80, 110, 20);
 
         tabInsertPanel.add(lbEnergy);
         tabInsertPanel.add(lbTariff);
@@ -168,7 +168,6 @@ public class ProdactionPanel extends JPanel implements SocketGuiInterface {
                 if (dialogResult != JOptionPane.YES_OPTION){
                     return;
                 }
-
                 int[] selectedRows = table.getSelectedRows();
                 ArrayList<Object> listID = new ArrayList<>();
                 for (int id : selectedRows) {

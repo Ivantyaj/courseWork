@@ -66,9 +66,9 @@ public class Report implements Serializable {
             Prodaction prodaction = (Prodaction)arrayList.get(1);
             RawPackage rawPackage = (RawPackage)arrayList.get(2);
 
-            totalStaff += staff.getSalary()*(staff.getGoverment()/100);
+            totalStaff += staff.getSalary()+staff.getSalary()*(staff.getGoverment()/100);
 
-            totalProdaction += prodaction.getAmortisation() + prodaction.getEnergy()*prodaction.getTariff() + transport;
+            totalProdaction += prodaction.getAmortisation() + prodaction.getEnergy()*prodaction.getTariff()/10 + transport;
             totalProdaction *= persentDefect;
 
             totalRawPackage += rawPackage.getCount()* rawPackage.getPrice();

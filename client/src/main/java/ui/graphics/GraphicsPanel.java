@@ -33,9 +33,9 @@ public class GraphicsPanel extends JPanel implements SocketGuiInterface {
     };
 
     private String[] chartsColumnName = {
-            "Налоги",
+            "Персонал",
             "Сырье",
-            "Зарплата",
+            "Производство",
     };
 
     private chartPieUI ui;
